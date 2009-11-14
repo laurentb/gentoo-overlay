@@ -8,7 +8,7 @@ inherit cmake-utils
 
 DESCRIPTION="an IRC instant messaging gateway, using libpurple"
 HOMEPAGE="http://symlink.me/projects/show/minbif"
-SRC_URI="http://symlink.me/attachments/download/22/${P/_}.tar.gz"
+SRC_URI="http://symlink.me/attachments/download/27/${P/_}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -19,8 +19,7 @@ DEPEND="net-im/pidgin[gstreamer?]
 	libcaca? ( media-libs/libcaca[imlib] )"
 RDEPEND="${DEPEND}"
 
-#S=${WORKDIR}/${P/_}
-S=${WORKDIR}
+S="${WORKDIR}/minbif"
 
 src_prepare() {
 	sed -i "s/-Werror//g" CMakeLists.txt || die "sed failed"
