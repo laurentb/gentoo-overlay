@@ -13,9 +13,9 @@ SRC_URI="http://symlink.me/attachments/download/22/${P/_}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="libcaca"
+IUSE="+libcaca gstreamer"
 
-DEPEND="net-im/pidgin
+DEPEND="net-im/pidgin[gstreamer?]
 	libcaca? ( media-libs/libcaca[imlib] )"
 RDEPEND="${DEPEND}"
 
@@ -28,7 +28,17 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs
-	use libcaca || mycmakeargs="${mycmakeargs} -DENABLE_CACA=0 -DENABLE_VIDEO=0"
-	
+	if [ use libcaca ]; then
+		mycmakeargs="${mycmakeargs} -DENABLE_CACA=1"
+	else
+		mycmakeargs="${mycmakeargs} -DENABLE_CACA=0"
+	fi
+
+	if [ use gstreamer ]; then
+		mycmakeargs="${mycmakeargs} -DENABLE_VIDEO=1"
+	else
+		mycmakeargs="${mycmakeargs} -DENABLE_VIDEO=0"
+	fi
+
 	cmake-utils_src_configure
 }
