@@ -27,6 +27,7 @@ src_prepare() {
 src_configure() {
 	local mycmakeargs
 	mycmakeargs="${mycmakeargs}
+		-DCONF_PREFIX=${PREFIX:-/etc}
 		$(cmake-utils_use_with libcaca CACA)
 		$(cmake-utils_use_with gstreamer VIDEO)
 	"
