@@ -12,6 +12,8 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="debug server +game meta-server"
 
+EAPI="2"
+
 DEPEND="
 	game? (
 		>=media-libs/libsdl-1.2.6
@@ -26,7 +28,7 @@ src_unpack() {
 	git_src_unpack
 }
 
-src_compile() {
+src_configure() {
 	# needed because we are using git
 	NOCONFIGURE=1 ./autogen.sh || die "autogen.sh failed"
 
@@ -36,6 +38,9 @@ src_compile() {
 		$(use_enable meta-server) \
 		$(use_enable game) \
 		|| die
+}
+
+src_compile() {
 
 	emake || die "emake failed"
 }
