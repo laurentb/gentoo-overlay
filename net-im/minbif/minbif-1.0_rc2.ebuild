@@ -27,17 +27,10 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs
-	if [ use libcaca ]; then
-		mycmakeargs="${mycmakeargs} -DENABLE_CACA=1"
-	else
-		mycmakeargs="${mycmakeargs} -DENABLE_CACA=0"
-	fi
-
-	if [ use gstreamer ]; then
-		mycmakeargs="${mycmakeargs} -DENABLE_VIDEO=1"
-	else
-		mycmakeargs="${mycmakeargs} -DENABLE_VIDEO=0"
-	fi
+	mycmakeargs="${mycmakeargs}
+		$(cmake-utils_use_with libcaca CACA)
+		$(cmake-utils_use_with gstreamer VIDEO)
+	"
 
 	cmake-utils_src_configure
 }
