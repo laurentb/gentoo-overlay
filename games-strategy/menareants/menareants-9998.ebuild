@@ -1,3 +1,7 @@
+# Copyright 1999-2009 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI="2"
 inherit eutils git games
 
 DESCRIPTION="Men Are Ants is a strategic turn by turn \
@@ -11,8 +15,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="debug server +game meta-server"
-
-EAPI="2"
 
 DEPEND="
 	game? (
