@@ -24,10 +24,6 @@ DEPEND="
 		)"
 RDEPEND="${DEPEND}"
 
-src_unpack() {
-	git_src_unpack
-}
-
 src_configure() {
 	# needed because we are using git
 	NOCONFIGURE=1 ./autogen.sh || die "autogen.sh failed"
