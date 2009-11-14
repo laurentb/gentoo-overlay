@@ -50,14 +50,14 @@ src_install() {
 
 	dodoc API AUTHORS DEVELOPPEURS COPYING ChangeLog NEWS README TODO WIN32
 	doman src/menareants.6
-	useq server && doman server/menareants-server.6
-	useq meta-server && doman meta-server/menareants-meta-server.6
+	use server && doman server/menareants-server.6
+	use meta-server && doman meta-server/menareants-meta-server.6
 
 	prepgamesdirs
 }
 
 pkg_postinst() {
-	if useq server
+	if use server
 	then
 		echo
 		einfo "For now, menareants-server should be run " && \
