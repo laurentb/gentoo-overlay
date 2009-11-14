@@ -10,8 +10,9 @@ MY_P="${MY_P}-b$(get_version_component_range 4)"
 S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="unix port of Monkey's Audio"
-HOMEPAGE="http://sourceforge.net/projects/mac-port"
-SRC_URI="mirror://sourceforge/mac-port/${MY_P}.tar.gz"
+HOMEPAGE="http://supermmx.org/linux/mac/"
+SRC_URI="http://supermmx.org/resources/linux/mac/${MY_P}.tar.gz
+http://slackware.sukkology.net/packages/mac/${MY_P}.tar.gz"
 
 LICENSE="unknown"
 SLOT="0"
