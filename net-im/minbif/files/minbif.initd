@@ -12,8 +12,8 @@ depend() {
 }
 
 checkconfig() {
-	if ! [ -f /etc/minbif.conf ]; then
-		eerror "Configuration file /etc/minbif.conf does not exist."
+	if ! [ -f /etc/minbif/minbif.conf ]; then
+		eerror "Configuration file /etc/minbif/minbif.conf does not exist."
 		return 1
 	fi
 
@@ -29,7 +29,7 @@ start() {
 		--startas ${MINBIF_EXEC} \
 		--exec ${MINBIF_EXEC} -- \
 			--pidfile ${MINBIF_PID} \
-			/etc/minbif.conf
+			/etc/minbif/minbif.conf
 	eend $?
 }
 
