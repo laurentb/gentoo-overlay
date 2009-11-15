@@ -22,6 +22,7 @@ S="${WORKDIR}/minbif"
 
 src_prepare() {
 	sed -i "s/-Werror//g" CMakeLists.txt || die "sed failed"
+	rm "doc/Doxyfile"
 }
 
 src_configure() {
@@ -34,3 +35,30 @@ src_configure() {
 
 	cmake-utils_src_configure
 }
+
+pkg_preinst() {
+	enewgroup minbif
+	enewuser minbif -1 -1 /var/lib/minbif minbif
+}
+
+src_install() {
+	cmake-utils_src_install
+
+	dodoc README COPYING
+	doman man/minbif.8
+
+	dodir /usr/share/minbif
+	insinto /usr/share/minbif
+	doins -r scripts
+
+	keepdir /var/lib/minbif
+	fperms 700 /var/lib/minbif
+	fowners minbif:minbif /var/lib/minbif
+
+	keepdir /var/run/minbif
+	fperms 700 /var/run/minbif
+	fowners minbif:minbif /var/run/minbif
+
+	newinitd "${FILESDIR}"/minbif.initd minbif || die
+}
+
