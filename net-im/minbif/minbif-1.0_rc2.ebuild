@@ -26,6 +26,8 @@ src_prepare() {
 }
 
 src_configure() {
+	append-flags "-DX_DISPLAY_MISSING"
+
 	local mycmakeargs
 	mycmakeargs="${mycmakeargs}
 		-DCONF_PREFIX=${PREFIX:-/etc/minbif}
