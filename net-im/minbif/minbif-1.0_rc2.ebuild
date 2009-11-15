@@ -29,8 +29,8 @@ src_configure() {
 	local mycmakeargs
 	mycmakeargs="${mycmakeargs}
 		-DCONF_PREFIX=${PREFIX:-/etc/minbif}
-		$(cmake-utils_use_with libcaca CACA)
-		$(cmake-utils_use_with gstreamer VIDEO)
+		$(cmake-utils_use_enable libcaca CACA)
+		$(cmake-utils_use_enable gstreamer VIDEO)
 	"
 
 	cmake-utils_src_configure
