@@ -36,6 +36,13 @@ src_configure() {
 	cmake-utils_src_configure
 }
 
+pkg_setup() {
+	einfo
+	elog If you only want libpurple, you can emerge
+	elog net-im/pidgin with the -gtk -ncurses flags.
+	einfo
+}
+
 pkg_preinst() {
 	enewgroup minbif
 	enewuser minbif -1 -1 /var/lib/minbif minbif
