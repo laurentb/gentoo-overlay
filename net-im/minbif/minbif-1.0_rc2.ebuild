@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+libcaca gstreamer"
 
 DEPEND="net-im/pidgin[gstreamer?]
-	libcaca? ( media-libs/libcaca[imlib] )"
+	libcaca? ( media-libs/libcaca[imlib] media-libs/imlib2[png] )"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/minbif"
