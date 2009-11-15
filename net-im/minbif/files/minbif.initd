@@ -3,6 +3,9 @@
 # Distributed under the terms of the GNU General Public License v2
 
 MINBIF_EXEC="/usr/bin/minbif"
+MINBIF_PID="/var/run/minbif/minbif.pid"
+
+opts="reload"
 
 depend() {
 	need net
@@ -25,13 +28,21 @@ start() {
 		-c minbif:minbif \
 		--startas ${MINBIF_EXEC} \
 		--exec ${MINBIF_EXEC} -- \
-			--pidfile /var/run/minbif/minbif.pid \
+			--pidfile ${MINBIF_PID} \
 			/etc/minbif.conf
 	eend $?
 }
 
 stop() {
 	ebegin "Stopping minbif"
-	start-stop-daemon --stop --pidfile /var/run/minbif/minbif.pid
+	start-stop-daemon --quiet --stop \
+        --pidfile ${MINBIF_PID}
+	eend $?
+}
+
+reload() {
+	ebegin "Reloading minbif config"
+	start-stop-daemon --quiet --stop --oknodo --signal HUP \
+        --pidfile ${MINBIF_PID}
 	eend $? 
 }
