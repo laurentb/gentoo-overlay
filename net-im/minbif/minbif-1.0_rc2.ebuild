@@ -28,6 +28,9 @@ src_prepare() {
 src_configure() {
 	append-flags "-DX_DISPLAY_MISSING"
 
+	use libcaca || { use gstreamer && \
+		die "You need to enable libcaca if you enable gstreamer"; };
+
 	local mycmakeargs
 	mycmakeargs="${mycmakeargs}
 		-DCONF_PREFIX=${PREFIX:-/etc/minbif}
