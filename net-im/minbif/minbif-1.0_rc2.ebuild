@@ -62,14 +62,12 @@ src_install() {
 	dodir /usr/share/minbif
 	insinto /usr/share/minbif
 	doins -r scripts
-
+	
+	diropts -o minbif -g minbif -m0700
 	keepdir /var/lib/minbif
-	fperms 700 /var/lib/minbif
-	fowners minbif:minbif /var/lib/minbif
 
+	diropts -o minbif -g minbif -m0700
 	keepdir /var/run/minbif
-	fperms 700 /var/run/minbif
-	fowners minbif:minbif /var/run/minbif
 
 	newinitd "${FILESDIR}"/minbif.initd minbif || die
 }
