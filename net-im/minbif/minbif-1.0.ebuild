@@ -21,8 +21,13 @@ RDEPEND="${DEPEND}
 
 src_prepare() {
 	sed -i "s/-Werror//g" CMakeLists.txt || die "sed failed"
-	sed -i "s#share/doc/minbif)#share/doc/${P})#g" \
+
+	sed -i "s#share/doc/minbif)#share/doc/${P})#" \
 		CMakeLists.txt || die "sed failed"
+
+	use xinetd && { sed -i "s/type\s=\s[0-9]/type = 0/" \
+		minbif.conf || die "sed failed"; }
+
 	rm "doc/Doxyfile"
 	mv "doc/minbif.xinetd" ./
 }
@@ -31,7 +36,7 @@ src_configure() {
 	append-flags "-DX_DISPLAY_MISSING"
 
 	use libcaca || { use gstreamer && \
-		die "You need to enable libcaca if you enable gstreamer"; };
+		die "You need to enable libcaca if you enable gstreamer"; }
 
 	local mycmakeargs
 	mycmakeargs="${mycmakeargs}
