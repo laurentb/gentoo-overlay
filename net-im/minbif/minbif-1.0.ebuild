@@ -12,11 +12,12 @@ SRC_URI="http://symlink.me/attachments/download/30/${P/_}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+libcaca gstreamer"
+IUSE="+libcaca gstreamer -xinetd"
 
 DEPEND="net-im/pidgin[gstreamer?]
 	libcaca? ( media-libs/libcaca[imlib] media-libs/imlib2[png] )"
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+		xinetd? ( sys-apps/xinetd )"
 
 src_prepare() {
 	sed -i "s/-Werror//g" CMakeLists.txt || die "sed failed"
@@ -43,10 +44,19 @@ src_configure() {
 }
 
 pkg_setup() {
-	einfo
-	elog If you only want libpurple, you can emerge
-	elog net-im/pidgin with the -gtk -ncurses flags.
-	einfo
+	einfo If you only want libpurple, you can emerge
+	einfo net-im/pidgin with the -gtk -ncurses flags.
+
+	if use xinetd; then
+		elog
+		ewarn Unlike BitlBee, inetd mode is not the recommended
+		ewarn way of operation, since the daemon mode is stable.
+	fi
+}
+
+pkg_postinst() {
+	elog
+	elog irssi scripts are located in /usr/share/minbif
 }
 
 pkg_preinst() {
@@ -63,7 +73,11 @@ src_install() {
 	dodir /usr/share/minbif
 	insinto /usr/share/minbif
 	doins -r scripts
-	doins minbif.xinetd
+
+	if use xinetd; then
+		insinto /etc/xinetd.d
+		newins minbif.xinetd minbif
+	fi
 
 	diropts -o minbif -g minbif -m0700
 	keepdir /var/lib/minbif
