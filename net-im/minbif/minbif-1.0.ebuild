@@ -20,6 +20,8 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	sed -i "s/-Werror//g" CMakeLists.txt || die "sed failed"
+	sed -i "s#share/doc/minbif)#share/doc/${P})#g" \
+		CMakeLists.txt || die "sed failed"
 	rm "doc/Doxyfile"
 }
 
