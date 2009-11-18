@@ -9,6 +9,7 @@ opts="reload"
 
 depend() {
 	need net
+	use logger
 }
 
 checkconfig() {

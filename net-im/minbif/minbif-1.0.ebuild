@@ -12,12 +12,13 @@ SRC_URI="http://symlink.me/attachments/download/30/${P/_}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+libcaca gstreamer -xinetd"
+IUSE="+libcaca gstreamer -xinetd +syslog"
 
 DEPEND="net-im/pidgin[gstreamer?]
 	libcaca? ( media-libs/libcaca[imlib] media-libs/imlib2[png] )"
 RDEPEND="${DEPEND}
-		xinetd? ( sys-apps/xinetd )"
+		xinetd? ( sys-apps/xinetd )
+		syslog? ( virtual/logger )"
 
 src_prepare() {
 	sed -i "s/-Werror//g" CMakeLists.txt || die "sed failed"
@@ -26,6 +27,9 @@ src_prepare() {
 		CMakeLists.txt || die "sed failed"
 
 	use xinetd && { sed -i "s/type\s=\s[0-9]/type = 0/" \
+		minbif.conf || die "sed failed"; }
+
+	use syslog || { sed -i "s/to_syslog\s=\strue/to_syslog = false/" \
 		minbif.conf || die "sed failed"; }
 
 	rm "doc/Doxyfile"
