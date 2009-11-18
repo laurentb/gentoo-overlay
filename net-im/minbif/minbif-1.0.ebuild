@@ -3,7 +3,7 @@
 
 EAPI=2
 
-inherit cmake-utils
+inherit cmake-utils eutils
 
 DESCRIPTION="an IRC instant messaging gateway, using libpurple"
 HOMEPAGE="http://symlink.me/projects/show/minbif"
