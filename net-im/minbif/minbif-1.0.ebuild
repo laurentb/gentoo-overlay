@@ -23,6 +23,7 @@ src_prepare() {
 	sed -i "s#share/doc/minbif)#share/doc/${P})#g" \
 		CMakeLists.txt || die "sed failed"
 	rm "doc/Doxyfile"
+	mv "doc/minbif.xinetd" ./
 }
 
 src_configure() {
@@ -62,7 +63,8 @@ src_install() {
 	dodir /usr/share/minbif
 	insinto /usr/share/minbif
 	doins -r scripts
-	
+	doins minbif.xinetd
+
 	diropts -o minbif -g minbif -m0700
 	keepdir /var/lib/minbif
 
