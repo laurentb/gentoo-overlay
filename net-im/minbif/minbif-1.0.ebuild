@@ -15,7 +15,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+libcaca gstreamer -xinetd +syslog"
 
 DEPEND="net-im/pidgin[gstreamer?]
-	libcaca? ( media-libs/libcaca[imlib] media-libs/imlib2[png] )"
+	libcaca? ( media-libs/libcaca[imlib] media-libs/imlib2[png] )
+	>=dev-libs/glib-2.14"
 RDEPEND="${DEPEND}
 		xinetd? ( sys-apps/xinetd )
 		syslog? ( virtual/logger )"
