@@ -3,14 +3,15 @@
 
 EAPI="2"
 
-DESCRIPTION=""
-HOMEPAGE=""
-SRC_URI="http://git-wt-commit.rubyforge.org/git-wtf -> ${P} \
+DESCRIPTION="git-wtf is a script to display the state of your repository in a \
+readable and easy-to-scan format."
+HOMEPAGE="http://git-wt-commit.rubyforge.org/"
+SRC_URI="http://gitorious.org/willgit/mainline/blobs/raw/7c9cccb/bin/${PN} -> ${P} \
 http://stuff.laurent.bachelier.name/mirror/${P}"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
