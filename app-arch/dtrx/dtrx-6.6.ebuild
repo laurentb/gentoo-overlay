@@ -13,8 +13,21 @@ SRC_URI="http://brettcsmith.org/2007/dtrx/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="cab 7z +zip cpio +tar +gzip +bzip2 xz rpm installshield rar deb"
 
 DEPEND=""
-RDEPEND=""
+RDEPEND="cab? ( app-arch/cabextract )
+7z? ( app-arch/p7zip )
+zip? ( app-arch/unzip )
+tar? ( app-arch/tar )
+cpio? ( app-arch/cpio )
+lzma? ( app-arch/lzma-utils )
+gzip? ( app-arch/gzip )
+bzip2? ( app-arch/bzip2 )
+xz? ( app-arch/xz-utils )
+rar? ( app-arch/unrar )
+installshield? ( app-arch/unshield )
+rpm? ( app-arch/rpm app-arch/cpio )
+deb? ( sys-devel/binutils app-arch/tar app-arch/gzip )
+"
 
