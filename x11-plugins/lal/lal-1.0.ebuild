@@ -12,8 +12,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND=""
+DEPEND="x11-libs/libX11
+x11-libs/libXft"
+RDEPEND="${DEPEND}"
 
 src_install()
 {
