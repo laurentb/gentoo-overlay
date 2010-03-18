@@ -1,0 +1,2 @@
+move dev-util/git-wtf dev-vcs/git-wtf
+move dev-util/git-publish-branch dev-vcs/git-publish-branch

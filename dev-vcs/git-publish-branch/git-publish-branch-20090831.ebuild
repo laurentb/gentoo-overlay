@@ -3,10 +3,12 @@
 
 EAPI="2"
 
-DESCRIPTION="git-wtf is a script to display the state of your repository in a \
-readable and easy-to-scan format."
+DESCRIPTION="git-publish-branch is a simple script to ease the unnecessarily \
+complex task of \"publishing\" a branch, i.e., taking a local branch, \
+creating a reference to it on a remote repo, and setting up the local \
+branch to track the remote one, all in one go."
 HOMEPAGE="http://git-wt-commit.rubyforge.org/"
-SRC_URI="http://gitorious.org/willgit/mainline/blobs/raw/7c9cccb/bin/${PN} -> ${P} \
+SRC_URI="http://gitorious.org/willgit/mainline/blobs/raw/165815e/bin/${PN} -> ${P} \
 http://stuff.laurent.bachelier.name/mirror/${P}"
 
 LICENSE="GPL-3"
@@ -15,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="dev-util/git
+RDEPEND="dev-vcs/git
 dev-lang/ruby"
 
 src_unpack()
