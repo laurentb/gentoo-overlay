@@ -7,14 +7,14 @@ inherit cmake-utils eutils
 
 DESCRIPTION="an IRC instant messaging gateway, using libpurple"
 HOMEPAGE="http://symlink.me/projects/show/minbif"
-SRC_URI="http://symlink.me/attachments/download/39/${P}.tar.gz"
+SRC_URI="http://symlink.me/attachments/download/44/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+libcaca gstreamer -xinetd +syslog"
 
-DEPEND="net-im/pidgin[gstreamer?]
+DEPEND=">=net-im/pidgin-2.6.3[gstreamer?]
 	libcaca? ( media-libs/libcaca[imlib] media-libs/imlib2[png] )
 	>=dev-libs/glib-2.14"
 RDEPEND="${DEPEND}
