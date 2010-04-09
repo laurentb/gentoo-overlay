@@ -12,11 +12,13 @@ SRC_URI="http://symlink.me/attachments/download/45/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+libcaca gstreamer -xinetd +syslog"
+IUSE="+libcaca gstreamer -xinetd +syslog pam tls debug"
 
 DEPEND=">=net-im/pidgin-2.6.3[gstreamer?]
 	libcaca? ( media-libs/libcaca[imlib] media-libs/imlib2[png] )
-	>=dev-libs/glib-2.14"
+	>=dev-libs/glib-2.14
+	pam? ( sys-libs/pam )
+	tls? ( net-libs/gnutls )"
 RDEPEND="${DEPEND}
 		xinetd? ( sys-apps/xinetd )
 		syslog? ( virtual/logger )"
@@ -47,6 +49,9 @@ src_configure() {
 	mycmakeargs="${mycmakeargs}
 		-DCONF_PREFIX=${PREFIX:-/etc/minbif}
 		$(cmake-utils_use_enable libcaca CACA)
+		$(cmake-utils_use_enable debug DEBUG)
+		$(cmake-utils_use_enable pam PAM)
+		$(cmake-utils_use_enable tls TLS)
 		$(cmake-utils_use_enable gstreamer VIDEO)
 	"
 
