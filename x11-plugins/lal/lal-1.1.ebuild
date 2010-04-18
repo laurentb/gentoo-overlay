@@ -16,7 +16,11 @@ DEPEND="x11-libs/libX11
 x11-libs/libXft"
 RDEPEND="${DEPEND}"
 
+S="${WORKDIR}/${PN}"
+
 src_install()
 {
 	dobin lal
+	dodoc README COPYING
+	doman docs/lal.1
 }
