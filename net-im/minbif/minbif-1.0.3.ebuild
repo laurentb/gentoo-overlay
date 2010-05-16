@@ -7,7 +7,7 @@ inherit cmake-utils eutils
 
 DESCRIPTION="an IRC instant messaging gateway, using libpurple"
 HOMEPAGE="http://minbif.im/"
-SRC_URI="http://symlink.me/attachments/download/45/${P}.tar.gz"
+SRC_URI="http://symlink.me/attachments/download/50/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
