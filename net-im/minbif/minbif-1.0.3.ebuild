@@ -82,7 +82,7 @@ pkg_preinst() {
 src_install() {
 	cmake-utils_src_install
 
-	dodoc README COPYING
+	dodoc AUTHORS README COPYING ChangeLog
 	doman man/minbif.8
 
 	dodir /usr/share/minbif
