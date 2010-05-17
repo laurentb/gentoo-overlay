@@ -24,8 +24,6 @@ RDEPEND="${DEPEND}
 		syslog? ( virtual/logger )"
 
 src_prepare() {
-	sed -i "s/-Werror//g" CMakeLists.txt || die "sed failed"
-
 	sed -i "s#share/doc/minbif)#share/doc/${P})#" \
 		CMakeLists.txt || die "sed failed"
 
@@ -96,8 +94,6 @@ src_install() {
 
 	diropts -o minbif -g minbif -m0700
 	keepdir /var/lib/minbif
-
-	diropts -o minbif -g minbif -m0700
 	keepdir /var/run/minbif
 
 	newinitd "${FILESDIR}"/minbif.initd minbif || die
