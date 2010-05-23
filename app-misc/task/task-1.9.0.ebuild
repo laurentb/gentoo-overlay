@@ -13,13 +13,13 @@ SRC_URI="http://taskwarrior.org/download/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="vim-syntax zsh-completion +ncurses debug"
+IUSE="vim-syntax zsh-completion +ncurses nls debug"
 
 DEPEND="ncurses? ( sys-libs/ncurses )"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	sed -i 's/ -O3//' configure.ac || die "sed failed"
+	sed -i 's,-pedantic -O3,,' configure.ac || die "sed failed"
 	eautoreconf
 }
 
@@ -32,15 +32,13 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" docdir="/trash" install \
 		|| die "make install failed"
-	# This is simpler than mangling the Makefile.
+	# This is simpler than mangling the Makefile for the broken doc path.
 	rm -rf "${D}"/trash
 
 	dodoc ChangeLog NEWS README README.build \
 			AUTHORS COPYING || die "dodoc failed"
 	docinto rc
 	dodoc doc/rc/* || die "dodoc failed"
-	docinto i18n
-	dodoc i18n/* || die "dodoc failed"
 
 	dobashcompletion scripts/bash/task_completion.sh ${PN}
 
@@ -56,4 +54,13 @@ src_install() {
 		insinto /usr/share/zsh/site-functions
 		doins scripts/zsh/_task || die "doins zsh failed"
 	fi
+
+	if use nls; then
+		insinto /usr/share/${PN}/locale
+		doins i18n/*
+	fi
+}
+
+pkg_postinst() {
+	use nls && einfo "Locale files are installed to /usr/share/${PN}/locale"
 }
