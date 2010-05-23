@@ -13,9 +13,10 @@ SRC_URI="http://taskwarrior.org/download/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="vim-syntax zsh-completion +ncurses nls debug"
+IUSE="vim-syntax zsh-completion +ncurses nls lua debug"
 
-DEPEND="ncurses? ( sys-libs/ncurses )"
+DEPEND="ncurses? ( sys-libs/ncurses )
+lua? ( dev-lang/lua )"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
@@ -24,8 +25,10 @@ src_prepare() {
 }
 
 src_configure() {
+	# --without-lua enables lua anyway!
 	econf \
 		$(use_with ncurses) \
+		$(use lua && echo '--with-lua') \
 		$(use_enable debug)
 }
 
