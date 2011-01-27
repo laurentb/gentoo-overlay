@@ -19,3 +19,6 @@ IUSE=""
 DEPEND=""
 RDEPEND="dev-python/termcolor"
 
+src_install() {
+	distutils_src_install --install-scripts="/usr/libexec/git-core"
+}
