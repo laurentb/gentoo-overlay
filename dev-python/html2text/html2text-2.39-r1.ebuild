@@ -3,20 +3,24 @@
 
 EAPI=3
 PYTHON_DEPEND="2:2.4"
+SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils
 
 DESCRIPTION="Turn HTML into equivalent Markdown-structured text."
-HOMEPAGE="http://www.aaronsw.com/2002/html2text/"
+HOMEPAGE="http://www.aaronsw.com/2002/html2text/ https://github.com/aaronsw/html2text"
 SRC_URI="http://www.aaronsw.com/2002/html2text/${P}.py"
 
-LICENSE="BSD"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND=""
+
+PYTHON_MODNAME="${PN}.py"
 
 src_unpack() {
 	mkdir -pv "${S}"
