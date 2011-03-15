@@ -21,7 +21,7 @@ RDEPEND="${DEPEND}
 	|| ( <dev-lang/php-5.3[pcre,reflection,spl] >=dev-lang/php-5.3 )
 	>=dev-php/PEAR-Image_GraphViz-1.2.1
 	>=dev-php/PEAR-Log-1.8.7-r1
-	dev-php5/PEAR-DbUnit
+	dev-php/dbunit
 	dev-php5/PEAR-PHP_CodeCoverage
 	dev-php5/PEAR-PHP_Timer
 	dev-php5/phpunit-mockobject
