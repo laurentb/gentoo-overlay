@@ -22,7 +22,7 @@ RDEPEND="${DEPEND}
 	>=dev-php/PEAR-Image_GraphViz-1.2.1
 	>=dev-php/PEAR-Log-1.8.7-r1
 	dev-php/dbunit
-	dev-php5/PEAR-PHP_CodeCoverage
+	dev-php/php-codecoverage
 	dev-php5/PEAR-PHP_Timer
 	dev-php5/phpunit-mockobject
 	dev-php5/phpunit-selenium"
