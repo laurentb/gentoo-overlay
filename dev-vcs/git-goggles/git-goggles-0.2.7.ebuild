@@ -3,6 +3,8 @@
 
 EAPI=3
 PYTHON_DEPEND="2:2.4"
+SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils
 
@@ -18,6 +20,8 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="dev-python/termcolor"
+
+DOCS="AUTHORS INSTALL LICENSE README.rst docs/*"
 
 src_install() {
 	distutils_src_install --install-scripts="/usr/libexec/git-core"
