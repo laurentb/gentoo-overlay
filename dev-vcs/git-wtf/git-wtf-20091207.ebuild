@@ -1,7 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="2"
+EAPI=4
 
 DESCRIPTION="git-wtf is a script to display the state of your repository in a \
 readable and easy-to-scan format."
@@ -13,18 +13,19 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+RESTRICT="nomirror"
 
 DEPEND=""
 RDEPEND="dev-vcs/git
 dev-lang/ruby"
 
-src_unpack()
-{
-	cp ${DISTDIR}/${P} ${WORKDIR}/${PN}
+S="${WORKDIR}"
+
+src_unpack() {
+	cp "${DISTDIR}/${P}" "${WORKDIR}/${PN}"
 }
 
-src_install()
-{
+src_install() {
 	exeinto "/usr/libexec/git-core/"
 	doexe ${PN}
 }
