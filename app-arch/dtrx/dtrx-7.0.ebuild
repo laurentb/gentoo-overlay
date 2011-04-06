@@ -10,7 +10,7 @@ DESCRIPTION="Intelligently extract multiple archive types."
 HOMEPAGE="http://brettcsmith.org/2007/dtrx/"
 SRC_URI="http://brettcsmith.org/2007/dtrx/${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="cab 7z +zip cpio +tar +gzip +bzip2 +lzma rpm installshield rar deb"
