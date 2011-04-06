@@ -1,12 +1,14 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+
+EAPI=4
 
 inherit eutils
 
 DESCRIPTION="Displays the system activity in a very special way ;-)"
-HOMEPAGE="http://dindinx.net/hotbabe/"
-SRC_URI="http://dindinx.net/hotbabe/downloads/${P}.tar.gz"
+HOMEPAGE="http://hotbabe.sourceforge.net/"
+SRC_URI="mirror://sourceforge/hotbabe/${PV}/${P}.tar.gz
+http://packages.medibuntu.org/pool/free/h/${PN}/${P}.orig.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Artistic"
 SLOT="0"
@@ -14,19 +16,21 @@ KEYWORDS="~amd64 ~x86"
 IUSE="offensive"
 RESTRICT="nomirror"
 
-DEPEND="=x11-libs/gtk+-2*"
+DEPEND="x11-libs/gdk-pixbuf:2"
+RDEPEND="${DEPEND}"
 
 pkg_setup() {
 	use offensive || die "You need USE=offensive to emerge"
 }
 
 src_compile() {
-	emake PREFIX="/usr" || die "emake failed"
+	emake PREFIX="/usr"
 }
 
 src_install() {
-	make PREFIX="${D}"/usr install || die "install failed"
-	mv "${D}"/usr/share/doc/{${PN},${PF}}
-	newman "${D}"/usr/share/man/man1/${PN}.1 ${PN}.6
-	rm -r "${D}"/usr/share/man/man1
+	make PREFIX="${D}"/usr install
+	dodoc -r "${D}/usr/share/doc/${PN}/"
+	rm -r "${D}/usr/share/doc/${PN}/"
+	newman "${D}/usr/share/man/man1/${PN}.1" "${PN}.6"
+	rm -r "${D}/usr/share/man/man1"
 }
