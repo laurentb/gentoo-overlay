@@ -1,6 +1,7 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:
+
+EAPI=4
 
 inherit eutils versionator
 
@@ -16,19 +17,20 @@ http://slackware.sukkology.net/packages/mac/${MY_P}.tar.gz"
 
 LICENSE="unknown"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
-IUSE="backward-compatible"
+KEYWORDS="~amd64 ~ppc ~x86"
+IUSE=""
+RESTRICT="nomirror"
 
-DEPEND="virtual/libc
-	x86? ( dev-lang/nasm )"
+DEPEND="x86? ( dev-lang/nasm )"
+RDEPEND=""
 
-src_compile() {
-	econf `use_enable backward-compatible backward` || die "configure failed"
-	emake || die "make failed"
+src_prepare() {
+	default
+	epatch "${FILESDIR}"/mac-const.patch
 }
 
 src_install() {
-	make DESTDIR=${D} install || die "make install failed"
-	dodoc AUTHORS INSTALL NEWS README TODO COPYING 
-	dohtml ${S}/src/License.htm	${S}/src/Readme.htm
+	make DESTDIR=${D} install
+	dodoc AUTHORS INSTALL NEWS README TODO COPYING
+	dohtml ${S}/src/License.htm ${S}/src/Readme.htm
 }
