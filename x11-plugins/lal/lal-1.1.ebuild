@@ -18,6 +18,10 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"
 
+src_prepare() {
+	sed -i 's/\$(CC) /$(CC) $(CFLAGS) /g' Makefile
+}
+
 src_install() {
 	dobin lal
 	dodoc README COPYING
