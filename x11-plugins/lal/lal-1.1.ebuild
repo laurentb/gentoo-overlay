@@ -1,7 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="2"
+EAPI=4
 
 DESCRIPTION="lal is a clock for the dock. Nothing more, nothing less."
 HOMEPAGE="http://projects.l3ib.org/lal/"
@@ -18,8 +18,7 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"
 
-src_install()
-{
+src_install() {
 	dobin lal
 	dodoc README COPYING
 	doman docs/lal.1
