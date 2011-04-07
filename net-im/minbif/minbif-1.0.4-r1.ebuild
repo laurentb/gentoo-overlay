@@ -1,7 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=3
+EAPI=4
 
 inherit cmake-utils eutils
 [ "$PV" == "9999" ] && inherit git
@@ -14,7 +14,6 @@ if [ "$PV" != "9999" ]; then
 	KEYWORDS="~amd64 ~x86"
 else
 	SRC_URI=""
-	EGIT_BRANCH="master"
 	EGIT_REPO_URI="git://git.symlink.me/pub/romain/minbif.git"
 	KEYWORDS=""
 	S="${WORKDIR}"/${PN}
@@ -22,27 +21,24 @@ fi
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="+libcaca +imlib video -xinetd +syslog pam gnutls debug"
+IUSE="debug gnutls +imlib +libcaca pam +syslog video -xinetd"
 
-DEPEND=">=net-im/pidgin-2.7
+DEPEND=">=net-im/pidgin-2.7.10
 	video? ( >=net-im/pidgin-2.7[gstreamer] )
 	libcaca? ( media-libs/libcaca[imlib] )
 	imlib? ( media-libs/imlib2[png] )
 	pam? ( sys-libs/pam )
 	gnutls? ( net-libs/gnutls )"
 RDEPEND="${DEPEND}
-		xinetd? ( sys-apps/xinetd )
-		syslog? ( virtual/logger )"
+	xinetd? ( sys-apps/xinetd )
+	syslog? ( virtual/logger )"
 
 src_prepare() {
-	sed -i "s#share/doc/minbif)#share/doc/${P})#" \
-		CMakeLists.txt || die "sed failed"
+	sed -i "s#share/doc/minbif)#share/doc/${PF})#" CMakeLists.txt
 
-	use xinetd && { sed -i "s/type\s=\s[0-9]/type = 0/" \
-		minbif.conf || die "sed failed"; }
+	use xinetd && sed -i "s/type\s=\s[0-9]/type = 0/" minbif.conf
 
-	use syslog || { sed -i "s/to_syslog\s=\strue/to_syslog = false/" \
-		minbif.conf || die "sed failed"; }
+	use syslog || sed -i "s/to_syslog\s=\strue/to_syslog = false/" minbif.conf
 
 	rm "doc/Doxyfile"
 	mv "doc/minbif.xinetd" ./
@@ -105,6 +101,5 @@ src_install() {
 	keepdir /var/lib/minbif
 	keepdir /var/run/minbif
 
-	newinitd "${FILESDIR}"/minbif.initd minbif || die
+	newinitd "${FILESDIR}"/minbif.initd minbif
 }
-
