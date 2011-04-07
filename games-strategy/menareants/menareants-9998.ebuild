@@ -1,15 +1,17 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="2"
-inherit eutils git games
+EAPI=3
+inherit autotools eutils games
+[ "$PV" == "9998" ] && inherit git
+[ "$PV" == "9999" ] && inherit git
 
-DESCRIPTION="Men Are Ants is a strategic turn by turn \
-(simultaneous) game with solo and multiplayer modes. \
-0.4 stable branch."
+DESCRIPTION="Men Are Ants is a strategic turn by turn
+(simultaneous) game with solo and multiplayer modes."
 HOMEPAGE="http://menareants.org/"
-
-EGIT_REPO_URI="git://git.symlink.me/pub/menareants/0.4.git"
+SRC_URI=""
+[ "$PV" == "9998" ] && EGIT_REPO_URI="git://git.symlink.me/pub/menareants/0.4.git"
+[ "$PV" == "9999" ] && EGIT_REPO_URI="git://git.symlink.me/pub/menareants/unstable.git"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -18,38 +20,34 @@ IUSE="debug server +game meta-server"
 
 DEPEND="
 	game? (
-		>=media-libs/libsdl-1.2.6
-		>=media-libs/sdl-ttf-2.0
-		>=media-libs/sdl-image-1.2
-		>=media-libs/sdl-mixer-1.2.6
+		>=media-libs/libsdl-1.2.6[X,audio,video]
+		>=media-libs/sdl-ttf-2.0[X]
+		>=media-libs/sdl-image-1.2[png]
+		>=media-libs/sdl-mixer-1.2.6[wav,vorbis]
 		>=media-libs/sdl-gfx-2.0
 		)"
 RDEPEND="${DEPEND}"
 
-src_configure() {
-	# needed because we are using git
-	NOCONFIGURE=1 ./autogen.sh || die "autogen.sh failed"
+src_prepare() {
+	eautoreconf
+	epatch ${FILESDIR}/${PN}-gcc4.patch
+}
 
+src_configure() {
 	egamesconf \
 		$(use_enable debug) \
 		$(use_enable server) \
 		$(use_enable meta-server) \
-		$(use_enable game) \
-		|| die
-}
-
-src_compile() {
-
-	emake || die "emake failed"
+		$(use_enable game)
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-
+	emake DESTDIR="${D}" install
 	dodoc API AUTHORS DEVELOPPEURS COPYING ChangeLog NEWS README TODO WIN32
 	doman src/menareants.6
 	use server && doman server/menareants-server.6
 	use meta-server && doman meta-server/menareants-meta-server.6
+	{ use server || use meta-server ;} && dodoc doc/ADMINS
 
 	prepgamesdirs
 }
