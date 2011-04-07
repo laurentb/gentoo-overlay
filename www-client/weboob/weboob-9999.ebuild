@@ -1,21 +1,22 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 2010-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=3
+PYTHON_DEPEND="2:2.5"
+SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils
 [ "$PV" == "9999" ] && inherit git
 [ "$PV" == "9998" ] && inherit git
-PYTHON_DEPEND="2:2.5"
 
 DESCRIPTION="Weboob (Web Out Of Browsers) provides several applications to interact with a lot of websites."
 HOMEPAGE="http://weboob.org/"
 SRC_URI=""
-EGIT_BRANCH="master"
 [ "$PV" == "9999" ] && EGIT_REPO_URI="git://git.symlink.me/pub/romain/weboob.git"
 [ "$PV" == "9998" ] && EGIT_REPO_URI="git://git.symlink.me/pub/romain/weboob-stable.git"
 
-LICENSE="GPL-2"
+LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="X"
@@ -33,6 +34,8 @@ DEPEND="dev-python/prettytable
 	X? ( dev-python/PyQt4[X] dev-python/pyxdg )"
 RDEPEND="${DEPEND}"
 
+DOCS="AUTHORS COPYING ChangeLog README INSTALL"
+
 set_global_options() {
 	local qtopt="--no-qt" && xdgopt="--no-xdg"
 	use X && qtopt="--qt" && xdgopt="--xdg"
@@ -48,4 +51,3 @@ src_install() {
 	set_global_options
 	distutils_src_install
 }
-
