@@ -18,8 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND="dev-python/termcolor"
+DEPEND="dev-python/termcolor dev-vcs/git"
+RDEPEND="${RDEPEND}"
 
 DOCS="AUTHORS INSTALL LICENSE README.rst docs/*"
 
