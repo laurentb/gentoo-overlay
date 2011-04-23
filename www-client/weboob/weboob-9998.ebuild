@@ -31,7 +31,8 @@ DEPEND="dev-python/prettytable
 	dev-python/imaging
 	dev-python/gdata
 	dev-python/feedparser
-	X? ( dev-python/PyQt4[X] dev-python/pyxdg )"
+	X? ( dev-python/PyQt4[X] dev-python/pyxdg )
+	|| ( dev-lang/python:2.7 dev-lang/python:2.6 dev-python/simplejson )"
 RDEPEND="${DEPEND}"
 
 DOCS="AUTHORS COPYING ChangeLog README INSTALL"
