@@ -12,7 +12,7 @@ inherit distutils
 DESCRIPTION="Authenticated Social Storage Made for Mothers"
 HOMEPAGE="http://ass2m.org/"
 SRC_URI=""
-[ "$PV" == "9999" ] && EGIT_REPO_URI="git://git.symlink.me/pub/romain/ass2m.git"
+[ "$PV" == "9999" ] && EGIT_REPO_URI="git://git.symlink.me/pub/laurentb/ass2m.git"
 
 LICENSE="AGPL-3"
 SLOT="0"
