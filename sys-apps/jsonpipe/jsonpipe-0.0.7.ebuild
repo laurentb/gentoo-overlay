@@ -18,12 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-src_prepare () {
-	# fix unecessary strict dependency
-	sed -i 's/argparse>=1.2.1/argparse>=1.1.0/' setup.py
-}
-
 DEPEND=""
 RDEPEND=">=dev-python/simplejson-2.1.3
 || ( dev-lang/python:2.7 >=dev-python/argparse-1.1 )
->=dev-python/calabash-0.0.2"
+>=dev-python/calabash-0.0.3"
