@@ -1,6 +1,5 @@
 app-admin
 app-arch
-app-backup
 app-misc
 app-text
 dev-python
@@ -9,7 +8,6 @@ games-misc
 games-strategy
 media-sound
 net-im
-net-p2p
 sys-apps
 www-apps
 www-client
