@@ -20,10 +20,11 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND="dev-python/webob
+	|| ( dev-lang/python:2.7 dev-python/argparse )
 	dev-python/paste
 	dev-python/mako
 	dev-python/imaging
-	|| ( dev-lang/python:2.7 dev-python/argparse )"
+	dev-python/PyRSS2Gen"
 RDEPEND="${DEPEND}"
 
 DOCS="COPYING"
