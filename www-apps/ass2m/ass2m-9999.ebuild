@@ -24,7 +24,8 @@ DEPEND="dev-python/webob
 	dev-python/paste
 	dev-python/mako
 	dev-python/imaging
-	dev-python/PyRSS2Gen"
+	dev-python/PyRSS2Gen
+	dev-python/python-dateutil"
 RDEPEND="${DEPEND}"
 
 DOCS="COPYING"
