@@ -6,15 +6,17 @@ PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
-inherit distutils
-[ "$PV" == "9999" ] && inherit git
-[ "$PV" == "9998" ] && inherit git
+inherit base distutils
+[ "$PV" == "9999" ] \
+	&& EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}.git" \
+	&& inherit git-2
+[ "$PV" == "9998" ] \
+	&& EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}-stable.git" \
+	&& inherit git-2
 
 DESCRIPTION="Weboob (Web Out Of Browsers) provides several applications to interact with a lot of websites."
 HOMEPAGE="http://weboob.org/"
 SRC_URI=""
-[ "$PV" == "9999" ] && EGIT_REPO_URI="git://git.symlink.me/pub/romain/weboob.git"
-[ "$PV" == "9998" ] && EGIT_REPO_URI="git://git.symlink.me/pub/romain/weboob-stable.git"
 
 LICENSE="AGPL-3"
 SLOT="0"
