@@ -4,7 +4,9 @@
 EAPI=4
 
 inherit cmake-utils eutils
-[ "$PV" == "9999" ] && inherit git
+[ "$PV" == "9999" ] \
+	&& EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}.git" \
+	&& inherit git-2
 
 DESCRIPTION="an IRC instant messaging gateway, using libpurple"
 HOMEPAGE="http://minbif.im/"
@@ -14,7 +16,6 @@ if [ "$PV" != "9999" ]; then
 	KEYWORDS="~amd64 ~x86"
 else
 	SRC_URI=""
-	EGIT_REPO_URI="git://git.symlink.me/pub/romain/minbif.git"
 	KEYWORDS=""
 	S="${WORKDIR}"/${PN}
 fi
