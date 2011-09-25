@@ -6,13 +6,14 @@ PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
-inherit distutils
-[ "$PV" == "9999" ] && inherit git
+inherit base distutils
+[ "$PV" == "9999" ] \
+	&& EGIT_REPO_URI="git://git.symlink.me/pub/laurentb/${PN}.git" \
+	&& inherit git-2
 
 DESCRIPTION="Authenticated Social Storage Made for Mothers"
 HOMEPAGE="http://ass2m.org/"
 SRC_URI=""
-[ "$PV" == "9999" ] && EGIT_REPO_URI="git://git.symlink.me/pub/laurentb/ass2m.git"
 
 LICENSE="AGPL-3"
 SLOT="0"
