@@ -2,14 +2,15 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=3
-inherit autotools eutils games
-[ "$PV" == "9999" ] && inherit git
+inherit base autotools eutils games
+[ "$PV" == "9999" ] \
+	&& EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}.git" \
+	&& inherit git-2
 
 DESCRIPTION="Men Are Ants is a strategic turn by turn
 (simultaneous) game with solo and multiplayer modes."
 HOMEPAGE="http://menareants.org/"
 SRC_URI=""
-[ "$PV" == "9999" ] && EGIT_REPO_URI="git://git.symlink.me/pub/romain/menareants.git"
 
 LICENSE="GPL-2"
 SLOT="0"
