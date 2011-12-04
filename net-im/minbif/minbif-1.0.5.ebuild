@@ -12,7 +12,7 @@ DESCRIPTION="an IRC instant messaging gateway, using libpurple"
 HOMEPAGE="http://minbif.im/"
 
 if [ "$PV" != "9999" ]; then
-	SRC_URI="http://symlink.me/attachments/download/90/${P}.tar.gz"
+	SRC_URI="http://symlink.me/attachments/download/148/${P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
 else
 	SRC_URI=""
