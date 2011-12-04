@@ -1,11 +1,11 @@
 #!/sbin/runscript
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 MINBIF_EXEC="/usr/bin/minbif"
 MINBIF_PID="/var/run/minbif/minbif.pid"
 
-opts="reload"
+extra_commands="reload"
 
 depend() {
 	need net
@@ -25,9 +25,8 @@ start() {
 	checkconfig || return 1
 
 	ebegin "Starting minbif"
-	start-stop-daemon --start \
-		-c minbif:minbif \
-		--startas ${MINBIF_EXEC} \
+	start-stop-daemon --quiet --start \
+		--user minbif --group minbif \
 		--exec ${MINBIF_EXEC} -- \
 			--pidfile ${MINBIF_PID} \
 			/etc/minbif/minbif.conf
@@ -43,7 +42,7 @@ stop() {
 
 reload() {
 	ebegin "Reloading minbif config"
-	start-stop-daemon --quiet --stop --oknodo --signal HUP \
+	start-stop-daemon --quiet --signal HUP \
         --pidfile ${MINBIF_PID}
-	eend $? 
+	eend $?
 }
