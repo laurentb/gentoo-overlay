@@ -7,7 +7,7 @@ inherit cmake-utils eutils
 
 DESCRIPTION="coincoin plugin for libpurple"
 HOMEPAGE="http://symlink.me/projects/minbif/wiki/CoinCoin"
-SRC_URI="http://symlink.me/attachments/download/90/minbif-${PV}.tar.gz"
+SRC_URI="http://symlink.me/attachments/download/148/minbif-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
