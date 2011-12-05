@@ -7,12 +7,14 @@ inherit toolchain-funcs
 
 DESCRIPTION="Make pointer-driven interfaces easier and faster for users to operate"
 HOMEPAGE="http://www.semicomplete.com/projects/keynav/"
-SRC_URI="http://semicomplete.googlecode.com/files/${P}.tar.gz"
+SRC_URI="http://semicomplete.googlecode.com/files/${PN}-0.${PV}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+S="${WORKDIR}/${PN}-0.${PV}"
 
 RDEPEND="x11-libs/cairo[X]
 	x11-libs/libXinerama
