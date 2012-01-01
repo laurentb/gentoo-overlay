@@ -1,4 +1,4 @@
-# Copyright 2010-2011 Gentoo Foundation
+# Copyright 2010-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=3
@@ -12,7 +12,7 @@ DESCRIPTION="A console program that creates lists of music collections, based
 on directory structure."
 HOMEPAGE="http://bitheap.org/dnuos/"
 SRC_URI="http://bitheap.org/dnuos/files/${P}.tar.gz
-http://pypi.python.org/packages/source/d/${P}.tar.gz"
+mirror://pypi/${PN:0:1}/{$PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
