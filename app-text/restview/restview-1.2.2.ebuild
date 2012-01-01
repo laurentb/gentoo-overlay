@@ -11,7 +11,7 @@ inherit distutils
 DESCRIPTION="A viewer for ReStructuredText documents that renders them on the fly."
 HOMEPAGE="http://mg.pov.lt/restview/
 http://pypi.python.org/pypi/restview"
-SRC_URI="http://pypi.python.org/packages/source/r/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

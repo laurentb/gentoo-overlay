@@ -12,7 +12,8 @@ DESCRIPTION="A simple Python library for easily displaying tabular data in a
 visually appealing ASCII table format."
 HOMEPAGE="https://code.google.com/p/prettytable/
 http://pypi.python.org/pypi/PrettyTable"
-SRC_URI="http://pypi.python.org/packages/source/P/PrettyTable/${P}.tar.gz"
+MY_PN="PrettyTable"
+SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

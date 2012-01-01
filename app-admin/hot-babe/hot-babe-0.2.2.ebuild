@@ -7,8 +7,8 @@ inherit eutils
 
 DESCRIPTION="Displays the system activity in a very special way ;-)"
 HOMEPAGE="http://hotbabe.sourceforge.net/"
-SRC_URI="mirror://sourceforge/hotbabe/${PV}/${P}.tar.gz
-http://packages.medibuntu.org/pool/free/h/${PN}/${P}.orig.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN/-/}/${PV}/${P}.tar.gz
+http://packages.medibuntu.org/pool/free/${PN:0:1}/${PN}/${P}.orig.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Artistic"
 SLOT="0"

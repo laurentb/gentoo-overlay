@@ -11,7 +11,7 @@ inherit distutils
 DESCRIPTION="Convert JSON to a UNIX-friendly line-based format."
 HOMEPAGE="https://github.com/dvxhouse/jsonpipe
 http://pypi.python.org/pypi/jsonpipe"
-SRC_URI="http://pypi.python.org/packages/source/j/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"
