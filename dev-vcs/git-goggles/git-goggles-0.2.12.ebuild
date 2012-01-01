@@ -1,4 +1,4 @@
-# Copyright 2011 Gentoo Foundation
+# Copyright 2011-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=3
@@ -22,6 +22,8 @@ DEPEND="dev-python/termcolor dev-vcs/git"
 RDEPEND="${RDEPEND}"
 
 DOCS="AUTHORS INSTALL LICENSE README.rst docs/*"
+
+PYTHON_MODNAME="${PN/-/}"
 
 src_install() {
 	distutils_src_install --install-scripts="/usr/libexec/git-core"
