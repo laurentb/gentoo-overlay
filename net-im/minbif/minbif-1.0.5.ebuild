@@ -1,4 +1,4 @@
-# Copyright 2009-2011 Gentoo Foundation
+# Copyright 2009-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=4
@@ -78,7 +78,7 @@ pkg_postinst() {
 	elog irssi scripts are located in /usr/share/minbif
 }
 
-pkg_preinst() {
+pkg_setup() {
 	enewgroup minbif
 	enewuser minbif -1 -1 /var/lib/minbif minbif
 }
