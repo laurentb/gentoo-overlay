@@ -15,11 +15,7 @@ KEYWORDS="~amd64 ~x86"
 DEPEND=""
 RDEPEND=""
 
-src_prepare () {
-	mv Symbola${PV/./}.ttf Symbola.ttf
-}
-
 FONT_SUFFIX="ttf"
 S="${WORKDIR}"
 FONT_S="${S}"
-DOCS="Symbola${PV/./}.txt Symbola${PV/./}.pdf"
+DOCS="Symbola.pdf"
