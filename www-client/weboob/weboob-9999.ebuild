@@ -1,4 +1,4 @@
-# Copyright 2010-2011 Gentoo Foundation
+# Copyright 2010-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=3
@@ -7,33 +7,41 @@ SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
 inherit base distutils
-[ "$PV" == "9999" ] \
-	&& EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}.git" \
-	&& inherit git-2
-[ "$PV" == "9998" ] \
-	&& EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}-stable.git" \
-	&& inherit git-2
+if [ "$PV" == "9999" ]; then
+	EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}.git"
+	inherit git-2
+	KEYWORDS=""
+	SRC_URI=""
+elif [ "$PV" == "9998" ]; then
+	EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}-stable.git"
+	inherit git-2
+	KEYWORDS=""
+	SRC_URI=""
+else
+	KEYWORDS="~x86 ~amd64"
+	SRC_URI="http://symlink.me/attachments/download/165/${PN}-0.a.tar.gz"
+	S="${WORKDIR}/${PN}-0.a"
+fi
 
-DESCRIPTION="Weboob (Web Out Of Browsers) provides several applications to interact with a lot of websites."
+
+DESCRIPTION="Weboob (Web Out of Browsers) provides several applications to interact with a lot of websites."
 HOMEPAGE="http://weboob.org/"
-SRC_URI=""
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
-IUSE="X"
+IUSE="X +secure-updates"
 
 DEPEND="dev-python/prettytable
 	dev-python/html2text
 	dev-python/mechanize
 	dev-python/python-dateutil
-	dev-python/html5lib
 	dev-python/lxml
 	dev-python/pyyaml
 	dev-python/imaging
 	dev-python/gdata
 	dev-python/feedparser
 	X? ( dev-python/PyQt4[X] dev-python/pyxdg )
+	secure-updates? ( app-crypt/gnupg )
 	|| ( dev-lang/python:2.7 dev-lang/python:2.6 dev-python/simplejson )"
 RDEPEND="${DEPEND}"
 
