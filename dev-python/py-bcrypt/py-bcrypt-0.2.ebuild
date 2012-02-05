@@ -9,10 +9,12 @@ RESTRICT_PYTHON_ABIS="3.*"
 inherit distutils
 
 DESCRIPTION="py-bcrypt is an implementation the OpenBSD Blowfish password hashing algorithm"
-HOMEPAGE="http://www.mindrot.org/projects/py-bcrypt"
-SRC_URI="http://www.mindrot.org/files/${PN}/${P}.tar.gz"
+HOMEPAGE="http://www.mindrot.org/projects/py-bcrypt
+https://code.google.com/p/py-bcrypt/"
+SRC_URI="http://www.mindrot.org/files/${PN}/${P}.tar.gz
+http://${PN}.googlecode.com/files/${P}.tar.gz"
 
-LICENSE="BSD"
+LICENSE="BSD-4"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
