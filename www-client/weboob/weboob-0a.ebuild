@@ -48,7 +48,7 @@ RDEPEND="${DEPEND}"
 DOCS="AUTHORS COPYING ChangeLog README INSTALL"
 
 set_global_options() {
-	local qtopt="--no-qt" && xdgopt="--no-xdg"
+	local qtopt="--no-qt" xdgopt="--no-xdg"
 	use X && qtopt="--qt" && xdgopt="--xdg"
 	DISTUTILS_GLOBAL_OPTIONS=($qtopt $xdgopt)
 }
