@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=4
@@ -6,7 +6,7 @@ EAPI=4
 inherit eutils
 
 DESCRIPTION="Proximity detector for your mobile phone via bluetooth"
-HOMEPAGE="http://blueproximity.sourceforge.net"
+HOMEPAGE="http://blueproximity.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 IUSE=""
@@ -18,6 +18,8 @@ do
 done
 
 SLOT="0"
+
+LICENSE="GPL-2"
 
 KEYWORDS="~x86 ~amd64"
 DEPEND=""
