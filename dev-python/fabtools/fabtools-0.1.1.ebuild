@@ -21,8 +21,4 @@ IUSE=""
 DEPEND=""
 RDEPEND=">=dev-python/fabric-1.2.0"
 
-src_prepare() {
-	default
-	sed -i "s/exclude=\['ez_setup'\]/exclude=['ez_setup', 'tests']/" "setup.py"
-}
-
+DOCS="README.rst LICENSE"
