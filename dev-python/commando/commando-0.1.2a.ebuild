@@ -7,9 +7,11 @@ SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
 inherit base distutils
-[ "$PV" == "9999" ] \
-	&& EGIT_REPO_URI="git://github.com/lakshmivyas/${PN}.git" \
-	&& inherit git-2
+if [ "$PV" == "9999" ]; then
+	EGIT_REPO_URI="git://github.com/lakshmivyas/${PN}.git
+	https://github.com/lakshmivyas/${PN}.git"
+	inherit git-2
+fi
 
 DESCRIPTION="A declarative interface for argparse"
 HOMEPAGE="http://github.com/lakshmivyas/commando

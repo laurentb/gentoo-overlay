@@ -7,7 +7,8 @@ SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
 inherit base distutils
-EGIT_REPO_URI="git://github.com/hyde/typogrify.git"
+EGIT_REPO_URI="git://github.com/hyde/typogrify.git
+https://github.com/hyde/typogrify.git"
 EGIT_BRANCH="hyde-setup"
 inherit git-2
 

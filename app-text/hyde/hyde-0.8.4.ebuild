@@ -7,9 +7,11 @@ SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
 inherit base distutils
-[ "$PV" == "9999" ] \
-	&& EGIT_REPO_URI="git://github.com/${PN}/${PN}.git" \
-	&& inherit git-2
+if [ "$PV" == "9999" ]; then
+	EGIT_REPO_URI="git://github.com/${PN}/${PN}.git
+	https://github.com/${PN}/${PN}.git"
+	inherit git-2
+fi
 
 DESCRIPTION="Static website generator written in Python"
 HOMEPAGE="http://hyde.github.com/ https://github.com/hyde/hyde
