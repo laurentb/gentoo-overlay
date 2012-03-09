@@ -21,4 +21,4 @@ IUSE=""
 DEPEND=""
 RDEPEND=">=dev-python/fabric-1.2.0"
 
-DOCS="README.rst LICENSE"
+DOCS="README.rst LICENSE CHANGELOG.rst"
