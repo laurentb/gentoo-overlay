@@ -1,7 +1,7 @@
 # Copyright 2011-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=3
+EAPI=4
 PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
@@ -18,10 +18,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="dev-python/termcolor dev-vcs/git"
-RDEPEND="${RDEPEND}"
+DEPEND=""
+RDEPEND="dev-python/termcolor dev-vcs/git"
 
-DOCS="AUTHORS INSTALL LICENSE README.rst docs/*"
+DOCS="AUTHORS INSTALL LICENSE README.rst docs/*.rst"
 
 PYTHON_MODNAME="${PN/-/}"
 
