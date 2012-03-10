@@ -1,7 +1,7 @@
 # Copyright 2010-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=3
+EAPI=4
 PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
@@ -48,17 +48,14 @@ RDEPEND="${DEPEND}"
 DOCS="AUTHORS COPYING ChangeLog README INSTALL"
 
 set_global_options() {
-	local qtopt="--no-qt" xdgopt="--no-xdg"
-	use X && qtopt="--qt" && xdgopt="--xdg"
-	DISTUTILS_GLOBAL_OPTIONS=($qtopt $xdgopt)
+	local xopt=$(use X && echo "" || echo "no-")
+	DISTUTILS_GLOBAL_OPTIONS=("* --${xopt}qt" "* --${xopt}xdg")
 }
 
-src_compile() {
+distutils_src_install_pre_hook() {
 	set_global_options
-	distutils_src_compile
 }
 
-src_install() {
+distutils_src_compile_pre_hook() {
 	set_global_options
-	distutils_src_install
 }
