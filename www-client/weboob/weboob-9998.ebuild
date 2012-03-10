@@ -31,7 +31,9 @@ LICENSE="AGPL-3"
 SLOT="0"
 IUSE="X +secure-updates"
 
-DEPEND="dev-python/prettytable
+DEPEND="X? ( dev-python/PyQt4[X] dev-python/pyxdg )"
+RDEPEND="${DEPEND}
+	dev-python/prettytable
 	dev-python/html2text
 	dev-python/mechanize
 	dev-python/python-dateutil
@@ -40,10 +42,8 @@ DEPEND="dev-python/prettytable
 	dev-python/imaging
 	dev-python/gdata
 	dev-python/feedparser
-	X? ( dev-python/PyQt4[X] dev-python/pyxdg )
 	secure-updates? ( app-crypt/gnupg )
 	|| ( dev-lang/python:2.7 dev-lang/python:2.6 dev-python/simplejson )"
-RDEPEND="${DEPEND}"
 
 DOCS="AUTHORS COPYING ChangeLog README INSTALL"
 
