@@ -1,7 +1,7 @@
 # Copyright 2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=3
+EAPI=4
 PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
@@ -28,8 +28,8 @@ LICENSE="MIT"
 SLOT="0"
 IUSE=""
 
-DEPEND="|| ( dev-lang/python:2.7 dev-python/argparse )"
-RDEPEND="${DEPEND}"
+DEPEND=""
+RDEPEND="|| ( dev-lang/python:2.7 dev-python/argparse )"
 
 DOCS="LICENSE README.markdown"
 

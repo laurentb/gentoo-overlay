@@ -1,7 +1,7 @@
 # Copyright 2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=3
+EAPI=4
 PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
@@ -30,11 +30,11 @@ LICENSE="MIT"
 SLOT="0"
 IUSE=""
 
-DEPEND=">=dev-python/commando-0.1.1a
+DEPEND=""
+RDEPEND=">=dev-python/commando-0.1.1a
 	|| ( dev-lang/python:2.7 dev-python/argparse )
 	>=dev-python/jinja-2.5.5
 	>=dev-python/markdown-2.0.3
 	>=dev-python/pyyaml-3.09
 	dev-python/pygments
 	dev-python/typogrify-hyde"
-RDEPEND="${DEPEND}"
