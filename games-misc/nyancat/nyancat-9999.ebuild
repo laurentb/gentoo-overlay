@@ -8,7 +8,7 @@ https://github.com/klange/${PN}.git"
 inherit git-2
 
 DESCRIPTION="Nyancat rendered with various bits of ANSI"
-HOMEPAGE="https://github.com/klange/nyancat http://miku.acm.uiuc.edu/"
+HOMEPAGE="http://miku.acm.uiuc.edu/ https://github.com/klange/nyancat"
 SRC_URI=""
 
 LICENSE="UoI-NCSA"
@@ -18,6 +18,10 @@ IUSE=""
 
 DEPEND=""
 RDEPEND=""
+
+src_compile() {
+	emake LFLAGS="${LDFLAGS} ${CFLAGS}"
+}
 
 src_install() {
 	dodoc README.md
