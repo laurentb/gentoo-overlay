@@ -19,8 +19,8 @@ elif [ "$PV" == "9998" ]; then
 	SRC_URI=""
 else
 	KEYWORDS="~x86 ~amd64"
-	SRC_URI="http://symlink.me/attachments/download/165/${PN}-0.a.tar.gz"
-	S="${WORKDIR}/${PN}-0.a"
+	SRC_URI="http://symlink.me/attachments/download/169/${PN}-0.b.tar.gz"
+	S="${WORKDIR}/${PN}-0.b"
 fi
 
 
@@ -58,4 +58,8 @@ distutils_src_install_pre_hook() {
 
 distutils_src_compile_pre_hook() {
 	set_global_options
+}
+
+pkg_postinst() {
+	elog "You should now run \"weboob-config update\" (as your login user)."
 }
