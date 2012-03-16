@@ -29,7 +29,7 @@ HOMEPAGE="http://weboob.org/"
 
 LICENSE="AGPL-3"
 SLOT="0"
-IUSE="X +secure-updates"
+IUSE="X +secure-updates fast-libs"
 
 DEPEND="X? ( dev-python/PyQt4[X] dev-python/pyxdg )"
 RDEPEND="${DEPEND}
@@ -43,6 +43,7 @@ RDEPEND="${DEPEND}
 	dev-python/gdata
 	dev-python/feedparser
 	secure-updates? ( app-crypt/gnupg )
+	fast-libs? ( dev-python/simplejson dev-python/pyyaml[libyaml] )
 	|| ( dev-lang/python:2.7 dev-lang/python:2.6 dev-python/simplejson )"
 
 DOCS="AUTHORS COPYING ChangeLog README INSTALL"
