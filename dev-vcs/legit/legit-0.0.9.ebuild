@@ -6,7 +6,7 @@ PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
-inherit eutils distutils
+inherit distutils
 
 DESCRIPTION="A git CLI tool to manage branches easily."
 HOMEPAGE="https://github.com/kennethreitz/legit
