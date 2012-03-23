@@ -1,11 +1,11 @@
 Welcome!
 
-This overlay has:
-* ebuilds with newer versions
-* unaproved ebuilds for various reasons
-* ebuilds not in any major overlay
-* ebuilds I need to improve
+This overlay is mainly for my own usage, though packages are of reasonable quality and do not conflict with the official portage tree if you use stable.
 
-It is mainly for my own usage, though I intend to get most of these to sunrise or the main overlay.
+It contains some "restricted/unwanted" packages, a lot of Python, git and CLI libraries and tools, and some software I watch closely (providing always-up-to-date ebuilds): esniper, minbif, weboob...
 
-Laurent Bachelier <laurent@bachelier.name>
+You can browse the package list: http://gpo.zugaina.org/Overlays/laurentb
+
+Copyright is assigned to the Gentoo Foundation.
+
+Contact: Laurent Bachelier <laurent@bachelier.name>
