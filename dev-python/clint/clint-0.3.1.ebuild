@@ -25,5 +25,4 @@ src_prepare() {
 	epatch "${FILESDIR}"/fix-data-files.patch
 }
 
-
 DOCS="HISTORY.rst README.rst LICENSE AUTHORS NOTICE"
