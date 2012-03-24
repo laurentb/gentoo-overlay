@@ -22,9 +22,9 @@ RDEPEND="${DEPEND}"
 S=${WORKDIR}/${MY_P}
 
 src_install() {
-	emake DESTDIR="${D}" install || die "Install failed"
-	dobin frontends/snipe || die
-	dodoc AUTHORS ChangeLog NEWS README TODO sample_auction.txt sample_config.txt || die
+	emake DESTDIR="${D}" install
+	dobin frontends/snipe
+	dodoc AUTHORS ChangeLog NEWS README TODO sample_auction.txt sample_config.txt
 }
 
 pkg_postinst() {
