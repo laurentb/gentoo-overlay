@@ -18,8 +18,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 src_prepare() {
-	sed -i "s#share/doc/${PN}/#share/doc/${P}/#" setup.py
-	sed -i "s#share/doc/${PN}\"#share/doc/${P}\"#" setup.py
+	sed -i "s#share/doc/${PN}/#share/doc/${PF}/#" setup.py
+	sed -i "s#share/doc/${PN}\"#share/doc/${PF}\"#" setup.py
 }
 
 DEPEND=""

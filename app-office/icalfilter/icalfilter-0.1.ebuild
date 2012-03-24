@@ -19,7 +19,7 @@ IUSE=""
 
 src_prepare() {
 	sed -i "s#'TODO'##" setup.py
-	sed -i "s#share/${PN}/doc#share/doc/${P}#" setup.py
+	sed -i "s#share/${PN}/doc#share/doc/${PF}#" setup.py
 }
 
 DEPEND=""

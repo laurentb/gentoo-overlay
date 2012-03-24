@@ -36,7 +36,7 @@ DEPEND=""
 RDEPEND=">=dev-python/psutil-0.4.1"
 
 src_prepare() {
-	sed -i "s#share/doc/${PN}#share/doc/${P}#" setup.py
+	sed -i "s#share/doc/${PN}#share/doc/${PF}#" setup.py
 }
 
 DOCS="AUTHORS COPYING ChangeLog NEWS README README-fr"
