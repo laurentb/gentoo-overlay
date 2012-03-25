@@ -23,8 +23,3 @@ RDEPEND=">=dev-python/git-python-0.3.0
 >=dev-python/clint-0.2.4"
 
 DOCS="README.rst LICENSE"
-
-src_prepare() {
-	epatch "${FILESDIR}/0001-Remove-unused-dependencies.patch"
-	epatch "${FILESDIR}/0002-Require-minimum-versions.patch"
-}
