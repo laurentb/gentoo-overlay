@@ -6,7 +6,7 @@ PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
-inherit distutils
+inherit eutils distutils
 
 DESCRIPTION="A git CLI tool to manage branches easily."
 HOMEPAGE="https://github.com/kennethreitz/legit
@@ -25,5 +25,6 @@ RDEPEND=">=dev-python/git-python-0.3.0
 DOCS="README.rst LICENSE"
 
 src_prepare() {
-	sed -i 's/==.\+//' reqs.txt
+	epatch "${FILESDIR}/0001-Remove-unused-dependencies.patch"
+	epatch "${FILESDIR}/0002-Require-minimum-versions.patch"
 }

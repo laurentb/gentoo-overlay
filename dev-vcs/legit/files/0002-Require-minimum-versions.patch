@@ -1,0 +1,23 @@
+From 98ec4325ace43daa68e1a02af13e60d821398ff6 Mon Sep 17 00:00:00 2001
+From: Laurent Bachelier <laurent@bachelier.name>
+Date: Thu, 22 Mar 2012 02:25:29 +0100
+Subject: [PATCH 2/3] Require minimum versions
+
+* No reason to want an exact version of clint, use latest
+* Older gitpython versions miss git.exc.GitCommandError (at least)
+---
+ reqs.txt |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/reqs.txt b/reqs.txt
+index af2f730..1193048 100644
+--- a/reqs.txt
++++ b/reqs.txt
+@@ -1,2 +1,2 @@
+-clint==0.2.4
+-gitpython
++clint>=0.2.4
++gitpython>=0.3.0
+-- 
+1.7.3.4
+
