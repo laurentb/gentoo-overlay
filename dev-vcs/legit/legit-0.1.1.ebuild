@@ -20,7 +20,8 @@ IUSE="zsh-completion"
 
 DEPEND=""
 RDEPEND=">=dev-python/git-python-0.3.0
->=dev-python/clint-0.2.4"
+>=dev-python/clint-0.2.4
+>=dev-python/smmap-0.8.2"
 
 DOCS="README.rst LICENSE"
 
