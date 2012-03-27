@@ -6,6 +6,10 @@ It contains some "restricted/unwanted" packages, a lot of Python, git and CLI li
 
 You can browse the package list: http://gpo.zugaina.org/Overlays/laurentb
 
+This overlay is available in the default layman list. Just run:
+
+    # layman -a laurentb
+
 Copyright is assigned to the Gentoo Foundation.
 
 Contact: Laurent Bachelier <laurent@bachelier.name>
