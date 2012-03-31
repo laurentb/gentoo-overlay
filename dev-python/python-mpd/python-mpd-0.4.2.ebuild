@@ -9,8 +9,8 @@ inherit distutils
 
 DESCRIPTION="Python MPD client library (fork)"
 HOMEPAGE="https://github.com/Mic92/python-mpd2"
-SRC_URI="https://github.com/Mic92/python-mpd2/tarball/v0.4.1 -> ${P}.tar.gz"
-S="${WORKDIR}/Mic92-python-mpd2-08e2da8"
+SRC_URI="https://github.com/Mic92/python-mpd2/tarball/v${PV} -> ${P}.tar.gz"
+S="${WORKDIR}/Mic92-python-mpd2-fc669df"
 
 LICENSE="LGPL-3"
 # no keywords for now, since it is a fork of the official version
