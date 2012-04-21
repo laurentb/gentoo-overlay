@@ -5,7 +5,7 @@ EAPI=4
 
 DESCRIPTION="A simple CLI tool that display file system usage, with colors"
 HOMEPAGE="http://projects.gw-computing.net/projects/dfc"
-SRC_URI="http://projects.gw-computing.net/attachments/download/39/${P}.tar.gz"
+SRC_URI="http://projects.gw-computing.net/attachments/download/42/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
