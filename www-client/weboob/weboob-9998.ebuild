@@ -57,6 +57,11 @@ distutils_src_install_pre_hook() {
 	set_global_options
 }
 
+distutils_src_install_post_hook() {
+	exeinto "/usr/share/${PN}"
+	doexe contrib/*-munin
+}
+
 distutils_src_compile_pre_hook() {
 	set_global_options
 }
