@@ -22,3 +22,5 @@ DEPEND=""
 RDEPEND=">=dev-python/requests-0.10.4
 	>=dev-python/pygments-1.4
 	|| ( dev-lang/python:2.7 dev-python/argparse )"
+
+DOCS="README.rst LICENSE"
