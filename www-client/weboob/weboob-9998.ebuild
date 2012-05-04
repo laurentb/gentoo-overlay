@@ -19,8 +19,8 @@ elif [ "$PV" == "9998" ]; then
 	SRC_URI=""
 else
 	KEYWORDS="~x86 ~amd64"
-	SRC_URI="http://symlink.me/attachments/download/169/${PN}-0.b.tar.gz"
-	S="${WORKDIR}/${PN}-0.b"
+	SRC_URI="http://symlink.me/attachments/download/182/${PN}-0.c.tar.gz"
+	S="${WORKDIR}/${PN}-0.c"
 fi
 
 
