@@ -1,7 +1,7 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="3"
+EAPI="4"
 
 PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
@@ -38,6 +38,8 @@ S="${WORKDIR}/${MY_P}"
 DOCS="AUTHORS.txt INSTALL.txt NEWS.txt"
 
 pkg_setup() {
+	python_pkg_setup
+
 	if ! use acoustid && ! use amplifind; then
 		ewarn "The 'acoustid' and 'amplifind' USE flags are disabled."
 		ewarn "Acoustic fingerprinting and recognition will not be available."
