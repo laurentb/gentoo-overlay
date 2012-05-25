@@ -11,21 +11,21 @@ inherit eutils distutils
 
 DESCRIPTION="An improved rewrite/port of the Picard Tagger using Qt"
 HOMEPAGE="http://musicbrainz.org/doc/PicardQt"
-SRC_URI="
-	coverart? ( http://dev.gentoo.org/~radhermit/distfiles/${PN}-0.15.1-coverart.py.gz )"
+SRC_URI=""
 EGIT_REPO_URI="git://github.com/musicbrainz/picard.git"
 inherit git-2
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="cdda coverart ffmpeg nls"
+IUSE="cdda acoustid amplifind nls"
 
 DEPEND="
 	dev-python/PyQt4[X]
 	media-libs/mutagen
 	cdda? ( >=media-libs/libdiscid-0.1.1 )
-	ffmpeg? (
+	acoustid? ( media-libs/chromaprint[tools] )
+	amplifind? (
 		virtual/ffmpeg
 		>=media-libs/libofa-0.9.2 )"
 RDEPEND="${DEPEND}"
@@ -38,9 +38,10 @@ S="${WORKDIR}/${MY_P}"
 DOCS="AUTHORS.txt INSTALL.txt NEWS.txt"
 
 pkg_setup() {
-	if ! use ffmpeg; then
-		ewarn "The 'ffmpeg' USE flag is disabled. Acoustic fingerprinting and"
-		ewarn "recognition will not be available."
+	if ! use acoustid && ! use amplifind; then
+		ewarn "The 'acoustid' and 'amplifind' USE flags are disabled."
+		ewarn "Acoustic fingerprinting and recognition will not be available."
+		ewarn "Enabling 'acoustid' is recommended."
 	fi
 	if ! use cdda; then
 		ewarn "The 'cdda' USE flag is disabled. CD index lookup and"
@@ -49,16 +50,9 @@ pkg_setup() {
 	fi
 }
 
-src_unpack() {
-	git-2_src_unpack
-	if use coverart; then
-		cp "${WORKDIR}"/${PN}-0.15.1-coverart.py "${S}"/${PN}/plugins/coverart.py || die "Copy of coverart plugin failed"
-	fi
-}
-
 src_configure() {
 	$(PYTHON -f) setup.py config || die "setup.py config failed"
-	if ! use ffmpeg; then
+	if ! use amplifind; then
 		sed -i -e "s:\(^with-avcodec\ =\ \).*:\1False:" \
 			-e "s:\(^with-libofa\ =\ \).*:\1False:" \
 			build.cfg || die "sed failed"
@@ -86,8 +80,4 @@ pkg_postinst() {
 	elog
 	elog "You should set the environment variable BROWSER to something like"
 	elog "\"firefox '%s' &\" to let python know which browser to use."
-	if use coverart; then
-		ewarn "You have downloaded and installed the coverart downloader plugin."
-		ewarn "If you expect it to work please enable it in Options->Plugins."
-	fi
 }
