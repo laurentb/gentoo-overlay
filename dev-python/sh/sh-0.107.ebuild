@@ -8,7 +8,7 @@ SUPPORT_PYTHON_ABIS="1"
 inherit distutils
 
 DESCRIPTION="Python subprocess wrapper"
-HOMEPAGE="http://pypi.python.org/pypi/pbs
+HOMEPAGE="http://pypi.python.org/pypi/sh
 https://github.com/amoffat/pbs"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 

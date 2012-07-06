@@ -1,1 +1,2 @@
 move app-text/nyancat games-misc/nyancat
+move dev-python/pbs dev-python/sh
