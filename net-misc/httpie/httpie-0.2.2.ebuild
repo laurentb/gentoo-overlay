@@ -2,9 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=4
-PYTHON_DEPEND="2:2.6"
+PYTHON_DEPEND="2:2.6 3:3.1"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils
 
@@ -20,7 +19,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND=">=dev-python/requests-0.10.4
-	>=dev-python/pygments-1.4
+	>=dev-python/pygments-1.5
 	|| ( dev-lang/python:2.7 dev-python/argparse )"
 
 DOCS="README.rst LICENSE"
