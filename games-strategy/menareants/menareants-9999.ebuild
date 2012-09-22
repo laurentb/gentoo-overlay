@@ -1,7 +1,7 @@
 # Copyright 2005-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=3
+EAPI=4
 inherit base autotools eutils games
 [ "$PV" == "9999" ] \
 	&& EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}.git" \
@@ -41,7 +41,7 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install
-	dodoc API AUTHORS DEVELOPPEURS COPYING ChangeLog NEWS README TODO WIN32
+	dodoc API AUTHORS DEVELOPPEURS COPYING ChangeLog NEWS README TODO
 	doman src/menareants.6
 	use server && doman server/menareants-server.6
 	use meta-server && doman meta-server/menareants-meta-server.6
