@@ -1,9 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="2"
+EAPI="4"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT="test"
 
 inherit distutils
 
@@ -27,27 +28,21 @@ DEPEND="${RDEPEND}
 		|| ( dev-lang/python[sqlite] dev-python/pysqlite )
 		dev-python/nose )"
 
-RESTRICT_PYTHON_ABIS="3*"
-RESTRICT="test"
-
-src_compile() {
-	distutils_src_compile
-
+distutils_src_compile_post_hook() {
 	if use doc; then
 		cd doc
-		PYTHONPATH=.. emake html || die "Building docs failed"
+		PYTHONPATH=.. emake html
 	fi
 }
 
-src_install() {
-	distutils_src_install
+distutils_src_install_post_hook() {
 	if use examples ; then
 		insinto /usr/share/${PF}/examples
-		doins -r examples/* || die "Install failed"
+		doins -r examples/*
 	fi
 
 	if use doc; then
-		dohtml -r doc/_build/html/* || die "Error installing docs"
+		dohtml -r doc/_build/html/*
 	fi
 }
 
