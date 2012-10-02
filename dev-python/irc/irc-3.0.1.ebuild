@@ -21,6 +21,10 @@ IUSE="doc"
 DEPEND=""
 RDEPEND=""
 
+distutils_src_compile_pre_hook() {
+	sed -i "s/'hgtools',//" pavement.py
+}
+
 distutils_src_install_post_hook() {
 	if use doc; then
 		insinto "/usr/share/doc/${PF}/scripts"
