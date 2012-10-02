@@ -14,7 +14,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="greenlets"
 
 DEPEND="app-text/xmlto"
-RDEPEND=">=dev-python/irc-3.0.0
+RDEPEND=">=dev-lang/python-2.6.0
+>=dev-python/irc-3.0.0
 greenlets? ( dev-python/eventlet )"
 
 src_prepare() {
