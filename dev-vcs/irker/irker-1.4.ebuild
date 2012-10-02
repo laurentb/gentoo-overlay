@@ -19,6 +19,7 @@ RDEPEND=">=dev-python/irc-3.0.0"
 src_prepare() {
 	sed -i "s/VERS=.\+/VERS=${PV}/" Makefile
 	sed -i "s/ROOT/DESTDIR/g" Makefile
+	sed -i 's/xmlto/xmlto --skip-validation/' Makefile
 }
 
 src_install() {
