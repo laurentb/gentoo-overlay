@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=4
+inherit base
 
 DESCRIPTION="Specialized IRC notification daemon"
 HOMEPAGE="http://www.catb.org/esr/irker/"
@@ -17,8 +18,7 @@ RDEPEND=">=dev-python/irc-3.0.0"
 
 src_prepare () {
 	sed -i "s/VERS=.\+/VERS=${PV}/" Makefile
+	sed -i "s/ROOT/DESTDIR/g" Makefile
 }
 
-src_install() {
-	emake ROOT="${D}" install
-}
+DOCS=(README NEWS BUGS COPYING hacking.txt install.txt security.txt)
