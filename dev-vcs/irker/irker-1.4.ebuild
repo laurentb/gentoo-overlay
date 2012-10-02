@@ -16,9 +16,16 @@ IUSE=""
 DEPEND="app-text/xmlto"
 RDEPEND=">=dev-python/irc-3.0.0"
 
-src_prepare () {
+src_prepare() {
 	sed -i "s/VERS=.\+/VERS=${PV}/" Makefile
 	sed -i "s/ROOT/DESTDIR/g" Makefile
+}
+
+src_install() {
+	base_src_install
+
+	exeinto /usr/libexec
+	doexe irkerhook.py
 }
 
 DOCS=(README NEWS BUGS COPYING hacking.txt install.txt security.txt)
