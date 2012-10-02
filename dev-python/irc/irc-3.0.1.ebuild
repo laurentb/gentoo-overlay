@@ -16,7 +16,16 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.zip"
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="doc"
 
 DEPEND=""
 RDEPEND=""
+
+distutils_src_install_post_hook() {
+	if use doc; then
+		insinto "/usr/share/doc/${PF}/scripts"
+		doins scripts/*
+	fi
+}
+
+DOCS="README CHANGES COPYING"
