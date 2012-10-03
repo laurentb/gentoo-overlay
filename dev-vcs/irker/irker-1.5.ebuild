@@ -19,8 +19,6 @@ RDEPEND=">=dev-lang/python-2.6.0
 greenlets? ( dev-python/eventlet )"
 
 src_prepare() {
-	sed -i "s/VERS=.\+/VERS=${PV}/" Makefile
-	sed -i "s/ROOT/DESTDIR/g" Makefile
 	sed -i 's/xmlto/xmlto --skip-validation/' Makefile
 }
 
