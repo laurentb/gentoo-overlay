@@ -19,6 +19,8 @@ RDEPEND=">=dev-lang/python-2.6.0
 greenlets? ( dev-python/eventlet )"
 
 src_prepare() {
+	base_src_prepare
+
 	sed -i 's/xmlto/xmlto --skip-validation/' Makefile
 }
 
