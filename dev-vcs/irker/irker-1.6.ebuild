@@ -26,7 +26,7 @@ src_install() {
 	base_src_install
 
 	exeinto /usr/libexec
-	doexe irkerhook.py
+	newexe irkerhook.py irkerhook
 }
 
-DOCS=(README NEWS BUGS COPYING hacking.txt install.txt security.txt)
+DOCS=(README NEWS COPYING hacking.txt install.txt security.txt)
