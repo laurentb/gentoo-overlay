@@ -33,4 +33,5 @@ src_install() {
 	newexe irkerhook.py irkerhook
 }
 
-DOCS=(README NEWS COPYING hacking.txt install.txt security.txt)
+DOCS=(README NEWS COPYING hacking.txt install.txt security.txt filter-example.py
+filter-test.py irk)
