@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=4
-inherit base
+inherit base python
 
 DESCRIPTION="Specialized IRC notification daemon"
 HOMEPAGE="http://www.catb.org/esr/irker/"
@@ -20,6 +20,8 @@ greenlets? ( dev-python/eventlet )"
 
 src_prepare() {
 	base_src_prepare
+
+	python_convert_shebangs 2 irkerd irkerhook.py
 
 	sed -i 's/xmlto/xmlto --skip-validation/' Makefile
 }
