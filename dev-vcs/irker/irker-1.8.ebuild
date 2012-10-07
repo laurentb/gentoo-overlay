@@ -21,13 +21,16 @@ greenlets? ( dev-python/eventlet )"
 src_prepare() {
 	base_src_prepare
 
-	python_convert_shebangs 2 irkerd irkerhook.py
+	python_convert_shebangs 2 irk irkerd irkerhook.py
 
 	sed -i 's/xmlto/xmlto --skip-validation/' Makefile
 }
 
 src_install() {
 	base_src_install
+
+	exeinto /usr/bin
+	doexe irk
 
 	exeinto /usr/libexec
 	newexe irkerhook.py irkerhook
