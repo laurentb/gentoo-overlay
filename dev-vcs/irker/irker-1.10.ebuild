@@ -11,12 +11,11 @@ SRC_URI="http://www.catb.org/~esr/irker/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="greenlets"
+IUSE=""
 
 DEPEND="app-text/xmlto"
 RDEPEND=">=dev-lang/python-2.6.0
->=dev-python/irc-3.0.0
-greenlets? ( dev-python/eventlet )"
+>=dev-python/irc-3.0.0"
 
 src_prepare() {
 	base_src_prepare
