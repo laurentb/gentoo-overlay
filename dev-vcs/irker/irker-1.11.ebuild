@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=4
-inherit base python
+inherit base user python
 
 DESCRIPTION="Specialized IRC notification daemon"
 HOMEPAGE="http://www.catb.org/esr/irker/"
@@ -25,6 +25,13 @@ src_prepare() {
 	sed -i 's/xmlto/xmlto --skip-validation/' Makefile
 }
 
+pkg_setup() {
+	python_pkg_setup
+
+	enewgroup irker
+	enewuser irker -1 -1 -1 irker
+}
+
 src_install() {
 	base_src_install
 
@@ -33,6 +40,8 @@ src_install() {
 
 	exeinto /usr/libexec
 	newexe irkerhook.py irkerhook
+
+	newinitd "${FILESDIR}"/irkerd-init.d irker
 }
 
 DOCS=(README NEWS COPYING hacking.txt install.txt security.txt filter-example.py
