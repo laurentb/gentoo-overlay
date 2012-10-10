@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=4
-inherit base user python
+inherit base user systemd python
 
 DESCRIPTION="Specialized IRC notification daemon"
 HOMEPAGE="http://www.catb.org/esr/irker/"
@@ -33,7 +33,7 @@ pkg_setup() {
 }
 
 src_install() {
-	base_src_install
+	base_src_install SYSTEMDSYSTEMUNITDIR=$(systemd_get_unitdir)
 
 	exeinto /usr/bin
 	doexe irk
