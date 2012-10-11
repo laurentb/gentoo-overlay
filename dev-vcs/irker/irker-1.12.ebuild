@@ -15,7 +15,7 @@ IUSE=""
 
 DEPEND="app-text/xmlto"
 RDEPEND=">=dev-lang/python-2.6.0
->=dev-python/irc-3.0.0"
+>=dev-python/irc-3.2.1"
 
 src_prepare() {
 	base_src_prepare
