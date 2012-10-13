@@ -13,7 +13,7 @@ HOMEPAGE="http://bitbucket.org/jaraco/irc
 http://pypi.python.org/pypi/irc"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.zip"
 
-LICENSE="GPL-2+"
+LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
