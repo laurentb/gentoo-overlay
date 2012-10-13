@@ -13,7 +13,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="app-text/xmlto"
+DEPEND="app-text/xmlto
+app-text/docbook-xml-dtd:4.1.2"
 RDEPEND=">=dev-lang/python-2.6.0
 >=dev-python/irc-3.2.1"
 
@@ -21,8 +22,6 @@ src_prepare() {
 	base_src_prepare
 
 	python_convert_shebangs 2 irk irkerd irkerhook.py
-
-	sed -i 's/xmlto/xmlto --skip-validation/' Makefile
 }
 
 pkg_setup() {
