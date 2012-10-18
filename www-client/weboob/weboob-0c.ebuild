@@ -31,7 +31,7 @@ LICENSE="AGPL-3"
 SLOT="0"
 IUSE="X +secure-updates fast-libs"
 
-DEPEND="X? ( dev-python/PyQt4[X] dev-python/pyxdg )"
+DEPEND="X? ( >=dev-python/PyQt4-4.9.4-r1[X] dev-python/pyxdg )"
 RDEPEND="${DEPEND}
 	dev-python/prettytable
 	dev-python/html2text
