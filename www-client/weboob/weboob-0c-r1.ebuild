@@ -64,6 +64,8 @@ distutils_src_install_post_hook() {
 
 distutils_src_compile_pre_hook() {
 	set_global_options
+
+	[ "$PV" == "0c" ] && epatch "${FILESDIR}/fix-prettytable.patch"
 }
 
 pkg_postinst() {
