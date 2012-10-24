@@ -35,6 +35,9 @@ RDEPEND="${DEPEND}
 	syslog? ( virtual/logger )"
 
 src_prepare() {
+	epatch "${FILESDIR}/${PN}-1.0.5-glib-single-includes.patch"
+	epatch "${FILESDIR}/${PN}-1.0.5-gcc47.patch"
+
 	sed -i "s#share/doc/minbif)#share/doc/${PF})#" CMakeLists.txt
 
 	use xinetd && sed -i "s/type\s=\s[0-9]/type = 0/" minbif.conf
