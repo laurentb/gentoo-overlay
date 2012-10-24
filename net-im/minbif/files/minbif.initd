@@ -8,7 +8,6 @@ MINBIF_PID="/var/run/minbif/minbif.pid"
 extra_commands="reload"
 
 depend() {
-	need net
 	use logger
 }
 

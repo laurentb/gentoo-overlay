@@ -4,10 +4,6 @@
 
 PIDFILE=/var/run/${SVCNAME}.pid
 
-depend() {
-    need net
-}
-
 start() {
     ebegin "Starting ${SVCNAME}"
     start-stop-daemon --start --background --exec /usr/bin/irkerd \
