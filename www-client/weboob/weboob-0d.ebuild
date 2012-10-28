@@ -19,8 +19,8 @@ elif [ "$PV" == "9998" ]; then
 	SRC_URI=""
 else
 	KEYWORDS="~x86 ~amd64"
-	SRC_URI="http://symlink.me/attachments/download/182/${PN}-0.c.tar.gz"
-	S="${WORKDIR}/${PN}-0.c"
+	SRC_URI="http://symlink.me/attachments/download/199/${PN}-0.d.tar.gz"
+	S="${WORKDIR}/${PN}-0.d"
 fi
 
 
@@ -64,8 +64,6 @@ distutils_src_install_post_hook() {
 
 distutils_src_compile_pre_hook() {
 	set_global_options
-
-	[ "$PV" == "0c" ] && epatch "${FILESDIR}/fix-prettytable.patch"
 }
 
 pkg_postinst() {
