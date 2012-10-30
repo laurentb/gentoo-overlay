@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="|| ( dev-lang/python:2.7 >=dev-python/argparse-1.1 )
+RDEPEND="virtual/python-argparse
 dev-python/PyRSS2Gen"
 
 DOCS="LICENSE README"

@@ -25,6 +25,6 @@ src_prepare() {
 DEPEND=""
 RDEPEND="dev-python/python-dateutil
 	dev-python/vobject
-	|| ( dev-lang/python:2.7 dev-python/argparse )"
+	virtual/python-argparse"
 
 DOCS="INSTALL.rst LICENSE AUTHORS CHANGELOG README.rst"

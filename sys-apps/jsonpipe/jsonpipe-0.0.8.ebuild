@@ -20,5 +20,5 @@ IUSE=""
 
 DEPEND=""
 RDEPEND=">=dev-python/simplejson-2.1.3
-|| ( dev-lang/python:2.7 >=dev-python/argparse-1.1 )
+virtual/python-argparse
 >=dev-python/calabash-0.0.3"

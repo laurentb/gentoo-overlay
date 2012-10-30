@@ -32,7 +32,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND=">=dev-python/commando-0.1.1a
-	|| ( dev-lang/python:2.7 dev-python/argparse )
+	virtual/python-argparse
 	>=dev-python/jinja-2.5.5
 	>=dev-python/markdown-2.0.3
 	>=dev-python/pyyaml-3.09

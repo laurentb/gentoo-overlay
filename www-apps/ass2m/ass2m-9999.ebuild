@@ -22,7 +22,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="dev-python/webob
-	|| ( dev-lang/python:2.7 dev-python/argparse )
+	virtual/python-argparse
 	dev-python/paste
 	dev-python/mako
 	dev-python/imaging

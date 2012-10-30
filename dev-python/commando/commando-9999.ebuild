@@ -29,7 +29,7 @@ SLOT="0"
 IUSE=""
 
 DEPEND=""
-RDEPEND="|| ( dev-lang/python:2.7 dev-python/argparse )"
+RDEPEND="virtual/python-argparse"
 
 DOCS="LICENSE README.markdown"
 

@@ -28,6 +28,6 @@ IUSE=""
 DEPEND=""
 RDEPEND="dev-python/PyQt4
 >=dev-python/gfbi_core-0.5.6
-|| ( dev-lang/python:2.7 >=dev-python/argparse-1.1 )"
+virtual/python-argparse"
 
 DOCS="*.txt README.rst CHANGELOG"
