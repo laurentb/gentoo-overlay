@@ -16,8 +16,7 @@ IUSE=""
 DEPEND="app-text/xmlto
 app-text/docbook-xml-dtd:4.1.2"
 RDEPEND=">=dev-lang/python-2.6.0
->=dev-python/irc-3.2.1
-<dev-python/irc-3.3"
+>=dev-python/irc-3.2.1"
 
 src_prepare() {
 	base_src_prepare
