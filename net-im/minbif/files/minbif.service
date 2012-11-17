@@ -1,0 +1,13 @@
+[Unit]
+Description=minbif daemon
+
+[Service]
+Type=forking
+PIDFile=/run/minbif/minbif.pid
+User=minbif
+ExecStart=/usr/bin/minbif --pidfile /run/minbif/minbif.pid /etc/minbif/minbif.conf
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

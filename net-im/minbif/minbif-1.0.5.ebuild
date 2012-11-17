@@ -3,7 +3,7 @@
 
 EAPI=4
 
-inherit cmake-utils eutils
+inherit cmake-utils eutils systemd
 [ "$PV" == "9999" ] \
 	&& EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}.git" \
 	&& inherit git-2
@@ -100,6 +100,8 @@ src_install() {
 		insinto /etc/xinetd.d
 		newins minbif.xinetd minbif
 	fi
+
+	systemd_dounit "${FILESDIR}/minbif.service"
 
 	diropts -o minbif -g minbif -m0700
 	keepdir /var/lib/minbif

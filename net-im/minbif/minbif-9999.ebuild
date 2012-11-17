@@ -3,7 +3,7 @@
 
 EAPI=4
 
-inherit cmake-utils eutils
+inherit cmake-utils eutils systemd
 [ "$PV" == "9999" ] \
 	&& EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}.git" \
 	&& inherit git-2
@@ -35,6 +35,9 @@ RDEPEND="${DEPEND}
 	syslog? ( virtual/logger )"
 
 src_prepare() {
+	epatch "${FILESDIR}/${PN}-1.0.5-glib-single-includes.patch"
+	epatch "${FILESDIR}/${PN}-1.0.5-gcc47.patch"
+
 	sed -i "s#share/doc/minbif)#share/doc/${PF})#" CMakeLists.txt
 
 	use xinetd && sed -i "s/type\s=\s[0-9]/type = 0/" minbif.conf
@@ -97,6 +100,8 @@ src_install() {
 		insinto /etc/xinetd.d
 		newins minbif.xinetd minbif
 	fi
+
+	systemd_dounit "${FILESDIR}/minbif.service"
 
 	diropts -o minbif -g minbif -m0700
 	keepdir /var/lib/minbif
