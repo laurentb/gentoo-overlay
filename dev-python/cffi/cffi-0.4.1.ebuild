@@ -10,14 +10,12 @@ inherit distutils
 
 DESCRIPTION="Foreign Function Interface for Python calling C code."
 HOMEPAGE="http://cffi.readthedocs.org/ http://pypi.python.org/pypi/cffi"
-SRC_URI="https://bitbucket.org/${PN}/${PN}/get/69cddb87c25f70c01c1dfc6da27b85f6cade6fd7.tar.gz"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
-
-S="${WORKDIR}/${PN}-${PN}-69cddb87c25f"
 
 DEPEND="dev-libs/libffi
 		dev-python/pycparser
