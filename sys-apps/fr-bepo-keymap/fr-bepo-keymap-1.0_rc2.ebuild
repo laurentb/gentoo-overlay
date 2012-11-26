@@ -1,7 +1,7 @@
-# Copyright 2010-2011 Gentoo Foundation
+# Copyright 2010-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=5
 
 DESCRIPTION="Bépo keymap for the Linux Console"
 HOMEPAGE="http://bepo.fr/wiki/Console_linux"
@@ -35,7 +35,6 @@ src_install() {
 
 pkg_postinst() {
 	elog "To try out bépo, start \"loadkeys fr-dvorak-bepo\"."
-	elog "To use bépo permanently, add KEYMAP=\"fr-dvorak-bepo\""
+	elog "To use bépo permanently, add keymap=\"fr-dvorak-bepo\""
 	elog "to /etc/conf.d/keymaps."
 }
-

@@ -1,7 +1,7 @@
-# Copyright 2010-2011 Gentoo Foundation
+# Copyright 2010-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=5
 
 DESCRIPTION="lal is a clock for the dock. Nothing more, nothing less."
 HOMEPAGE="http://projects.l3ib.org/lal/"

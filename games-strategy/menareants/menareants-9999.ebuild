@@ -1,7 +1,7 @@
-# Copyright 2005-2011 Gentoo Foundation
+# Copyright 2005-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=5
 inherit base autotools eutils games
 [ "$PV" == "9999" ] \
 	&& EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}.git" \

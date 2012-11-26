@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=5
 
-inherit eutils
+inherit base
 
 DESCRIPTION="Displays the system activity in a very special way ;-)"
 HOMEPAGE="http://hotbabe.sourceforge.net/"
@@ -24,11 +24,11 @@ pkg_setup() {
 }
 
 src_compile() {
-	emake PREFIX="/usr"
+	base_src_compile PREFIX="/usr"
 }
 
 src_install() {
-	make PREFIX="${D}"/usr install
+	base_src_install PREFIX="/usr"
 	dodoc -r "${D}/usr/share/doc/${PN}/"
 	rm -r "${D}/usr/share/doc/${PN}/"
 	newman "${D}/usr/share/man/man1/${PN}.1" "${PN}.6"
