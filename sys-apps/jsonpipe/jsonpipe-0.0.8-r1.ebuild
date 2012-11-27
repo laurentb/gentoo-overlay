@@ -22,3 +22,8 @@ DEPEND=""
 RDEPEND=">=dev-python/simplejson-2.1.3
 virtual/python-argparse
 >=dev-python/calabash-0.0.3"
+
+src_prepare() {
+	sed -i "s/'argparse>=1.1', //" setup.py
+	sed -i "s/calabash==/calabash>=/" setup.py
+}
