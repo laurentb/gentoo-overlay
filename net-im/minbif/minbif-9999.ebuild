@@ -102,6 +102,7 @@ src_install() {
 	fi
 
 	systemd_dounit "${FILESDIR}/minbif.service"
+	systemd_newtmpfilesd "${FILESDIR}/tmpfiles.d-minbif.conf" "minbif.conf"
 
 	diropts -o minbif -g minbif -m0700
 	keepdir /var/lib/minbif
