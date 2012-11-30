@@ -53,7 +53,7 @@ src_configure() {
 
 	local mycmakeargs
 	mycmakeargs="${mycmakeargs}
-		-DCONF_PREFIX=${PREFIX:-/etc/minbif}
+		-DCONF_PREFIX=/etc/minbif
 		$(cmake-utils_use_enable libcaca CACA)
 		$(cmake-utils_use_enable imlib IMLIB)
 		$(cmake-utils_use_enable debug DEBUG)
