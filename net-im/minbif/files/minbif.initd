@@ -22,6 +22,7 @@ checkconfig() {
 
 start() {
 	checkconfig || return 1
+	checkpath -d -o minbif:minbif $(dirname ${MINBIF_PID})
 
 	ebegin "Starting minbif"
 	start-stop-daemon --quiet --start \
