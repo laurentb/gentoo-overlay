@@ -12,7 +12,7 @@ inherit base distutils
 	&& inherit git-2
 
 DESCRIPTION="Authenticated Social Storage Made for Mothers"
-HOMEPAGE="http://ass2m.org/"
+HOMEPAGE="http://symlink.me/projects/assnet"
 SRC_URI=""
 
 LICENSE="AGPL-3"
