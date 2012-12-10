@@ -18,4 +18,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="dev-python/dnspython"
+RDEPEND="dev-python/dnspython
+dev-python/pyasn1
+dev-python/pyasn1-modules"
