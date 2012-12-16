@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-PYTHON_DEPEND="2:2.6 3:3.2"
+PYTHON_DEPEND="2:2.7 3:3.2"
 SUPPORT_PYTHON_ABIS="1"
 
 inherit base linux-info distutils
@@ -16,12 +16,14 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=">=dev-python/cffi-0.3.9999
+DEPEND=">=dev-python/cffi-0.4.2
 sys-fs/btrfs-progs"
 RDEPEND="${DEPEND}
 virtual/python-argparse
 dev-python/pyxdg
-dev-python/sqlalchemy"
+dev-python/sqlalchemy
+dev-python/alembic
+dev-python/contextlib2"
 
 DOCS="COPYING README.rst"
 
