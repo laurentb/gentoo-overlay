@@ -2,13 +2,23 @@ Welcome!
 
 This overlay is mainly for my own usage, though packages are of reasonable quality and do not conflict with the official portage tree if you use stable.
 
-It contains some "restricted/unwanted" packages, a lot of Python, git and CLI libraries and tools, and some software I watch closely (providing always-up-to-date ebuilds): esniper, minbif, weboob...
+It contains some "restricted/unwanted" packages, a lot of Python, git and CLI libraries and tools, and some software I watch closely (providing always-up-to-date ebuilds): esniper, minbif, weboob, irker...
 
 You can browse the package list: http://gpo.zugaina.org/Overlays/laurentb
 
 This overlay is available in the default layman list. Just run:
 
     # layman -a laurentb
+
+The commits should now by signed by my GPG key.
+
+    # gpg --recv-key 9CC4445E
+    # GIT_WORKDIR=/var/lib/layman/laurentb git log -n1 --show-signature
+
+You can check the authenticity of my key by various means, including:
+* https://laurent.bachelier.name/gpgkey.txt
+* namecoin p/laurentb http://explorer.dot-bit.org/n/42712
+* The GPG web of trust
 
 Copyright is assigned to the Gentoo Foundation.
 
