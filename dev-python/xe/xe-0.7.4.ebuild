@@ -22,3 +22,7 @@ DEPEND=""
 RDEPEND=""
 
 PYTHON_MODNAME="${PN}.py"
+
+src_prepare() {
+	sed -i '/not possible to reach this line/d' xe.py
+}
