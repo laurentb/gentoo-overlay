@@ -34,3 +34,8 @@ RDEPEND="virtual/python-argparse"
 DOCS="LICENSE README.markdown"
 
 PYTHON_MODNAME="${PN}.py"
+
+src_prepare() {
+	sed -i "/argparse/d" requirements.txt
+	rm -rf "${PN}.egg-info"
+}

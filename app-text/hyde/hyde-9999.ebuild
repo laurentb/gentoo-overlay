@@ -38,3 +38,8 @@ RDEPEND=">=dev-python/commando-0.1.1a
 	>=dev-python/pyyaml-3.09
 	dev-python/pygments
 	dev-python/typogrify-hyde"
+
+src_prepare() {
+	sed -i "s/'argparse',//" setup.py
+	rm -rf "${PN}.egg-info"
+}
