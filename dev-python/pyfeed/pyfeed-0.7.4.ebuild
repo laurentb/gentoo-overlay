@@ -10,7 +10,8 @@ inherit distutils
 
 DESCRIPTION="Python modules for working with syndication feeds"
 HOMEPAGE="http://home.avvanta.com/~steveha/pyfeed.html"
-SRC_URI="http://home.avvanta.com/~steveha/${P}.tar.gz"
+SRC_URI="http://home.avvanta.com/~steveha/${P}.tar.gz
+http://www.blarg.net/~steveha/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

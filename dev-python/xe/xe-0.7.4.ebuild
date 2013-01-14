@@ -11,7 +11,8 @@ inherit distutils
 DESCRIPTION="XML elements is a Python library designed
 to make it easy to work with XML"
 HOMEPAGE="http://home.avvanta.com/~steveha/xe.html"
-SRC_URI="http://home.avvanta.com/~steveha/${P}.tar.gz"
+SRC_URI="http://home.avvanta.com/~steveha/${P}.tar.gz
+http://www.blarg.net/~steveha/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
