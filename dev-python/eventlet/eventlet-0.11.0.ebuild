@@ -9,7 +9,8 @@ RESTRICT="test"
 inherit distutils
 
 DESCRIPTION="A networking library that achieves high scalability by using non-blocking io"
-HOMEPAGE="http://wiki.secondlife.com/wiki/Eventlet"
+HOMEPAGE="http://eventlet.net/
+https://pypi.python.org/pypi/eventlet"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
