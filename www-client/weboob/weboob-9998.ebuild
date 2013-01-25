@@ -8,19 +8,19 @@ RESTRICT_PYTHON_ABIS="3.*"
 
 inherit base distutils
 if [ "$PV" == "9999" ]; then
-	EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}.git"
+	EGIT_REPO_URI="git://git.symlink.me/pub/${PN}/devel.git"
 	inherit git-2
 	KEYWORDS=""
 	SRC_URI=""
 elif [ "$PV" == "9998" ]; then
-	EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}-stable.git"
+	EGIT_REPO_URI="git://git.symlink.me/pub/${PN}/stable.git"
 	inherit git-2
 	KEYWORDS=""
 	SRC_URI=""
 else
 	KEYWORDS="~x86 ~amd64"
-	SRC_URI="http://symlink.me/attachments/download/199/${PN}-0.d.tar.gz"
-	S="${WORKDIR}/${PN}-0.d"
+	SRC_URI="http://symlink.me/attachments/download/206/${PN}-0.e.tar.gz"
+	S="${WORKDIR}/${PN}-0.e"
 fi
 
 
