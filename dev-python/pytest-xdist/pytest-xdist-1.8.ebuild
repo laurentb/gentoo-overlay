@@ -7,7 +7,7 @@ SUPPORT_PYTHON_ABIS="1"
 
 inherit distutils
 
-DESCRIPTION="http://pypi.python.org/pypi/pytest-xdist"
+DESCRIPTION="py.test xdist plugin for distributed testing"
 HOMEPAGE="http://pypi.python.org/pypi/pytest-xdist
 https://bitbucket.org/hpk42/pytest-xdist"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.zip"
