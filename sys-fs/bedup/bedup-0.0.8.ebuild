@@ -17,6 +17,8 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=">=dev-python/cffi-0.4.2
+>=sys-kernel/linux-headers-3.3
+>=sys-libs/glibc-2.14
 sys-fs/btrfs-progs"
 RDEPEND="${DEPEND}
 virtual/python-argparse
