@@ -4,7 +4,7 @@
 EAPI=5
 inherit base
 
-DESCRIPTION=""
+DESCRIPTION="Clone a SCM repo (git) temporarily"
 HOMEPAGE="http://git.p.engu.in/laurentb/tmpclone/"
 SRC_URI="http://git.p.engu.in/laurentb/${PN}/snapshot/${P}.tar.bz2"
 
