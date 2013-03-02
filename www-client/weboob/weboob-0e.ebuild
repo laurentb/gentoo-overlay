@@ -57,8 +57,8 @@ distutils_src_install_pre_hook() {
 }
 
 distutils_src_install_post_hook() {
-	exeinto "/usr/share/${PN}"
-	doexe contrib/*-munin
+	insinto /usr/share/${PN}/
+	doins -r contrib/*
 }
 
 distutils_src_compile_pre_hook() {
