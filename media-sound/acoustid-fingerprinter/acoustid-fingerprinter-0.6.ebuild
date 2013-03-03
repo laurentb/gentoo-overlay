@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 
 IUSE=""
-DEPEND="x11-libs/qt-gui
+DEPEND="dev-qt/qtgui
 	media-libs/chromaprint
 	virtual/ffmpeg"
 RDEPEND="${DEPEND}"
