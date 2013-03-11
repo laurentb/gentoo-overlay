@@ -1,4 +1,4 @@
-# Copyright 2012 Gentoo Foundation
+# Copyright 2012-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -17,7 +17,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND=""
+# setuptools required RDEPEND for extensions
+DEPEND="dev-python/setuptools"
+RDEPEND="${DEPEND}
+>=dev-python/mccabe-0.2
+>=dev-python/pep8-1.4.3
+>=dev-python/pyflakes-0.6.1-r1"
 
-DOCS="README CONTRIBUTORS.txt LICENSE"
+DOCS="README.rst CHANGES.rst CONTRIBUTORS.txt LICENSE"
