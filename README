@@ -10,7 +10,7 @@ This overlay is available in the default layman list. Just run:
 
     # layman -a laurentb
 
-The commits should now by signed by my GPG key.
+The commits should now be signed by my GPG key.
 
     # gpg --recv-key 9CC4445E
     # GIT_WORKDIR=/var/lib/layman/laurentb git log -n1 --show-signature
