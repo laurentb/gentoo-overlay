@@ -43,7 +43,7 @@ RDEPEND="${DEPEND}
 	dev-python/feedparser
 	secure-updates? ( app-crypt/gnupg )
 	fast-libs? ( dev-python/simplejson dev-python/pyyaml[libyaml] )
-	|| ( dev-lang/python:2.7 dev-lang/python:2.6 dev-python/simplejson )
+	virtual/python-json
 	|| ( ( <dev-python/lxml-3.0 ) ( >=dev-python/lxml-3.0 dev-python/cssselect ) )"
 
 DOCS="AUTHORS COPYING ChangeLog README INSTALL"
