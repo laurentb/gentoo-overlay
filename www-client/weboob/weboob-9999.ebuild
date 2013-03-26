@@ -24,7 +24,7 @@ else
 fi
 
 
-DESCRIPTION="Weboob (Web Out of Browsers) provides several applications to interact with a lot of websites."
+DESCRIPTION="Weboob (Web Outside of Browsers) provides several applications to interact with a lot of websites."
 HOMEPAGE="http://weboob.org/"
 
 LICENSE="AGPL-3"
