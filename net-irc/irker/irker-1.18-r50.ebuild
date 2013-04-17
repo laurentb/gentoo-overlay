@@ -41,6 +41,7 @@ src_install() {
 	newexe irkerhook.py irkerhook
 
 	newinitd "${FILESDIR}"/irkerd-init.d irker
+	newconfd "${FILESDIR}"/irkerd-conf.d irker
 }
 
 DOCS=(README NEWS COPYING hacking.txt install.txt security.txt filter-example.py

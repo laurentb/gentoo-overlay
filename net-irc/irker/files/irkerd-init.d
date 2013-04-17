@@ -5,10 +5,15 @@
 PIDFILE=/var/run/${SVCNAME}.pid
 
 start() {
+    OPTIONS=""
+    [ -n "${USERNAME}" ] && OPTIONS="${OPTIONS} -n ${USERNAME}"
+    [ -n "${PASSWORD}" ] && OPTIONS="${OPTIONS} -p ${PASSWORD}"
+    [ -n "${LOGFILE}" ] && OPTIONS="${OPTIONS} -l ${LOGFILE}"
     ebegin "Starting ${SVCNAME}"
     start-stop-daemon --start --background --exec /usr/bin/irkerd \
         --pidfile ${PIDFILE} --make-pidfile \
-        --user irker:irker
+        --user irker:irker \
+        -- ${OPTIONS}
     eend $?
 }
 
