@@ -29,6 +29,7 @@ src_compile() {
 
 src_install() {
 	base_src_install BINDIR="${D}/usr/bin"
+	doman spipe*/spipe*.1
 }
 
 DOCS=(BUILDING CHANGELOG COPYRIGHT README STYLE spipe.txt spiped.txt)
