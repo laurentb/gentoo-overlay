@@ -1,11 +1,11 @@
-# Copyright 2010-2012 Gentoo Foundation
+# Copyright 2010-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
 
 DESCRIPTION="Bépo keymap for the Linux Console"
 HOMEPAGE="http://bepo.fr/wiki/Console_linux"
-LICENSE="CCPL-Attribution-ShareAlike-3.0" # Also GFDL
+LICENSE="CC-BY-SA-3.0" # Also GFDL
 
 SRC_URI="http://download.tuxfamily.org/dvorak/keymaps/fr-dvorak-bepo-keymaps-${PV/_}.tgz"
 SLOT="0"
