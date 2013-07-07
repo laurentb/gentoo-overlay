@@ -19,6 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND=">=dev-python/fabric-1.4.0"
+RDEPEND=">=dev-python/fabric-1.6.0"
 
 DOCS="README.rst LICENSE docs/*"
