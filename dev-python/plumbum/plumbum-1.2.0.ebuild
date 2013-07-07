@@ -1,4 +1,4 @@
-# Copyright 2012 Gentoo Foundation
+# Copyright 2012-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -19,3 +19,5 @@ IUSE=""
 
 DEPEND="dev-python/six"
 RDEPEND="${DEPEND}"
+
+DOCS="*.rst LICENSE"
