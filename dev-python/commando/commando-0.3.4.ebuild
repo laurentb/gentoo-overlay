@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-PYTHON_DEPEND="2:2.6"
+PYTHON_DEPEND="2:2.7"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
@@ -31,11 +31,4 @@ IUSE=""
 DEPEND=""
 RDEPEND="virtual/python-argparse"
 
-DOCS="LICENSE README.markdown"
-
-PYTHON_MODNAME="${PN}.py"
-
-src_prepare() {
-	sed -i "/argparse/d" requirements.txt
-	rm -rf "${PN}.egg-info"
-}
+DOCS="LICENSE *.rst"
