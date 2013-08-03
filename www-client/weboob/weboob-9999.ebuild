@@ -1,8 +1,8 @@
-# Copyright 2010-2012 Gentoo Foundation
+# Copyright 2010-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-PYTHON_DEPEND="2:2.5"
+PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
@@ -19,8 +19,8 @@ elif [ "$PV" == "9998" ]; then
 	SRC_URI=""
 else
 	KEYWORDS="~x86 ~amd64"
-	SRC_URI="http://symlink.me/attachments/download/218/${PN}-0.f.tar.gz"
-	S="${WORKDIR}/${PN}-0.f"
+	SRC_URI="http://symlink.me/attachments/download/229/${PN}-0.g.tar.gz"
+	S="${WORKDIR}/${PN}-0.g"
 fi
 
 
@@ -31,16 +31,18 @@ LICENSE="AGPL-3"
 SLOT="0"
 IUSE="X +secure-updates fast-libs"
 
-DEPEND="X? ( >=dev-python/PyQt4-4.9.4-r1[X,phonon] )"
+DEPEND="X? ( >=dev-python/PyQt4-4.9.4-r1[X,phonon] )
+	dev-python/setuptools"
 RDEPEND="${DEPEND}
 	dev-python/prettytable
 	dev-python/html2text
 	dev-python/mechanize
 	dev-python/python-dateutil
 	dev-python/pyyaml
-	dev-python/imaging
+	virtual/python-imaging
 	dev-python/gdata
 	dev-python/feedparser
+	dev-python/termcolor
 	secure-updates? ( app-crypt/gnupg )
 	fast-libs? ( dev-python/simplejson dev-python/pyyaml[libyaml] )
 	virtual/python-json
