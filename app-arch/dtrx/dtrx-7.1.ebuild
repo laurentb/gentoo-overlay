@@ -1,12 +1,10 @@
-# Copyright 2009-2012 Gentoo Foundation
+# Copyright 2009-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-PYTHON_DEPEND="2:2.5"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
 
-inherit distutils
+PYTHON_COMPAT=( python{2_6,2_7} )
+inherit distutils-r1
 
 DESCRIPTION="Intelligently extract multiple archive types."
 HOMEPAGE="http://brettcsmith.org/2007/dtrx/"
@@ -32,3 +30,5 @@ RDEPEND="cab? ( app-arch/cabextract )
 	rpm? ( app-arch/rpm app-arch/cpio )
 	deb? ( sys-devel/binutils app-arch/tar app-arch/gzip )
 "
+
+DOCS=( COPYING README INSTALL NEWS )
