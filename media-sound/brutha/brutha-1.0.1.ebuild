@@ -1,12 +1,11 @@
-# Copyright 2012 Gentoo Foundation
+# Copyright 2012-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-PYTHON_DEPEND="2:2.6"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
 
-inherit distutils
+PYTHON_COMPAT=( python{2_6,2_7} )
+
+inherit distutils-r1
 
 DESCRIPTION="Sync FLAC music files to Ogg Vorbis (or keep lossy as-is)"
 HOMEPAGE="http://pypi.python.org/pypi/brutha"
@@ -17,9 +16,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND="virtual/python-argparse
-media-libs/mutagen
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
+RDEPEND="virtual/python-argparse[${PYTHON_USEDEP}]
+media-libs/mutagen[${PYTHON_USEDEP}]
 media-sound/sox"
 
-DOCS="README LICENSE"
+DOCS=( README LICENSE )
