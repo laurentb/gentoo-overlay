@@ -26,15 +26,12 @@ DEPEND=""
 
 RDEPEND="dev-python/pygobject
 	dev-python/configobj
-	dev-python/setuptools
 	dev-python/pybluez
-	>=dev-python/pygtk-2.0
-	"
+	>=dev-python/pygtk-2.0"
 
 S="${WORKDIR}/${P}.orig"
 
-src_install()
-{
+src_install() {
 	sed -i -r "s:\`dirname \\\$PRG\`:/usr/lib/${PN}:" start_proximity.sh
 	newbin start_proximity.sh blueproximity
 	insinto "/usr/lib/${PN}"
