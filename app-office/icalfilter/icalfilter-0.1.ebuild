@@ -1,12 +1,11 @@
-# Copyright 2011-2012 Gentoo Foundation
+# Copyright 2011-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-PYTHON_DEPEND="2:2.5"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
 
-inherit distutils
+PYTHON_COMPAT=( python{2_5,2_6,2_7} )
+
+inherit distutils-r1
 
 DESCRIPTION="Swiss-army knife for iCalendar files; provides grep and sed-like features."
 HOMEPAGE="http://dev.filyb.info/icalfilter/"
@@ -22,9 +21,9 @@ src_prepare() {
 	sed -i "s#share/${PN}/doc#share/doc/${PF}#" setup.py
 }
 
-DEPEND=""
-RDEPEND="dev-python/python-dateutil
-	dev-python/vobject
-	virtual/python-argparse"
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
+RDEPEND="dev-python/python-dateutil[${PYTHON_USEDEP}]
+	dev-python/vobject[${PYTHON_USEDEP}]
+	virtual/python-argparse[${PYTHON_USEDEP}]"
 
-DOCS="INSTALL.rst LICENSE AUTHORS CHANGELOG README.rst"
+DOCS=( INSTALL.rst LICENSE AUTHORS CHANGELOG README.rst )
