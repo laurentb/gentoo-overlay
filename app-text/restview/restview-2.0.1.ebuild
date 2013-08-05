@@ -2,10 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-PYTHON_DEPEND="2:2.6 3:3.2"
-SUPPORT_PYTHON_ABIS="1"
 
-inherit distutils
+PYTHON_COMPAT=( python{2_6,2_7,3_2} )
+
+inherit distutils-r1
 
 DESCRIPTION="A viewer for ReStructuredText documents that renders them on the fly."
 HOMEPAGE="http://mg.pov.lt/restview/
@@ -17,6 +17,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND="dev-python/docutils
-dev-python/pygments"
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
+RDEPEND="dev-python/docutils[${PYTHON_USEDEP}]
+dev-python/pygments[${PYTHON_USEDEP}]"
