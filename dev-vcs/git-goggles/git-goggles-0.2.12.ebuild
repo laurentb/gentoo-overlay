@@ -2,11 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-PYTHON_DEPEND="2:2.5"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+PYTHON_COMPAT=( python{2_5,2_6,2_7} )
 
-inherit distutils
+inherit distutils-r1
 
 DESCRIPTION="A git utility to manage your source code as it evolves through its development lifecycle"
 HOMEPAGE="https://github.com/nowells/git-goggles
@@ -19,12 +17,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="dev-python/termcolor dev-vcs/git"
+RDEPEND="dev-python/termcolor[${PYTHON_USEDEP}]
+dev-vcs/git"
 
-DOCS="AUTHORS INSTALL LICENSE README.rst docs/*.rst"
+DOCS=( AUTHORS INSTALL LICENSE README.rst docs/index.rst docs/overview.rst )
 
-PYTHON_MODNAME="${PN/-/}"
-
-src_install() {
-	distutils_src_install --install-scripts="/usr/libexec/git-core"
+python_install() {
+	distutils-r1_python_install --install-scripts="/usr/libexec/git-core"
 }
