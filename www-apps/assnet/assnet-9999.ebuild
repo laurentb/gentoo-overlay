@@ -11,7 +11,7 @@ inherit base distutils
 	&& EGIT_REPO_URI="git://git.symlink.me/pub/laurentb/${PN}.git" \
 	&& inherit git-2
 
-DESCRIPTION="Authenticated Social Storage Made for Mothers"
+DESCRIPTION="The Asocial Sharing Network"
 HOMEPAGE="http://assnet.org/"
 SRC_URI=""
 
@@ -25,7 +25,7 @@ RDEPEND="dev-python/webob
 	virtual/python-argparse
 	dev-python/paste
 	dev-python/mako
-	dev-python/imaging
+	virtual/python-imaging
 	dev-python/PyRSS2Gen
 	dev-python/python-dateutil"
 
