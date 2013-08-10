@@ -1,22 +1,23 @@
-# Copyright 2012 Gentoo Foundation
+# Copyright 2012-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-PYTHON_DEPEND="2:2.5"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
 
-inherit distutils
+PYTHON_COMPAT=( python{2_5,2_6,2_7} )
+
+inherit distutils-r1
 
 DESCRIPTION="Twisted Jabber support library"
-HOMEPAGE="http://wokkel.ik.nu/ http://pypi.python.org/pypi/wokkel"
-SRC_URI="http://wokkel.ik.nu/releases/${PV}/${P}.tar.gz mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+HOMEPAGE="http://wokkel.ik.nu/
+https://pypi.python.org/pypi/wokkel"
+SRC_URI="http://wokkel.ik.nu/releases/${PV}/${P}.tar.gz
+mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND="dev-python/python-dateutil
->=dev-python/twisted-10.0.0"
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
+RDEPEND="dev-python/python-dateutil[${PYTHON_USEDEP}]
+dev-python/twisted-core[${PYTHON_USEDEP}]"
