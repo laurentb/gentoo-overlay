@@ -1,12 +1,11 @@
-# Copyright 2012 Gentoo Foundation
+# Copyright 2012-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-PYTHON_DEPEND="2:2.5"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
 
-inherit distutils
+PYTHON_COMPAT=( python{2_5,2_6,2_7} )
+
+inherit distutils-r1
 
 DESCRIPTION="gcp (Goffi's cp) is a file copier with queuing, progress, FAT
 support."
@@ -19,10 +18,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="dev-python/progressbar"
+RDEPEND="dev-python/progressbar[${PYTHON_USEDEP}]"
 
 src_prepare() {
 	sed -i "s#.\+share/doc.\+#],#" setup.py
 }
 
-DOCS="README CHANGELOG COPYING"
+DOCS=( README CHANGELOG COPYING )
