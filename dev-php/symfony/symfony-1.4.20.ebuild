@@ -4,7 +4,7 @@
 EAPI=5
 inherit php-pear-lib-r1
 
-DESCRIPTION="Open-source PHP5 professional web framework"
+DESCRIPTION="Open-source PHP5 web framework"
 HOMEPAGE="http://www.symfony-project.com/"
 SRC_URI="http://pear.symfony-project.com/get/${P}.tgz"
 
