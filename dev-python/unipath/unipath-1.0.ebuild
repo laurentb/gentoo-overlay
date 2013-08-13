@@ -2,11 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-PYTHON_DEPEND="2:2.6 3:3.2"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="2.5 3.1"
 
-inherit distutils
+PYTHON_COMPAT=( python{2_6,2_7,3_2} )
+
+inherit distutils-r1
 
 MY_PN="Unipath"
 MY_P="${MY_PN}-${PV}"
@@ -14,7 +13,7 @@ S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="Object-oriented alternative to os/os.path/shutil"
 HOMEPAGE="http://sluggo.scrapping.cc/python/unipath/
-http://pypi.python.org/pypi/Unipath"
+https://pypi.python.org/pypi/Unipath"
 SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz
 http://sluggo.scrapping.cc/python/unipath/${MY_P}.tar.gz"
 
@@ -26,4 +25,4 @@ IUSE=""
 DEPEND=""
 RDEPEND=""
 
-DOCS="README.rst README.html CHANGES BUGS.txt"
+DOCS=( README.rst README.html CHANGES BUGS.txt )
