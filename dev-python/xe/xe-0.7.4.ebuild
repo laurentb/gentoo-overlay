@@ -1,12 +1,11 @@
-# Copyright 2012 Gentoo Foundation
+# Copyright 2012-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-PYTHON_DEPEND="2:2.5"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
 
-inherit distutils
+PYTHON_COMPAT=( python{2_5,2_6,2_7} )
+
+inherit distutils-r1
 
 DESCRIPTION="XML elements is a Python library designed
 to make it easy to work with XML"
@@ -22,7 +21,7 @@ IUSE=""
 DEPEND=""
 RDEPEND=""
 
-PYTHON_MODNAME="${PN}.py"
+DOCS=( README.txt TODO psf.txt )
 
 src_prepare() {
 	sed -i '/not possible to reach this line/d' xe.py
