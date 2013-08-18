@@ -1,15 +1,14 @@
-# Copyright 2012 Gentoo Foundation
+# Copyright 2012-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-PYTHON_DEPEND="2:2.6"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
 
-inherit distutils
+PYTHON_COMPAT=( python{2_6,2_7} )
+
+inherit distutils-r1
 
 DESCRIPTION="Notify of rtorrent events, through RSS or IRC"
-HOMEPAGE="http://pypi.python.org/pypi/rtorrent-notify
+HOMEPAGE="https://pypi.python.org/pypi/rtorrent-notify
 http://git.p.engu.in/laurentb/rtorrent-notify/"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
@@ -18,8 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND="virtual/python-argparse
-dev-python/PyRSS2Gen"
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
+RDEPEND="virtual/python-argparse[${PYTHON_USEDEP}]
+dev-python/PyRSS2Gen[${PYTHON_USEDEP}]"
 
-DOCS="LICENSE README"
+DOCS=( LICENSE README )
