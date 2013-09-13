@@ -47,7 +47,6 @@ RDEPEND="${DEPEND}
 		dev-python/simplejson[${PYTHON_USEDEP}]
 		dev-python/pyyaml[libyaml,${PYTHON_USEDEP}]
 	)
-	virtual/python-json[${PYTHON_USEDEP}]
 	>=dev-python/lxml-3.0[${PYTHON_USEDEP}]
 	dev-python/cssselect[${PYTHON_USEDEP}]"
 
