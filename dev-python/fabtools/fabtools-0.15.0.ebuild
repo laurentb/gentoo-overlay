@@ -9,7 +9,7 @@ inherit distutils-r1
 
 DESCRIPTION="Tools for writing awesome Fabric files"
 HOMEPAGE="https://github.com/ronnix/fabtools
-http://pypi.python.org/pypi/fabtools"
+https://pypi.python.org/pypi/fabtools"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"

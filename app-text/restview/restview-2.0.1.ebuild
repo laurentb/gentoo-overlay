@@ -9,7 +9,7 @@ inherit distutils-r1
 
 DESCRIPTION="A viewer for ReStructuredText documents that renders them on the fly."
 HOMEPAGE="http://mg.pov.lt/restview/
-http://pypi.python.org/pypi/restview"
+https://pypi.python.org/pypi/restview"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"

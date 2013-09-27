@@ -15,7 +15,7 @@ inherit distutils-r1
 
 DESCRIPTION="Python Qt4 frontend for git filter-branch and git cherry-pick."
 HOMEPAGE="https://github.com/mike-perdide/gitbuster
-http://pypi.python.org/pypi/gitbuster"
+https://pypi.python.org/pypi/gitbuster"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"

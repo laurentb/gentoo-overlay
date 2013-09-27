@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python{2_6,2_7} )
 inherit distutils-r1
 
 DESCRIPTION="Sync FLAC music files to Ogg Vorbis (or keep lossy as-is)"
-HOMEPAGE="http://pypi.python.org/pypi/brutha"
+HOMEPAGE="https://pypi.python.org/pypi/brutha"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2+"

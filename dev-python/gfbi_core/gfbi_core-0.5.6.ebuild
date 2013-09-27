@@ -15,7 +15,7 @@ inherit distutils-r1
 
 DESCRIPTION="Core files for interactive git filter branch."
 HOMEPAGE="https://github.com/mike-perdide/gfbi_core
-http://pypi.python.org/pypi/gfbi_core"
+https://pypi.python.org/pypi/gfbi_core"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"

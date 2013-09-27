@@ -9,7 +9,7 @@ inherit distutils-r1
 
 DESCRIPTION="SàT extension widgets for Urwid"
 HOMEPAGE="http://wiki.goffi.org/wiki/Urwid-satext
-http://pypi.python.org/pypi/urwid_satext"
+https://pypi.python.org/pypi/urwid_satext"
 SRC_URI="ftp://ftp.goffi.org/urwid-satext/${P}.tar.bz2
 mirror://pypi/${PN:0:1}/${PN}/${P}.tar.bz2"
 

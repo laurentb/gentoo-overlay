@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3} )
 inherit distutils-r1
 
 DESCRIPTION="Shell combinators library"
-HOMEPAGE="http://pypi.python.org/pypi/plumbum
+HOMEPAGE="https://pypi.python.org/pypi/plumbum
 http://plumbum.readthedocs.org/"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 

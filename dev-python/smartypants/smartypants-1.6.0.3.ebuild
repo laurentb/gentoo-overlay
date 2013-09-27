@@ -9,7 +9,7 @@ inherit distutils-r1
 
 DESCRIPTION="SmartyPants: a smart-quotes plugin."
 HOMEPAGE="http://web.chad.org/projects/smartypants.py/
-http://pypi.python.org/pypi/smartypants/"
+https://pypi.python.org/pypi/smartypants/"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 KEYWORDS="~amd64 ~x86"
 
