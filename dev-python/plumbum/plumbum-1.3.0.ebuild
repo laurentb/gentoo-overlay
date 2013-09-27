@@ -20,4 +20,4 @@ IUSE=""
 DEPEND="dev-python/six[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
 
-DOCS="*.rst LICENSE"
+DOCS=( README.rst LICENSE )
