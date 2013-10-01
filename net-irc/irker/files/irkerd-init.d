@@ -1,8 +1,8 @@
 #!/sbin/runscript
-# Copyright 2012 Gentoo Foundation
+# Copyright 2012-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-PIDFILE=/var/run/${SVCNAME}.pid
+PIDFILE=/run/${SVCNAME}.pid
 
 start() {
     OPTIONS=""
@@ -12,7 +12,7 @@ start() {
     ebegin "Starting ${SVCNAME}"
     start-stop-daemon --start --background --exec /usr/bin/irkerd \
         --pidfile ${PIDFILE} --make-pidfile \
-        --user irker:irker \
+        --user nobody:nobody \
         -- ${OPTIONS}
     eend $?
 }
