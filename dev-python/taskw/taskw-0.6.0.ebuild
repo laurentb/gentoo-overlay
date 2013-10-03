@@ -16,8 +16,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="app-misc/task
-dev-python/six[${PYTHON_USEDEP}]"
+	dev-python/six[${PYTHON_USEDEP}]
+	python_targets_python2_6? ( dev-python/ordereddict[python_targets_python2_6] )"
 
 DOCS=( README.rst LICENSE.txt )
