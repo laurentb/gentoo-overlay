@@ -23,7 +23,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/PyQt4[$PYTHON_USEDEP]
 >=dev-python/gfbi_core-0.5.6[$PYTHON_USEDEP]
 virtual/python-argparse[$PYTHON_USEDEP]"

@@ -16,7 +16,7 @@ IUSE=""
 LICENSE="BSD"
 SLOT="0"
 
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND=">=dev-python/django-1.2[${PYTHON_USEDEP}]"
-DEPEND=""
 
 DOCS=( README.rst LICENSE CHANGES )

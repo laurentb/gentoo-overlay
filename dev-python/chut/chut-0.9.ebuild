@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/six[${PYTHON_USEDEP}]
 dev-python/docopts[${PYTHON_USEDEP}]
 dev-python/ConfigObject[${PYTHON_USEDEP}]"

@@ -16,16 +16,17 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=">=dev-python/cffi-0.4.2[${PYTHON_USEDEP}]
->=sys-kernel/linux-headers-3.3
->=sys-libs/glibc-2.14
-sys-fs/btrfs-progs"
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
+	>=dev-python/cffi-0.4.2[${PYTHON_USEDEP}]
+	>=sys-kernel/linux-headers-3.3
+	>=sys-libs/glibc-2.14
+	sys-fs/btrfs-progs"
 RDEPEND="${DEPEND}
-virtual/python-argparse[${PYTHON_USEDEP}]
-dev-python/pyxdg[${PYTHON_USEDEP}]
-dev-python/sqlalchemy[${PYTHON_USEDEP}]
-dev-python/alembic[${PYTHON_USEDEP}]
-dev-python/contextlib2[${PYTHON_USEDEP}]"
+	virtual/python-argparse[${PYTHON_USEDEP}]
+	dev-python/pyxdg[${PYTHON_USEDEP}]
+	dev-python/sqlalchemy[${PYTHON_USEDEP}]
+	dev-python/alembic[${PYTHON_USEDEP}]
+	dev-python/contextlib2[${PYTHON_USEDEP}]"
 
 DOCS=( COPYING README.rst )
 

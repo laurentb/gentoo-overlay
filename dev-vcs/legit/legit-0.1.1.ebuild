@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="zsh-completion"
 
-DEPEND=""
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND=">=dev-python/git-python-0.3.0[$PYTHON_USEDEP]
 >=dev-python/clint-0.2.4[$PYTHON_USEDEP]
 >=dev-python/smmap-0.8.2[$PYTHON_USEDEP]"

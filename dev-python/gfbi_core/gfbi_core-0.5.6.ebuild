@@ -23,7 +23,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND=">=dev-python/git-python-0.3.1[${PYTHON_USEDEP}]"
 
 DOCS=( AUTHORS.txt CHANGELOG LICENSE.txt README.rst )

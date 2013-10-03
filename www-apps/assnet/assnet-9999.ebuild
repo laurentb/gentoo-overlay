@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=""
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/webob[${PYTHON_USEDEP}]
 	virtual/python-argparse[${PYTHON_USEDEP}]
 	dev-python/paste[${PYTHON_USEDEP}]
