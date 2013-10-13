@@ -11,6 +11,16 @@ if [ "$PV" == "9999" ]; then
 	inherit git-2
 	SRC_URI=""
 elif [ "$PV" == "9998" ]; then
+	EGIT_REPO_URI="git://github.com/LExpress/symfony1.git https://github.com/LExpress/symfony1.git"
+	EGIT_BRANCH="1.4"
+	inherit git-2
+	SRC_URI=""
+elif [ "$PV" == "9997" ]; then
+	EGIT_REPO_URI="git://github.com/chok/symfony1.git https://github.com/chok/symfony1.git"
+	EGIT_BRANCH="1.4"
+	inherit git-2
+	SRC_URI=""
+elif [ "$PV" == "9996" ]; then
 	EGIT_REPO_URI="git://github.com/symfony/symfony1.git https://github.com/symfony/symfony1.git"
 	EGIT_BRANCH="1.4"
 	inherit git-2
