@@ -20,4 +20,4 @@ IUSE=""
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND=""
 
-DOCS=( LICENSE )
+DOCS=( README.rst LICENSE )
