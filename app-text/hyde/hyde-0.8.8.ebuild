@@ -37,6 +37,8 @@ RDEPEND="virtual/python-argparse[${PYTHON_USEDEP}]
 	>=dev-python/markupsafe-0.18[${PYTHON_USEDEP}]
 	>=dev-python/pygments-1.6[${PYTHON_USEDEP}]
 	>=dev-python/typogrify-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/jinja-2.7[${PYTHON_USEDEP}]"
+	>=dev-python/jinja-2.7.1[${PYTHON_USEDEP}]
+	<dev-python/smartypants-1.8[${PYTHON_USEDEP}]"
+# smartypants: https://github.com/hyde/hyde/issues/229
 
 DOCS=( LICENSE README.rst AUTHORS.rst CHANGELOG.rst )
