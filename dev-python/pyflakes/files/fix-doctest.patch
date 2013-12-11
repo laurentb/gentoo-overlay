@@ -1,0 +1,65 @@
+From 6e5b0d1cc529223f5ebebf676f8c6020ab0a6064 Mon Sep 17 00:00:00 2001
+From: Laurent Bachelier <laurent@bachelier.name>
+Date: Thu, 4 Jul 2013 01:06:36 +0200
+Subject: [PATCH 1/2] Add failing doctest syntax test
+
+---
+ pyflakes/test/test_doctests.py | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+
+diff --git a/pyflakes/test/test_doctests.py b/pyflakes/test/test_doctests.py
+index b466375..d7df779 100644
+--- a/pyflakes/test/test_doctests.py
++++ b/pyflakes/test/test_doctests.py
+@@ -207,3 +207,22 @@ def bar(self):
+                     >>> Foo
+                 '''
+         """)
++
++    def test_noOffsetSyntaxErrorInDoctest(self):
++        exceptions = super(Test, self).flakes(
++            '''
++            def buildurl(base, *args, **kwargs):
++                """
++                >>> buildurl('/blah.php', ('a', '&'), ('b', '=')
++                '/blah.php?a=%26&b=%3D'
++                >>> buildurl('/blah.php', a='&', 'b'='=')
++                '/blah.php?b=%3D&a=%26'
++                """
++                pass
++            ''',
++            m.DoctestSyntaxError,
++            m.DoctestSyntaxError).messages
++        exc = exceptions[0]
++        self.assertEqual(exc.lineno, 4)
++        exc = exceptions[1]
++        self.assertEqual(exc.lineno, 6)
+-- 
+1.8.5.1
+
+
+From b1c3177b33e78b13c6f3b135f0f29ae201e4cd6c Mon Sep 17 00:00:00 2001
+From: Laurent Bachelier <laurent@bachelier.name>
+Date: Thu, 4 Jul 2013 01:06:57 +0200
+Subject: [PATCH 2/2] Fix crash when no "offset" in doctest syntax error
+
+---
+ pyflakes/checker.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/pyflakes/checker.py b/pyflakes/checker.py
+index d59b8c9..92cd51f 100644
+--- a/pyflakes/checker.py
++++ b/pyflakes/checker.py
+@@ -578,7 +578,7 @@ def handleDoctests(self, node):
+             except SyntaxError:
+                 e = sys.exc_info()[1]
+                 position = (node_lineno + example.lineno + e.lineno,
+-                            example.indent + 4 + e.offset)
++                            example.indent + 4 + (e.offset or 0))
+                 self.report(messages.DoctestSyntaxError, node, position)
+             else:
+                 self.offset = (node_offset[0] + node_lineno + example.lineno,
+-- 
+1.8.5.1
+

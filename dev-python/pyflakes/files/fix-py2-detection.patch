@@ -1,0 +1,32 @@
+From d7eba0f200139c38ca72eb664e076fd45adf54ce Mon Sep 17 00:00:00 2001
+From: Timothy Edmund Crosley <timothy.crosley@gmail.com>
+Date: Sun, 1 Dec 2013 12:33:20 -0500
+Subject: [PATCH] Update checker.py
+
+There is a standard way to determine the version of Python2, using builtins as a check, breaks if any modules included in users installation override this module. For example if they have any utilities installed that use pies: https://github.com/timothycrosley/pies
+---
+ pyflakes/checker.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/pyflakes/checker.py b/pyflakes/checker.py
+index d59b8c9..61ea9dd 100644
+--- a/pyflakes/checker.py
++++ b/pyflakes/checker.py
+@@ -7,12 +7,12 @@
+ import doctest
+ import os
+ import sys
++
++PY2 = sys.version_info[0] == 2
+ try:
+     builtin_vars = dir(__import__('builtins'))
+-    PY2 = False
+ except ImportError:
+     builtin_vars = dir(__import__('__builtin__'))
+-    PY2 = True
+ 
+ try:
+     import ast
+-- 
+1.8.5.1
+
