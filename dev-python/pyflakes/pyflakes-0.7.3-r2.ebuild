@@ -25,5 +25,5 @@ python_test() {
 
 src_prepare () {
 	epatch "${FILESDIR}/fix-doctest.patch"
-	epatch "${FILESDIR}/fix-py2-detection.patch"
+	epatch "${FILESDIR}/sanitize-python2-check.patch"
 }
