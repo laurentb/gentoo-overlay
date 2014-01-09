@@ -1,4 +1,4 @@
-# Copyright 2013 Gentoo Foundation
+# Copyright 2013-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -20,4 +20,4 @@ IUSE=""
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND=">=dev-python/smartypants-1.6.0.3[${PYTHON_USEDEP}]"
 
-DOCS=( INSTALL.txt LICENSE.txt )
+DOCS=( README.rst LICENSE.txt )
