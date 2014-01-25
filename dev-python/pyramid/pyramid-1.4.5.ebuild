@@ -14,7 +14,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="repoze"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+development"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
@@ -26,4 +26,5 @@ RDEPEND="${DEPEND}
 	dev-python/venusian[${PYTHON_USEDEP}]
 	dev-python/webob[${PYTHON_USEDEP}]
 	net-zope/zope-deprecation[${PYTHON_USEDEP}]
-	net-zope/zope-interface[${PYTHON_USEDEP}]"
+	net-zope/zope-interface[${PYTHON_USEDEP}]
+	development? ( dev-python/waitress[${PYTHON_USEDEP}] )"
