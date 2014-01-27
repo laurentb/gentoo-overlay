@@ -12,7 +12,7 @@ This overlay is available in the default layman list. Just run:
 
 The commits should now be signed by my GPG key.
 
-    # gpg --recv-key 9CC4445E
+    # gpg --recv-key 0x3463EA5A518A9C75
     # GIT_DIR=/var/lib/layman/laurentb/.git git log -n1 --show-signature
 
 You can check the authenticity of my key by various means, including:
