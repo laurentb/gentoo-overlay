@@ -18,6 +18,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND=">=dev-python/smartypants-1.6.0.3[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/smartypants-1.8[${PYTHON_USEDEP}]"
 
 DOCS=( README.rst LICENSE.txt )

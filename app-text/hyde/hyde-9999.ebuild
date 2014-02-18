@@ -1,4 +1,4 @@
-# Copyright 2012-2013 Gentoo Foundation
+# Copyright 2012-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -37,8 +37,17 @@ RDEPEND="virtual/python-argparse[${PYTHON_USEDEP}]
 	>=dev-python/markupsafe-0.18[${PYTHON_USEDEP}]
 	>=dev-python/pygments-1.6[${PYTHON_USEDEP}]
 	>=dev-python/typogrify-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/jinja-2.7.1[${PYTHON_USEDEP}]
-	<dev-python/smartypants-1.8[${PYTHON_USEDEP}]"
+	>=dev-python/jinja-2.7.1[${PYTHON_USEDEP}]"
 # smartypants: https://github.com/hyde/hyde/issues/229
+
+src_prepare() {
+	# incorrect, this is for typogrify only
+	sed -i '/smartypants/d' setup.py requirements.txt
+	# crap
+	sed -i '/distribute_setup/d' setup.py
+	# stupid
+	sed -i 's/==/>=/' requirements.txt
+	sed -i "s/'\([a-z0-9]\+\)==/'\1>=/" setup.py
+}
 
 DOCS=( LICENSE README.rst AUTHORS.rst CHANGELOG.rst )

@@ -1,4 +1,4 @@
-# Copyright 2012-2013 Gentoo Foundation
+# Copyright 2012-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -11,7 +11,7 @@ DESCRIPTION="SmartyPants: a smart-quotes plugin."
 HOMEPAGE="https://bitbucket.org/livibetter/smartypants.py
 https://pypi.python.org/pypi/smartypants"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 
 LICENSE="BSD"
 SLOT="0"
