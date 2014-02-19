@@ -3,7 +3,7 @@
 
 EAPI=5
 
-inherit cmake-utils eutils systemd
+inherit cmake-utils eutils user systemd
 [ "$PV" == "9999" ] \
 	&& EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}.git" \
 	&& inherit git-2
