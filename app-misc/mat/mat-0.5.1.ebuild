@@ -1,4 +1,4 @@
-# Copyright 2012-2013 Gentoo Foundation
+# Copyright 2012-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -9,7 +9,7 @@ inherit distutils-r1
 
 DESCRIPTION="Metadata Anonymisation Toolkit"
 HOMEPAGE="https://mat.boum.org/"
-SRC_URI="https://mat.boum.org/files/${P}.tar.gz"
+SRC_URI="https://mat.boum.org/files/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
