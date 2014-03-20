@@ -22,5 +22,10 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/urwid[${PYTHON_USEDEP}]"
 
 src_prepare() {
+	sed -i '/distribute_setup/d' setup.py
+	sed -i '/use_setuptools/d' setup.py
+
 	sed -i "s#% name#% '${PF}'#" setup.py
 }
+
+DOCS=( CHANGELOG COPYING COPYING.LESSER README )
