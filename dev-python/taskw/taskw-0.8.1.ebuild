@@ -1,4 +1,4 @@
-# Copyright 2012-2013 Gentoo Foundation
+# Copyright 2012-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -18,6 +18,8 @@ IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="app-misc/task
+	dev-python/python-dateutil[${PYTHON_USEDEP}]
+	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 	python_targets_python2_6? ( dev-python/ordereddict[python_targets_python2_6] )"
 
