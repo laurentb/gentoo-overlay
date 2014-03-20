@@ -1,4 +1,4 @@
-# Copyright 2012-2013 Gentoo Foundation
+# Copyright 2012-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -18,13 +18,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND=""
-
-src_prepare() {
-	# https://github.com/kennethreitz/clint/issues/33
-	epatch "${FILESDIR}"/fix-data-files.patch
-	# https://github.com/kennethreitz/clint/pull/95
-	epatch "${FILESDIR}"/use-print-function.patch
-}
+RDEPEND="dev-python/args[${PYTHON_USEDEP}]"
 
 DOCS=( HISTORY.rst README.rst LICENSE AUTHORS NOTICE )
