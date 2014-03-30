@@ -25,4 +25,5 @@ virtual/python-argparse[${PYTHON_USEDEP}]
 src_prepare() {
 	sed -i "s/'argparse>=1.1', //" setup.py
 	sed -i "s/calabash==/calabash>=/" setup.py
+	sed -i "/use_setuptools/d" setup.py
 }
