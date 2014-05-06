@@ -21,4 +21,4 @@ sys-apps/findutils
 sys-process/parallel
 dev-db/sqlite:3"
 
-DOCS=(CHANGELOG INSTALL LICENSE)
+DOCS=(INSTALL LICENSE)
