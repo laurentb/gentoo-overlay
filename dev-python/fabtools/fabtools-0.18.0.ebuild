@@ -1,4 +1,4 @@
-# Copyright 2012-2013 Gentoo Foundation
+# Copyright 2012-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -18,6 +18,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND=">=dev-python/fabric-1.6.0[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/fabric-1.7.0[${PYTHON_USEDEP}]"
 
 DOCS=( README.rst LICENSE docs/. )
