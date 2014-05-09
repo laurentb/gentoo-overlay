@@ -23,7 +23,8 @@ RDEPEND="${DEPEND}
 exif? ( media-libs/exiftool )
 audio? ( media-libs/mutagen[${PYTHON_USEDEP}] )
 pdf? ( dev-python/python-poppler[${PYTHON_USEDEP}] dev-python/pycairo[${PYTHON_USEDEP}] dev-python/pdfrw[${PYTHON_USEDEP}] )
-gtk? ( dev-python/pygtk[${PYTHON_USEDEP}] )"
+gtk? ( dev-python/pygtk[${PYTHON_USEDEP}] )
+dev-python/pygobject:3"
 
 src_prepare() {
 	sed -i "s#share/doc/${PN}#share/doc/${PF}#" setup.py
