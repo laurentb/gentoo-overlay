@@ -19,7 +19,7 @@ elif [ "$PV" == "9998" ]; then
 else
 	KEYWORDS="~x86 ~amd64"
 	MY_P="${PN}-$(version_format_string '$1.$2')"
-	SRC_URI="http://symlink.me/attachments/download/235/${MY_P}.tar.gz"
+	SRC_URI="http://symlink.me/attachments/download/246/${MY_P}.tar.gz"
 	S="${WORKDIR}/${MY_P}"
 fi
 
@@ -48,7 +48,8 @@ RDEPEND="${DEPEND}
 		dev-python/pyyaml[libyaml,${PYTHON_USEDEP}]
 	)
 	>=dev-python/lxml-3.0[${PYTHON_USEDEP}]
-	dev-python/cssselect[${PYTHON_USEDEP}]"
+	dev-python/cssselect[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.2[${PYTHON_USEDEP}]"
 
 DOCS=( AUTHORS COPYING ChangeLog README INSTALL )
 
