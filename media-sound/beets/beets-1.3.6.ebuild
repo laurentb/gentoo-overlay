@@ -39,7 +39,9 @@ RDEPEND="
 	lastgenre? ( dev-python/pylast[${PYTHON_USEDEP}] )
 	mpdstats? ( dev-python/python-mpd[${PYTHON_USEDEP}] )
 	replaygain? (
-		media-libs/gstreamer:1.0
+	    dev-python/gst-python:1.0
+		media-plugins/gst-plugins-mad:1.0
+		media-libs/gst-plugins-good:1.0
 		|| ( media-sound/mp3gain media-sound/aacgain )
 	)
 	web? ( dev-python/flask[${PYTHON_USEDEP}] )
