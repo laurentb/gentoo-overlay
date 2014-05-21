@@ -53,6 +53,14 @@ RDEPEND="${DEPEND}
 
 DOCS=( AUTHORS COPYING ChangeLog README INSTALL )
 
+src_prepare() {
+	distutils-r1_src_prepare
+	if [ "$PV" == "0i" ]; then
+		epatch "${FILESDIR}/fix-http-error.patch"
+		epatch "${FILESDIR}/fix-python-277.patch"
+	fi
+}
+
 python_configure_all() {
 	mydistutilsargs=(
 		$(usex X '--qt' '--no-qt')
