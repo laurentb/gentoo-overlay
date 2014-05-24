@@ -6,7 +6,7 @@ EAPI="5"
 PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="sqlite"
 
-inherit distutils-r1 eutils
+inherit bash-completion-r1 distutils-r1 eutils
 
 MY_PV=${PV/_beta/-beta.}
 MY_P=${PN}-${MY_PV}
@@ -18,7 +18,7 @@ HOMEPAGE="http://beets.radbox.org/ http://pypi.python.org/pypi/beets"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 LICENSE="MIT"
-IUSE="bpd chroma convert discogs doc echonest lastgenre mpdstats replaygain test web"
+IUSE="bpd chroma convert discogs doc echonest info lastgenre mpdstats replaygain test web"
 
 # beatport, bench and echonest_tempo are not listed in the beets plugin docs. Guess they are mandatory.
 RDEPEND="
@@ -35,13 +35,13 @@ RDEPEND="
     discogs? ( dev-python/discogs-client[${PYTHON_USEDEP}] )
     doc? ( dev-python/sphinx )
     echonest? ( dev-python/pyechonest[${PYTHON_USEDEP}] )
+	info? ( || ( media-sound/id3v2 media-sound/mp3info ) )
     lastgenre? ( dev-python/pylast[${PYTHON_USEDEP}] )
     mpdstats? ( dev-python/python-mpd[${PYTHON_USEDEP}] )
     replaygain? (
         dev-python/gst-python:1.0
         media-plugins/gst-plugins-mad:1.0
         media-libs/gst-plugins-good:1.0
-        || ( media-sound/mp3gain media-sound/aacgain )
     )
     web? ( dev-python/flask[${PYTHON_USEDEP}] )
 "
@@ -53,7 +53,7 @@ S=${WORKDIR}/${MY_P}
 
 src_prepare() {
     # remove plugins that do not have appropriate dependencies installed
-    for flag in bpd chroma convert discogs echonest lastgenre mpdstats \
+    for flag in bpd chroma convert discogs echonest info lastgenre mpdstats \
                 replaygain web;do
         if ! use $flag ; then
             rm -r beetsplug/${flag}.py || \
@@ -91,37 +91,18 @@ python_test() {
 }
 
 python_install_all() {
-    doman man/beet.1 man/beetsconfig.5
+	doman man/beet.1 man/beetsconfig.5
 
     use doc && dohtml -r docs/_build/html/
+
+	distutils-r1_python_install_all
+
+	newbashcomp "${PN}/ui/completion_base.sh" ${PN}
 }
 
 pkg_postinst() {
-    elog "The following plugins has been installed:"
-    elog "    FromFilename Plugin"
-    elog "    Lyrics Plugin"
-    elog "    MBSync Plugin"
-    elog "    FetchArt Plugin"
-    elog "    EmbedArt Plugin"
-    elog "    Scrub Plugin"
-    elog "    Zero Plugin"
-    elog "    FtInTitle Plugin"
-    elog "    Key Finder Plugin"
-    elog "    Inline Plugin"
-    elog "    Rewrite Plugin"
-    elog "    The Plugin"
-    elog "    Bucket Plugin"
-    elog "    MPDUpdate Plugin"
-    elog "    ImportFeeds Plugin"
-    elog "    Smart Playlist Plugin"
-    elog "    Play Plugin"
-    elog "    Random Plugin"
-    elog "    Fuzzy Search Plugin"
-    elog "    MusicBrainz Collection Plugin"
-    elog "    IHate Plugin"
-    elog "    Info Plugin"
-    elog "    Missing Plugin"
-    elog "    Duplicates Plugin"
+    elog "The following plugins has been installed without extra dependencies:"
+    elog "FromFilename, Lyrics, MBSync, FetchArt, EmbedArt, Scrub, Zero, FtInTitle, Key Finder, Inline, Rewrite, The, Bucket, MPDUpdate, ImportFeeds, Smart Playlist, Play, Random, Fuzzy Search, MusicBrainz Collection, IHate, Missing, Duplicates"
     elog "The remaining plugins require dependiencies and are USE flag driven."
     elog "Learn more about beets plugins at http://beets.readthedocs.org/en/v${PV}/plugins/"
 }
