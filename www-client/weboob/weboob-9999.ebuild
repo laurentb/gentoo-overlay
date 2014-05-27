@@ -28,7 +28,7 @@ HOMEPAGE="http://weboob.org/"
 
 LICENSE="AGPL-3"
 SLOT="0"
-IUSE="X +secure-updates fast-libs"
+IUSE="X +secure-updates +sni fast-libs"
 
 DEPEND="X? ( >=dev-python/PyQt4-4.9.4-r1[X,phonon,${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]"
@@ -49,9 +49,22 @@ RDEPEND="${DEPEND}
 	)
 	>=dev-python/lxml-3.0[${PYTHON_USEDEP}]
 	dev-python/cssselect[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.2[${PYTHON_USEDEP}]"
+	>=dev-python/requests-2.2[${PYTHON_USEDEP}]
+	sni? (
+		dev-python/pyopenssl[${PYTHON_USEDEP}]
+		dev-python/ndg-httpsclient[${PYTHON_USEDEP}]
+		dev-python/pyasn1[${PYTHON_USEDEP}]
+	)"
 
 DOCS=( AUTHORS COPYING ChangeLog README INSTALL )
+
+src_prepare() {
+	distutils-r1_src_prepare
+	if [ "$PV" == "0i" ]; then
+		epatch "${FILESDIR}/fix-http-error.patch"
+		epatch "${FILESDIR}/fix-python-277.patch"
+	fi
+}
 
 python_configure_all() {
 	mydistutilsargs=(
