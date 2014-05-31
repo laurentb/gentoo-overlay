@@ -1,4 +1,4 @@
-# Copyright 2012-2013 Gentoo Foundation
+# Copyright 2012-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -17,7 +17,8 @@ IUSE=""
 
 DEPEND="app-text/docbook-xml-dtd:4.1.2
 	app-text/xmlto"
-RDEPEND="${PYTHON_DEPS}"
+RDEPEND="${PYTHON_DEPS}
+virtual/python-argparse[${PYTHON_USEDEP}]"
 
 src_prepare() {
 	# Rely on systemd eclass for systemd service install
