@@ -20,7 +20,8 @@ SLOT="0"
 LICENSE="MIT"
 IUSE="bpd chroma convert discogs doc echonest info lastgenre mpdstats replaygain test web"
 
-# beatport, bench and echonest_tempo are not listed in the beets plugin docs. Guess they are mandatory.
+# beatport and bench are not listed in the beets plugin docs, I guess they are mandatory.
+# echonest_tempo is a deprecated version of echonest.
 RDEPEND="
     dev-python/munkres[${PYTHON_USEDEP}]
     >=dev-python/python-musicbrainz-ngs-0.4[${PYTHON_USEDEP}]
