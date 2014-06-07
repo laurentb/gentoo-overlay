@@ -6,7 +6,7 @@ inherit base
 
 DESCRIPTION="Clone a SCM repo (git) temporarily"
 HOMEPAGE="http://git.p.engu.in/laurentb/tmpclone/"
-SRC_URI="http://git.p.engu.in/laurentb/${PN}/snapshot/${P}.tar.bz2"
+SRC_URI="http://git.p.engu.in/laurentb/${PN}/snapshot/${P}.tar.xz"
 
 LICENSE="Unlicense"
 SLOT="0"
