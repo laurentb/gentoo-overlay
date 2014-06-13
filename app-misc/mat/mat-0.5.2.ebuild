@@ -18,13 +18,13 @@ IUSE="+exif +audio +pdf gtk"
 
 DEPEND="dev-python/python-distutils-extra[${PYTHON_USEDEP}]
 dev-python/hachoir-core[${PYTHON_USEDEP}]
-dev-python/hachoir-parser"
+dev-python/hachoir-parser[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 exif? ( media-libs/exiftool )
 audio? ( media-libs/mutagen[${PYTHON_USEDEP}] )
 pdf? ( dev-python/python-poppler[${PYTHON_USEDEP}] dev-python/pycairo[${PYTHON_USEDEP}] dev-python/pdfrw[${PYTHON_USEDEP}] )
 gtk? ( dev-python/pygtk[${PYTHON_USEDEP}] )
-dev-python/pygobject:3"
+dev-python/pygobject:3[${PYTHON_USEDEP}]"
 
 src_prepare() {
 	sed -i "s#share/doc/${PN}#share/doc/${PF}#" setup.py
