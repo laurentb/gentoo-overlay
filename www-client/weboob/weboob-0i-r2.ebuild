@@ -63,6 +63,7 @@ src_prepare() {
 	if [ "$PV" == "0i" ]; then
 		epatch "${FILESDIR}/fix-http-error.patch"
 		epatch "${FILESDIR}/fix-python-277.patch"
+		epatch "${FILESDIR}/fix-configparser.patch"
 	fi
 }
 
