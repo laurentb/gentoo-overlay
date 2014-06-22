@@ -17,7 +17,10 @@ IUSE=""
 DEPEND=""
 RDEPEND="app-shells/bash
 sys-devel/bc
+sys-apps/coreutils
 sys-apps/findutils
+sys-apps/grep
+sys-apps/sed
 sys-process/parallel
 dev-db/sqlite:3"
 
