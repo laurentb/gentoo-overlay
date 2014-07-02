@@ -1,4 +1,4 @@
-# Copyright 2010-2013 Gentoo Foundation
+# Copyright 2010-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -18,8 +18,11 @@ elif [ "$PV" == "9998" ]; then
 	SRC_URI=""
 else
 	KEYWORDS="~x86 ~amd64"
+	MINOR=$((${PR/r/} / 100))
+	REDMINE_ID="265"
 	MY_P="${PN}-$(version_format_string '$1.$2')"
-	SRC_URI="http://symlink.me/attachments/download/246/${MY_P}.tar.gz"
+	[ "$MINOR" -gt 0 ] && MY_P="${MY_P}.${MINOR}"
+	SRC_URI="http://symlink.me/attachments/download/${REDMINE_ID}/${MY_P}.tar.gz"
 	S="${WORKDIR}/${MY_P}"
 fi
 
@@ -57,15 +60,6 @@ RDEPEND="${DEPEND}
 	)"
 
 DOCS=( AUTHORS COPYING ChangeLog README INSTALL )
-
-src_prepare() {
-	distutils-r1_src_prepare
-	if [ "$PV" == "0i" ]; then
-		epatch "${FILESDIR}/fix-http-error.patch"
-		epatch "${FILESDIR}/fix-python-277.patch"
-		epatch "${FILESDIR}/fix-configparser.patch"
-	fi
-}
 
 python_configure_all() {
 	mydistutilsargs=(
