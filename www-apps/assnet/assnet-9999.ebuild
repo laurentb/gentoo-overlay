@@ -1,4 +1,4 @@
-# Copyright 2011-2013 Gentoo Foundation
+# Copyright 2011-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -21,7 +21,6 @@ IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/webob[${PYTHON_USEDEP}]
-	virtual/python-argparse[${PYTHON_USEDEP}]
 	dev-python/paste[${PYTHON_USEDEP}]
 	dev-python/mako[${PYTHON_USEDEP}]
 	virtual/python-imaging[${PYTHON_USEDEP}]

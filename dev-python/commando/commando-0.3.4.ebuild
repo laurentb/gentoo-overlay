@@ -1,4 +1,4 @@
-# Copyright 2012-2013 Gentoo Foundation
+# Copyright 2012-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -29,6 +29,6 @@ SLOT="0"
 IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND="virtual/python-argparse[${PYTHON_USEDEP}]"
+RDEPEND=""
 
 DOCS=( LICENSE AUTHORS.rst CHANGELOG.rst CONTRIBUTING.rst README.rst )

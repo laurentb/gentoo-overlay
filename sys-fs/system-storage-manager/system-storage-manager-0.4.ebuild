@@ -1,4 +1,4 @@
-# Copyright 2012-2013 Gentoo Foundation
+# Copyright 2012-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -18,6 +18,5 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=""
-RDEPEND="virtual/python-argparse[${PYTHON_USEDEP}]
-sys-apps/util-linux
+RDEPEND="sys-apps/util-linux
 sys-apps/which"

@@ -1,4 +1,4 @@
-# Copyright 2012-2013 Gentoo Foundation
+# Copyright 2012-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -25,7 +25,6 @@ IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/PyQt4[$PYTHON_USEDEP]
->=dev-python/gfbi_core-0.5.6[$PYTHON_USEDEP]
-virtual/python-argparse[$PYTHON_USEDEP]"
+>=dev-python/gfbi_core-0.5.6[$PYTHON_USEDEP]"
 
 DOCS=( AUTHORS.txt CHANGELOG LICENSE.txt README.rst )

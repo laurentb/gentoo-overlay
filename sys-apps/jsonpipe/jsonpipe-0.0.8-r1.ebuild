@@ -1,4 +1,4 @@
-# Copyright 2011-2013 Gentoo Foundation
+# Copyright 2011-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -19,11 +19,10 @@ IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/simplejson[${PYTHON_USEDEP}]
-virtual/python-argparse[${PYTHON_USEDEP}]
 >=dev-python/calabash-0.0.3[${PYTHON_USEDEP}]"
 
 src_prepare() {
-	sed -i "s/'argparse>=1.1', //" setup.py
+	sed -i "/argparse/d" setup.py
 	sed -i "s/calabash==/calabash>=/" setup.py
 	sed -i "/use_setuptools/d" setup.py
 }

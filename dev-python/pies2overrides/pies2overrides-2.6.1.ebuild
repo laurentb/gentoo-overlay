@@ -18,6 +18,5 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND="virtual/python-argparse[${PYTHON_USEDEP}]
-python_targets_python2_6? ( dev-python/ordereddict[python_targets_python2_6] )
-dev-python/ipaddress[${PYTHON_USEDEP}]"
+RDEPEND="dev-python/ipaddress[${PYTHON_USEDEP}]
+python_targets_python2_6? ( dev-python/ordereddict[python_targets_python2_6] )"

@@ -29,8 +29,7 @@ SLOT="0"
 IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND="virtual/python-argparse[${PYTHON_USEDEP}]
-	>=dev-python/fswrap-0.1.1[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/fswrap-0.1.1[${PYTHON_USEDEP}]
 	>=dev-python/commando-0.3.4[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
 	>=dev-python/markdown-2.3.1[${PYTHON_USEDEP}]

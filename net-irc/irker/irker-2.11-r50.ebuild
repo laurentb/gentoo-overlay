@@ -17,8 +17,7 @@ IUSE=""
 
 DEPEND="app-text/docbook-xml-dtd:4.1.2
 	app-text/xmlto"
-RDEPEND="${PYTHON_DEPS}
-virtual/python-argparse[${PYTHON_USEDEP}]"
+RDEPEND="${PYTHON_DEPS}"
 
 src_prepare() {
 	# Rely on systemd eclass for systemd service install

@@ -1,4 +1,4 @@
-# Copyright 2011-2013 Gentoo Foundation
+# Copyright 2011-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -23,7 +23,6 @@ src_prepare() {
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/python-dateutil[${PYTHON_USEDEP}]
-	dev-python/vobject[${PYTHON_USEDEP}]
-	virtual/python-argparse[${PYTHON_USEDEP}]"
+	dev-python/vobject[${PYTHON_USEDEP}]"
 
 DOCS=( INSTALL.rst LICENSE AUTHORS CHANGELOG README.rst )

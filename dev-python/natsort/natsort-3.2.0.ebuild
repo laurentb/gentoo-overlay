@@ -18,6 +18,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="virtual/python-argparse[${PYTHON_USEDEP}]"
+RDEPEND=""
 
 DOCS=( README.rst LICENSE )

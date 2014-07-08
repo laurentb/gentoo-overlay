@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND="virtual/python-argparse[${PYTHON_USEDEP}]
+RDEPEND="
 python_targets_python2_6? ( dev-python/pies2overrides[python_targets_python2_6] )
 python_targets_python2_7? ( dev-python/pies2overrides[python_targets_python2_7] )
 python_targets_python2_6? ( dev-python/enum34[python_targets_python2_6] )

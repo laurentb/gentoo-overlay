@@ -1,4 +1,4 @@
-# Copyright 2012-2013 Gentoo Foundation
+# Copyright 2012-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -17,8 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND="virtual/python-argparse[${PYTHON_USEDEP}]
-media-libs/mutagen[${PYTHON_USEDEP}]
+RDEPEND="media-libs/mutagen[${PYTHON_USEDEP}]
 media-sound/sox"
 
 DOCS=( README LICENSE )
