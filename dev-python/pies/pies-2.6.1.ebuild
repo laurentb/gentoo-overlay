@@ -3,7 +3,7 @@
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3,3_4} )
+PYTHON_COMPAT=( python{2_7,3_2,3_3,3_4} )
 
 inherit distutils-r1
 
@@ -19,9 +19,7 @@ IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="
-python_targets_python2_6? ( dev-python/pies2overrides[python_targets_python2_6] )
 python_targets_python2_7? ( dev-python/pies2overrides[python_targets_python2_7] )
-python_targets_python2_6? ( dev-python/enum34[python_targets_python2_6] )
 python_targets_python2_7? ( dev-python/enum34[python_targets_python2_7] )
 python_targets_python3_2? ( dev-python/enum34[python_targets_python3_2] )
 python_targets_python3_3? ( dev-python/enum34[python_targets_python3_3] )"
