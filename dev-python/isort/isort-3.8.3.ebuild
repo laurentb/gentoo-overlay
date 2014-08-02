@@ -19,4 +19,4 @@ IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND=">=dev-python/natsort-3.0.0[${PYTHON_USEDEP}]
->=dev-python/pies-2.0.0[${PYTHON_USEDEP}]"
+>=dev-python/pies-2.6.0[${PYTHON_USEDEP}]"
