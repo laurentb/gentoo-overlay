@@ -18,6 +18,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND="dev-python/six[${PYTHON_USEDEP}]"
+RDEPEND=""
 
 DOCS=( README.rst LICENSE )
