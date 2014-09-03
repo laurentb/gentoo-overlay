@@ -71,7 +71,7 @@ python_configure_all() {
 python_install_all() {
 	distutils-r1_python_install_all
 	insinto /usr/share/${PN}/
-	doins -r contrib/*
+	doins -r contrib
 }
 
 pkg_preinst() {
