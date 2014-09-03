@@ -19,7 +19,7 @@ elif [ "$PV" == "9998" ]; then
 else
 	KEYWORDS="~x86 ~amd64"
 	MINOR=$((${PR/r/} / 100))
-	REDMINE_ID="265"
+	REDMINE_ID="271"
 	MY_P="${PN}-$(version_format_string '$1.$2')"
 	[ "$MINOR" -gt 0 ] && MY_P="${MY_P}.${MINOR}"
 	SRC_URI="http://symlink.me/attachments/download/${REDMINE_ID}/${MY_P}.tar.gz"
