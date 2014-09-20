@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x64"
 IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND=">=dev-python/pytest-2.3.5[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/pytest-2.4.2[${PYTHON_USEDEP}]
 	>=dev-python/execnet-1.1[${PYTHON_USEDEP}]"
 
 DOCS=( CHANGELOG LICENSE README.txt )
