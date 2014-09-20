@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND="dev-python/urwid[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/urwid-1.2.0[${PYTHON_USEDEP}]"
 
 src_prepare() {
 	sed -i '/distribute_setup/d' setup.py
