@@ -19,6 +19,7 @@ IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND=">=dev-python/pytest-2.4.2[${PYTHON_USEDEP}]
+	>=dev-python/py-1.4.22[${PYTHON_USEDEP}]
 	>=dev-python/execnet-1.1[${PYTHON_USEDEP}]"
 
 DOCS=( CHANGELOG LICENSE README.txt )
