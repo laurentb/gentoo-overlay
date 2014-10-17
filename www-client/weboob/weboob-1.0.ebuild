@@ -4,7 +4,7 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils-r1 gnome2-utils versionator
+inherit distutils-r1 gnome2-utils
 
 if [ "$PV" == "9999" ]; then
 	EGIT_REPO_URI="git://git.symlink.me/pub/${PN}/devel.git"
@@ -18,12 +18,8 @@ elif [ "$PV" == "9998" ]; then
 	SRC_URI=""
 else
 	KEYWORDS="~x86 ~amd64"
-	MINOR=$((${PR/r/} / 100))
-	REDMINE_ID="271"
-	MY_P="${PN}-$(version_format_string '$1.$2')"
-	[ "$MINOR" -gt 0 ] && MY_P="${MY_P}.${MINOR}"
-	SRC_URI="http://symlink.me/attachments/download/${REDMINE_ID}/${MY_P}.tar.gz"
-	S="${WORKDIR}/${MY_P}"
+	REDMINE_ID="289"
+	SRC_URI="http://symlink.me/attachments/download/${REDMINE_ID}/${P}.tar.gz"
 fi
 
 DESCRIPTION="Weboob (Web Outside of Browsers) provides several applications to interact with a lot of websites."
@@ -57,7 +53,8 @@ RDEPEND="${DEPEND}
 		dev-python/pyopenssl[${PYTHON_USEDEP}]
 		dev-python/ndg-httpsclient[${PYTHON_USEDEP}]
 		dev-python/pyasn1[${PYTHON_USEDEP}]
-	)"
+	)
+	virtual/python-futures[${PYTHON_USEDEP}]"
 
 DOCS=( AUTHORS COPYING ChangeLog README INSTALL )
 
