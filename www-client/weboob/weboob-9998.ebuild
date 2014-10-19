@@ -83,3 +83,10 @@ pkg_postinst() {
 pkg_postrm() {
 	use X && gnome2_icon_cache_update
 }
+
+src_prepare() {
+	if [ "$PV" == "1.0" ]; then
+		epatch "${FILESDIR}/0001-Set-copyright-in-applications.patch"
+		epatch "${FILESDIR}/0002-fix-StatusField-to-be-a-BaseObject.patch"
+	fi
+}

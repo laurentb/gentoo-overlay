@@ -1,0 +1,643 @@
+From: Florent <weboob@flo.fourcot.fr>
+Date: Fri, 17 Oct 2014 17:31:26 +0200
+Subject: Set copyright in applications
+
+---
+ weboob/applications/boobank/boobank.py                 | 2 +-
+ weboob/applications/boobathon/boobathon.py             | 2 +-
+ weboob/applications/boobcoming/boobcoming.py           | 2 +-
+ weboob/applications/boobill/boobill.py                 | 2 +-
+ weboob/applications/booblyrics/booblyrics.py           | 2 +-
+ weboob/applications/boobmsg/boobmsg.py                 | 2 +-
+ weboob/applications/boobooks/boobooks.py               | 2 +-
+ weboob/applications/boobsize/boobsize.py               | 2 +-
+ weboob/applications/boobtracker/boobtracker.py         | 2 +-
+ weboob/applications/cineoob/cineoob.py                 | 2 +-
+ weboob/applications/comparoob/comparoob.py             | 2 +-
+ weboob/applications/cookboob/cookboob.py               | 2 +-
+ weboob/applications/flatboob/flatboob.py               | 2 +-
+ weboob/applications/galleroob/galleroob.py             | 2 +-
+ weboob/applications/geolooc/geolooc.py                 | 2 +-
+ weboob/applications/handjoob/handjoob.py               | 2 +-
+ weboob/applications/havedate/havedate.py               | 2 +-
+ weboob/applications/masstransit/masstransit.py         | 2 +-
+ weboob/applications/monboob/monboob.py                 | 2 +-
+ weboob/applications/parceloob/parceloob.py             | 2 +-
+ weboob/applications/pastoob/pastoob.py                 | 2 +-
+ weboob/applications/qboobmsg/qboobmsg.py               | 2 +-
+ weboob/applications/qcineoob/qcineoob.py               | 2 +-
+ weboob/applications/qcookboob/qcookboob.py             | 2 +-
+ weboob/applications/qflatboob/qflatboob.py             | 2 +-
+ weboob/applications/qhandjoob/qhandjoob.py             | 2 +-
+ weboob/applications/qhavedate/qhavedate.py             | 2 +-
+ weboob/applications/qvideoob/qvideoob.py               | 2 +-
+ weboob/applications/qwebcontentedit/qwebcontentedit.py | 2 +-
+ weboob/applications/qweboobcfg/qweboobcfg.py           | 2 +-
+ weboob/applications/radioob/radioob.py                 | 2 +-
+ weboob/applications/suboob/suboob.py                   | 2 +-
+ weboob/applications/translaboob/translaboob.py         | 2 +-
+ weboob/applications/traveloob/traveloob.py             | 2 +-
+ weboob/applications/videoob/videoob.py                 | 2 +-
+ weboob/applications/webcontentedit/webcontentedit.py   | 2 +-
+ weboob/applications/weboobcfg/weboobcfg.py             | 2 +-
+ weboob/applications/weboobcli/weboobcli.py             | 2 +-
+ weboob/applications/weboobdebug/weboobdebug.py         | 2 +-
+ weboob/applications/weboobrepos/weboobrepos.py         | 2 +-
+ weboob/applications/weboorrents/weboorrents.py         | 2 +-
+ weboob/applications/wetboobs/wetboobs.py               | 2 +-
+ weboob/tools/application/base.py                       | 4 +++-
+ weboob/tools/application/repl.py                       | 4 +++-
+ 44 files changed, 48 insertions(+), 44 deletions(-)
+
+diff --git a/weboob/applications/boobank/boobank.py b/weboob/applications/boobank/boobank.py
+index 10a20a1..634001d 100644
+--- a/weboob/applications/boobank/boobank.py
++++ b/weboob/applications/boobank/boobank.py
+@@ -284,7 +284,7 @@ class AccountListFormatter(IFormatter):
+ class Boobank(ReplApplication):
+     APPNAME = 'boobank'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2011 Romain Bignon, Christophe Benz'
++    COPYRIGHT = 'Copyright(C) 2010-YEAR Romain Bignon, Christophe Benz'
+     CAPS = CapBank
+     DESCRIPTION = "Console application allowing to list your bank accounts and get their balance, " \
+                   "display accounts history and coming bank operations, and transfer money from an account to " \
+diff --git a/weboob/applications/boobathon/boobathon.py b/weboob/applications/boobathon/boobathon.py
+index 7940a23..1697273 100644
+--- a/weboob/applications/boobathon/boobathon.py
++++ b/weboob/applications/boobathon/boobathon.py
+@@ -279,7 +279,7 @@ h2. Attendees
+ class Boobathon(ReplApplication):
+     APPNAME = 'boobathon'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2011 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2011-YEAR Romain Bignon'
+     DESCRIPTION = 'Console application to participate to a Boobathon.'
+     SHORT_DESCRIPTION = "participate in a Boobathon"
+     CAPS = CapContent
+diff --git a/weboob/applications/boobcoming/boobcoming.py b/weboob/applications/boobcoming/boobcoming.py
+index 20f403d..39c88d3 100644
+--- a/weboob/applications/boobcoming/boobcoming.py
++++ b/weboob/applications/boobcoming/boobcoming.py
+@@ -141,7 +141,7 @@ class UpcomingFormatter(IFormatter):
+ class Boobcoming(ReplApplication):
+     APPNAME = 'boobcoming'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2012 Bezleputh'
++    COPYRIGHT = 'Copyright(C) 2012-YEAR Bezleputh'
+     DESCRIPTION = "Console application to see upcoming events."
+     SHORT_DESCRIPTION = "see upcoming events"
+     CAPS = CapCalendarEvent
+diff --git a/weboob/applications/boobill/boobill.py b/weboob/applications/boobill/boobill.py
+index 4e49fe6..67e3f98 100644
+--- a/weboob/applications/boobill/boobill.py
++++ b/weboob/applications/boobill/boobill.py
+@@ -42,7 +42,7 @@ class SubscriptionsFormatter(PrettyFormatter):
+ class Boobill(ReplApplication):
+     APPNAME = 'boobill'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2012 Florent Fourcot'
++    COPYRIGHT = 'Copyright(C) 2012-YEAR Florent Fourcot'
+     DESCRIPTION = 'Console application allowing to get and download bills.'
+     SHORT_DESCRIPTION = "get and download bills"
+     CAPS = CapBill
+diff --git a/weboob/applications/booblyrics/booblyrics.py b/weboob/applications/booblyrics/booblyrics.py
+index 7539677..f17e627 100644
+--- a/weboob/applications/booblyrics/booblyrics.py
++++ b/weboob/applications/booblyrics/booblyrics.py
+@@ -57,7 +57,7 @@ class LyricsListFormatter(PrettyFormatter):
+ class Booblyrics(ReplApplication):
+     APPNAME = 'booblyrics'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2013 Julien Veyssier'
++    COPYRIGHT = 'Copyright(C) 2013-YEAR Julien Veyssier'
+     DESCRIPTION = "Console application allowing to search for song lyrics on various websites."
+     SHORT_DESCRIPTION = "search and display song lyrics"
+     CAPS = CapLyrics
+diff --git a/weboob/applications/boobmsg/boobmsg.py b/weboob/applications/boobmsg/boobmsg.py
+index 6bd68b3..b1d07a0 100644
+--- a/weboob/applications/boobmsg/boobmsg.py
++++ b/weboob/applications/boobmsg/boobmsg.py
+@@ -236,7 +236,7 @@ class ProfileFormatter(IFormatter):
+ class Boobmsg(ReplApplication):
+     APPNAME = 'boobmsg'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2011 Christophe Benz'
++    COPYRIGHT = 'Copyright(C) 2010-YEAR Christophe Benz'
+     DESCRIPTION = "Console application allowing to send messages on various websites and " \
+                   "to display message threads and contents."
+     SHORT_DESCRIPTION = "send and receive message threads"
+diff --git a/weboob/applications/boobooks/boobooks.py b/weboob/applications/boobooks/boobooks.py
+index 6dd978f..cf8522d 100644
+--- a/weboob/applications/boobooks/boobooks.py
++++ b/weboob/applications/boobooks/boobooks.py
+@@ -41,7 +41,7 @@ class RentedListFormatter(PrettyFormatter):
+ class Boobooks(ReplApplication):
+     APPNAME = 'boobooks'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2012 Jeremy Monnet'
++    COPYRIGHT = 'Copyright(C) 2012-YEAR Jeremy Monnet'
+     CAPS = CapBook
+     DESCRIPTION = "Console application allowing to list your books rented or booked at the library, " \
+                   "book and search new ones, get your booking history (if available)."
+diff --git a/weboob/applications/boobsize/boobsize.py b/weboob/applications/boobsize/boobsize.py
+index 35bc7a8..47feac2 100644
+--- a/weboob/applications/boobsize/boobsize.py
++++ b/weboob/applications/boobsize/boobsize.py
+@@ -95,7 +95,7 @@ class GaugeFormatter(IFormatter):
+ class Boobsize(ReplApplication):
+     APPNAME = 'Boobsize'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2013 Florent Fourcot'
++    COPYRIGHT = 'Copyright(C) 2013-YEAR Florent Fourcot'
+     DESCRIPTION = "Console application allowing to display various sensors and gauges values."
+     SHORT_DESCRIPTION = "display sensors and gauges values"
+     CAPS = (CapGauge)
+diff --git a/weboob/applications/boobtracker/boobtracker.py b/weboob/applications/boobtracker/boobtracker.py
+index 2e17659..42a7515 100644
+--- a/weboob/applications/boobtracker/boobtracker.py
++++ b/weboob/applications/boobtracker/boobtracker.py
+@@ -106,7 +106,7 @@ class IssuesListFormatter(PrettyFormatter):
+ class BoobTracker(ReplApplication):
+     APPNAME = 'boobtracker'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2011 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2011-YEAR Romain Bignon'
+     DESCRIPTION = "Console application allowing to create, edit, view bug tracking issues."
+     SHORT_DESCRIPTION = "manage bug tracking issues"
+     CAPS = CapBugTracker
+diff --git a/weboob/applications/cineoob/cineoob.py b/weboob/applications/cineoob/cineoob.py
+index ebe1c2a..3f2210a 100644
+--- a/weboob/applications/cineoob/cineoob.py
++++ b/weboob/applications/cineoob/cineoob.py
+@@ -177,7 +177,7 @@ class PersonBiographyFormatter(PrettyFormatter):
+ class Cineoob(ReplApplication):
+     APPNAME = 'cineoob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2013 Julien Veyssier'
++    COPYRIGHT = 'Copyright(C) 2013-YEAR Julien Veyssier'
+     DESCRIPTION = "Console application allowing to search for movies and persons on various cinema databases " \
+                   ", list persons related to a movie, list movies related to a person and list common movies " \
+                   "of two persons."
+diff --git a/weboob/applications/comparoob/comparoob.py b/weboob/applications/comparoob/comparoob.py
+index d2e0e67..c558983 100644
+--- a/weboob/applications/comparoob/comparoob.py
++++ b/weboob/applications/comparoob/comparoob.py
+@@ -75,7 +75,7 @@ class PricesFormatter(PrettyFormatter):
+ class Comparoob(ReplApplication):
+     APPNAME = 'comparoob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2012 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2012-YEAR Romain Bignon'
+     DESCRIPTION = "Console application to compare products."
+     SHORT_DESCRIPTION = "compare products"
+     DEFAULT_FORMATTER = 'table'
+diff --git a/weboob/applications/cookboob/cookboob.py b/weboob/applications/cookboob/cookboob.py
+index b3ebd14..1a7f4c0 100644
+--- a/weboob/applications/cookboob/cookboob.py
++++ b/weboob/applications/cookboob/cookboob.py
+@@ -75,7 +75,7 @@ class RecipeListFormatter(PrettyFormatter):
+ class Cookboob(ReplApplication):
+     APPNAME = 'cookboob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2013 Julien Veyssier'
++    COPYRIGHT = 'Copyright(C) 2013-YEAR Julien Veyssier'
+     DESCRIPTION = "Console application allowing to search for recipes on various websites."
+     SHORT_DESCRIPTION = "search and consult recipes"
+     CAPS = CapRecipe
+diff --git a/weboob/applications/flatboob/flatboob.py b/weboob/applications/flatboob/flatboob.py
+index e38c9fe..54f2ae6 100644
+--- a/weboob/applications/flatboob/flatboob.py
++++ b/weboob/applications/flatboob/flatboob.py
+@@ -81,7 +81,7 @@ class HousingListFormatter(PrettyFormatter):
+ class Flatboob(ReplApplication):
+     APPNAME = 'flatboob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2012 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2012-YEAR Romain Bignon'
+     DESCRIPTION = "Console application to search for housing."
+     SHORT_DESCRIPTION = "search for housing"
+     CAPS = CapHousing
+diff --git a/weboob/applications/galleroob/galleroob.py b/weboob/applications/galleroob/galleroob.py
+index c761649..3b63e44 100644
+--- a/weboob/applications/galleroob/galleroob.py
++++ b/weboob/applications/galleroob/galleroob.py
+@@ -48,7 +48,7 @@ class GalleryListFormatter(PrettyFormatter):
+ class Galleroob(ReplApplication):
+     APPNAME = 'galleroob'
+     VERSION = '1.0'
+-    COPYRIGHT = u'Copyright(C) 2011 Noé Rubinstein'
++    COPYRIGHT = u'Copyright(C) 2011-2014 Noé Rubinstein'
+     DESCRIPTION = 'galleroob browses and downloads web image galleries'
+     SHORT_DESCRIPTION = 'browse and download web image galleries'
+     CAPS = CapGallery
+diff --git a/weboob/applications/geolooc/geolooc.py b/weboob/applications/geolooc/geolooc.py
+index d61410d..409c63b 100644
+--- a/weboob/applications/geolooc/geolooc.py
++++ b/weboob/applications/geolooc/geolooc.py
+@@ -29,7 +29,7 @@ __all__ = ['Geolooc']
+ class Geolooc(ReplApplication):
+     APPNAME = 'geolooc'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2011 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2010-YEAR Romain Bignon'
+     DESCRIPTION = "Console application allowing to geolocalize IP addresses."
+     SHORT_DESCRIPTION = "geolocalize IP addresses"
+     CAPS = CapGeolocIp
+diff --git a/weboob/applications/handjoob/handjoob.py b/weboob/applications/handjoob/handjoob.py
+index e0bc855..d3cd230 100644
+--- a/weboob/applications/handjoob/handjoob.py
++++ b/weboob/applications/handjoob/handjoob.py
+@@ -76,7 +76,7 @@ class JobAdvertListFormatter(PrettyFormatter):
+ class Handjoob(ReplApplication):
+     APPNAME = 'handjoob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2012 Bezleputh'
++    COPYRIGHT = 'Copyright(C) 2012-YEAR Bezleputh'
+     DESCRIPTION = "Console application to search for a job."
+     SHORT_DESCRIPTION = "search for a job"
+     CAPS = CapJob
+diff --git a/weboob/applications/havedate/havedate.py b/weboob/applications/havedate/havedate.py
+index f74936c..a391676 100644
+--- a/weboob/applications/havedate/havedate.py
++++ b/weboob/applications/havedate/havedate.py
+@@ -49,7 +49,7 @@ class EventListFormatter(PrettyFormatter):
+ class HaveDate(Boobmsg):
+     APPNAME = 'havedate'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2012 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2010-YEAR Romain Bignon'
+     DESCRIPTION = "Console application allowing to interact with various dating websites " \
+                   "and to optimize seduction algorithmically."
+     SHORT_DESCRIPTION = "interact with dating websites"
+diff --git a/weboob/applications/masstransit/masstransit.py b/weboob/applications/masstransit/masstransit.py
+index fa4f5bf..ae13844 100644
+--- a/weboob/applications/masstransit/masstransit.py
++++ b/weboob/applications/masstransit/masstransit.py
+@@ -279,7 +279,7 @@ class Masstransit(Application):
+     "Application Class"
+     APPNAME = 'masstransit'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2011 Julien Hébert'
++    COPYRIGHT = 'Copyright(C) 2010-YEAR Julien Hébert'
+     DESCRIPTION = "Maemo application allowing to search for train stations and get departure times."
+     SHORT_DESCRIPTION = "search for train stations and departures"
+ 
+diff --git a/weboob/applications/monboob/monboob.py b/weboob/applications/monboob/monboob.py
+index 6b72450..a344f70 100644
+--- a/weboob/applications/monboob/monboob.py
++++ b/weboob/applications/monboob/monboob.py
+@@ -90,7 +90,7 @@ class MonboobScheduler(Scheduler):
+ class Monboob(ReplApplication):
+     APPNAME = 'monboob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2011 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2010-YEAR Romain Bignon'
+     DESCRIPTION = 'Daemon allowing to regularly check for new messages on various websites, ' \
+                   'and send an email for each message, and post a reply to a message on a website.'
+     SHORT_DESCRIPTION = "daemon to send and check messages"
+diff --git a/weboob/applications/parceloob/parceloob.py b/weboob/applications/parceloob/parceloob.py
+index 87fe9c9..812a74a 100644
+--- a/weboob/applications/parceloob/parceloob.py
++++ b/weboob/applications/parceloob/parceloob.py
+@@ -85,7 +85,7 @@ class StatusFormatter(IFormatter):
+ class Parceloob(ReplApplication):
+     APPNAME = 'parceloob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2013 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2013-YEAR Romain Bignon'
+     CAPS = CapParcel
+     DESCRIPTION = "Console application to track your parcels."
+     SHORT_DESCRIPTION = "manage your parcels"
+diff --git a/weboob/applications/pastoob/pastoob.py b/weboob/applications/pastoob/pastoob.py
+index 6a65670..3b64143 100644
+--- a/weboob/applications/pastoob/pastoob.py
++++ b/weboob/applications/pastoob/pastoob.py
+@@ -34,7 +34,7 @@ __all__ = ['Pastoob']
+ class Pastoob(ReplApplication):
+     APPNAME = 'pastoob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2011-2013 Laurent Bachelier'
++    COPYRIGHT = 'Copyright(C) 2011-YEAR Laurent Bachelier'
+     DESCRIPTION = "Console application allowing to post and get pastes from pastebins."
+     SHORT_DESCRIPTION = "post and get pastes from pastebins"
+     CAPS = CapPaste
+diff --git a/weboob/applications/qboobmsg/qboobmsg.py b/weboob/applications/qboobmsg/qboobmsg.py
+index ffcb3a8..9edd414 100644
+--- a/weboob/applications/qboobmsg/qboobmsg.py
++++ b/weboob/applications/qboobmsg/qboobmsg.py
+@@ -27,7 +27,7 @@ from .main_window import MainWindow
+ class QBoobMsg(QtApplication):
+     APPNAME = 'qboobmsg'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2011 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2010-YEAR Romain Bignon'
+     DESCRIPTION = "Qt application allowing to read messages on various websites and reply to them."
+     SHORT_DESCRIPTION = "send and receive message threads"
+     CAPS = CapMessages
+diff --git a/weboob/applications/qcineoob/qcineoob.py b/weboob/applications/qcineoob/qcineoob.py
+index e5fb331..c37ed1a 100644
+--- a/weboob/applications/qcineoob/qcineoob.py
++++ b/weboob/applications/qcineoob/qcineoob.py
+@@ -29,7 +29,7 @@ from .main_window import MainWindow
+ class QCineoob(QtApplication):
+     APPNAME = 'qcineoob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2013 Julien Veyssier'
++    COPYRIGHT = 'Copyright(C) 2013-YEAR Julien Veyssier'
+     DESCRIPTION = "Qt application allowing to search movies, people, torrent and subtitles."
+     SHORT_DESCRIPTION = "search movies, people, torrent and subtitles"
+     CAPS = CapCinema, CapTorrent, CapSubtitle
+diff --git a/weboob/applications/qcookboob/qcookboob.py b/weboob/applications/qcookboob/qcookboob.py
+index bf09628..0ae0ec0 100644
+--- a/weboob/applications/qcookboob/qcookboob.py
++++ b/weboob/applications/qcookboob/qcookboob.py
+@@ -27,7 +27,7 @@ from .main_window import MainWindow
+ class QCookboob(QtApplication):
+     APPNAME = 'qcookboob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2013 Julien Veyssier'
++    COPYRIGHT = 'Copyright(C) 2013-2014 Julien Veyssier'
+     DESCRIPTION = "Qt application allowing to search recipes."
+     SHORT_DESCRIPTION = "search recipes"
+     CAPS = CapRecipe
+diff --git a/weboob/applications/qflatboob/qflatboob.py b/weboob/applications/qflatboob/qflatboob.py
+index df3f1ab..b746c2c 100644
+--- a/weboob/applications/qflatboob/qflatboob.py
++++ b/weboob/applications/qflatboob/qflatboob.py
+@@ -28,7 +28,7 @@ from .main_window import MainWindow
+ class QFlatBoob(QtApplication):
+     APPNAME = 'qflatboob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2012 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2010-2014 Romain Bignon'
+     DESCRIPTION = "Qt application to search for housing."
+     SHORT_DESCRIPTION = "search for housing"
+     CAPS = CapHousing
+diff --git a/weboob/applications/qhandjoob/qhandjoob.py b/weboob/applications/qhandjoob/qhandjoob.py
+index a5fc1b9..a9c304d 100644
+--- a/weboob/applications/qhandjoob/qhandjoob.py
++++ b/weboob/applications/qhandjoob/qhandjoob.py
+@@ -28,7 +28,7 @@ from .main_window import MainWindow
+ class QHandJoob(QtApplication):
+     APPNAME = 'qhandjoob'
+     VERSION = '1.0'
+-    COPYRIGHT = u'Copyright(C) 2013 Sébastien Monel'
++    COPYRIGHT = u'Copyright(C) 2013-2014 Sébastien Monel'
+     DESCRIPTION = "Qt application to search for job."
+     SHORT_DESCRIPTION = "search for job"
+     CAPS = CapJob
+diff --git a/weboob/applications/qhavedate/qhavedate.py b/weboob/applications/qhavedate/qhavedate.py
+index 70f601e..7b517d5 100644
+--- a/weboob/applications/qhavedate/qhavedate.py
++++ b/weboob/applications/qhavedate/qhavedate.py
+@@ -27,7 +27,7 @@ from .main_window import MainWindow
+ class QHaveDate(QtApplication):
+     APPNAME = 'qhavedate'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2012 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2010-2014 Romain Bignon'
+     DESCRIPTION = "Qt application allowing to interact with various dating websites."
+     SHORT_DESCRIPTION = "interact with dating websites"
+     CAPS = CapDating
+diff --git a/weboob/applications/qvideoob/qvideoob.py b/weboob/applications/qvideoob/qvideoob.py
+index 9333866..848017f 100644
+--- a/weboob/applications/qvideoob/qvideoob.py
++++ b/weboob/applications/qvideoob/qvideoob.py
+@@ -27,7 +27,7 @@ from .main_window import MainWindow
+ class QVideoob(QtApplication):
+     APPNAME = 'qvideoob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2011 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2010-2014 Romain Bignon'
+     DESCRIPTION = "Qt application allowing to search videos on various websites and play them."
+     SHORT_DESCRIPTION = "search and play videos"
+     CAPS = CapVideo
+diff --git a/weboob/applications/qwebcontentedit/qwebcontentedit.py b/weboob/applications/qwebcontentedit/qwebcontentedit.py
+index e660e23..118768f 100644
+--- a/weboob/applications/qwebcontentedit/qwebcontentedit.py
++++ b/weboob/applications/qwebcontentedit/qwebcontentedit.py
+@@ -26,7 +26,7 @@ from .main_window import MainWindow
+ class QWebContentEdit(QtApplication):
+     APPNAME = 'qwebcontentedit'
+     VERSION = '1.0'
+-    COPYRIGHT = u'Copyright(C) 2011 Clément Schreiner'
++    COPYRIGHT = u'Copyright(C) 2011-2014 Clément Schreiner'
+     DESCRIPTION = "Qt application allowing to manage content of various websites."
+     SHORT_DESCRIPTION = "manage websites content"
+     CAPS = CapContent
+diff --git a/weboob/applications/qweboobcfg/qweboobcfg.py b/weboob/applications/qweboobcfg/qweboobcfg.py
+index a0889ef..9c023b2 100644
+--- a/weboob/applications/qweboobcfg/qweboobcfg.py
++++ b/weboob/applications/qweboobcfg/qweboobcfg.py
+@@ -24,7 +24,7 @@ from weboob.tools.application.qt import BackendCfg, QtApplication
+ class QWeboobCfg(QtApplication):
+     APPNAME = 'qweboobcfg'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2011 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2010-2014 Romain Bignon'
+     DESCRIPTION = "weboob-config-qt is a graphical application to add/edit/remove backends, " \
+                   "and to register new website accounts."
+     SHORT_DESCRIPTION = "manage backends or register new accounts"
+diff --git a/weboob/applications/radioob/radioob.py b/weboob/applications/radioob/radioob.py
+index c4542c2..d5dd555 100644
+--- a/weboob/applications/radioob/radioob.py
++++ b/weboob/applications/radioob/radioob.py
+@@ -126,7 +126,7 @@ class PlaylistTrackListInfoFormatter(PrettyFormatter):
+ class Radioob(ReplApplication):
+     APPNAME = 'radioob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2013 Romain Bignon\nCopyright(C) 2013 Pierre Maziere'
++    COPYRIGHT = 'Copyright(C) 2010-YEAR Romain Bignon\nCopyright(C) YEAR Pierre Maziere'
+     DESCRIPTION = "Console application allowing to search for web radio stations, listen to them and get information " \
+                   "like the current song."
+     SHORT_DESCRIPTION = "search, show or listen to radio stations"
+diff --git a/weboob/applications/suboob/suboob.py b/weboob/applications/suboob/suboob.py
+index b51a46a..e7a4b7f 100644
+--- a/weboob/applications/suboob/suboob.py
++++ b/weboob/applications/suboob/suboob.py
+@@ -86,7 +86,7 @@ class SubtitleListFormatter(PrettyFormatter):
+ class Suboob(ReplApplication):
+     APPNAME = 'suboob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2013 Julien Veyssier'
++    COPYRIGHT = 'Copyright(C) 2013-YEAR Julien Veyssier'
+     DESCRIPTION = "Console application allowing to search for subtitles on various services " \
+                   "and download them."
+     SHORT_DESCRIPTION = "search and download subtitles"
+diff --git a/weboob/applications/translaboob/translaboob.py b/weboob/applications/translaboob/translaboob.py
+index 92dc1d9..5aea53a 100644
+--- a/weboob/applications/translaboob/translaboob.py
++++ b/weboob/applications/translaboob/translaboob.py
+@@ -48,7 +48,7 @@ class XmlTranslationFormatter(IFormatter):
+ class Translaboob(ReplApplication):
+     APPNAME = 'translaboob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2012 Lucien Loiseau'
++    COPYRIGHT = 'Copyright(C) 2012-YEAR Lucien Loiseau'
+     DESCRIPTION = "Console application to translate text from one language to another"
+     SHORT_DESCRIPTION = "translate text from one language to another"
+     CAPS = CapTranslate
+diff --git a/weboob/applications/traveloob/traveloob.py b/weboob/applications/traveloob/traveloob.py
+index f5ad1ad..276d1a5 100644
+--- a/weboob/applications/traveloob/traveloob.py
++++ b/weboob/applications/traveloob/traveloob.py
+@@ -67,7 +67,7 @@ class StationsFormatter(PrettyFormatter):
+ class Traveloob(ReplApplication):
+     APPNAME = 'traveloob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2013 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2010-YEAR Romain Bignon'
+     DESCRIPTION = "Console application allowing to search for train stations and get departure times."
+     SHORT_DESCRIPTION = "search for train stations and departures"
+     CAPS = CapTravel
+diff --git a/weboob/applications/videoob/videoob.py b/weboob/applications/videoob/videoob.py
+index eec2442..33127af 100644
+--- a/weboob/applications/videoob/videoob.py
++++ b/weboob/applications/videoob/videoob.py
+@@ -54,7 +54,7 @@ class VideoListFormatter(PrettyFormatter):
+ class Videoob(ReplApplication):
+     APPNAME = 'videoob'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2011 Christophe Benz, Romain Bignon, John Obbele'
++    COPYRIGHT = 'Copyright(C) 2010-YEAR Christophe Benz, Romain Bignon, John Obbele'
+     DESCRIPTION = "Console application allowing to search for videos on various websites, " \
+                   "play and download them and get information."
+     SHORT_DESCRIPTION = "search and play videos"
+diff --git a/weboob/applications/webcontentedit/webcontentedit.py b/weboob/applications/webcontentedit/webcontentedit.py
+index 555e5e4..37827d0 100644
+--- a/weboob/applications/webcontentedit/webcontentedit.py
++++ b/weboob/applications/webcontentedit/webcontentedit.py
+@@ -35,7 +35,7 @@ __all__ = ['WebContentEdit']
+ class WebContentEdit(ReplApplication):
+     APPNAME = 'webcontentedit'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2011 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2010-YEAR Romain Bignon'
+     DESCRIPTION = "Console application allowing to display and edit contents on various websites."
+     SHORT_DESCRIPTION = "manage websites content"
+     CAPS = CapContent
+diff --git a/weboob/applications/weboobcfg/weboobcfg.py b/weboob/applications/weboobcfg/weboobcfg.py
+index 742ee14..822325c 100644
+--- a/weboob/applications/weboobcfg/weboobcfg.py
++++ b/weboob/applications/weboobcfg/weboobcfg.py
+@@ -34,7 +34,7 @@ __all__ = ['WeboobCfg']
+ class WeboobCfg(ReplApplication):
+     APPNAME = 'weboob-config'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2012 Christophe Benz, Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2010-YEAR Christophe Benz, Romain Bignon'
+     DESCRIPTION = "Weboob-Config is a console application to add/edit/remove backends, " \
+                   "and to register new website accounts."
+     SHORT_DESCRIPTION = "manage backends or register new accounts"
+diff --git a/weboob/applications/weboobcli/weboobcli.py b/weboob/applications/weboobcli/weboobcli.py
+index dae9f12..76588bb 100644
+--- a/weboob/applications/weboobcli/weboobcli.py
++++ b/weboob/applications/weboobcli/weboobcli.py
+@@ -28,7 +28,7 @@ __all__ = ['WeboobCli']
+ class WeboobCli(ReplApplication):
+     APPNAME = 'weboob-cli'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2011 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2010-YEAR Romain Bignon'
+     SYNOPSIS =  'Usage: %prog [-dqv] [-b backends] [-cnfs] capability method [arguments..]\n'
+     SYNOPSIS += '       %prog [--help] [--version]'
+     DESCRIPTION = "Weboob-Cli is a console application to call a specific method on backends " \
+diff --git a/weboob/applications/weboobdebug/weboobdebug.py b/weboob/applications/weboobdebug/weboobdebug.py
+index d5539e2..a6c31bd 100644
+--- a/weboob/applications/weboobdebug/weboobdebug.py
++++ b/weboob/applications/weboobdebug/weboobdebug.py
+@@ -27,7 +27,7 @@ from weboob.tools.application.base import Application
+ class WeboobDebug(Application):
+     APPNAME = 'weboobdebug'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2011 Christophe Benz'
++    COPYRIGHT = 'Copyright(C) 2010-YEAR Christophe Benz'
+     DESCRIPTION = "Weboob-Debug is a console application to debug backends."
+     SHORT_DESCRIPTION = "debug backends"
+ 
+diff --git a/weboob/applications/weboobrepos/weboobrepos.py b/weboob/applications/weboobrepos/weboobrepos.py
+index 6daf3c0..04c25c9 100644
+--- a/weboob/applications/weboobrepos/weboobrepos.py
++++ b/weboob/applications/weboobrepos/weboobrepos.py
+@@ -39,7 +39,7 @@ __all__ = ['WeboobRepos']
+ class WeboobRepos(ReplApplication):
+     APPNAME = 'weboob-repos'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2012 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2012-YEAR Romain Bignon'
+     DESCRIPTION = "Weboob-repos is a console application to manage a Weboob Repository."
+     SHORT_DESCRIPTION = "manage a weboob repository"
+     COMMANDS_FORMATTERS = {'backends':    'table',
+diff --git a/weboob/applications/weboorrents/weboorrents.py b/weboob/applications/weboorrents/weboorrents.py
+index 9904f4a..6442611 100644
+--- a/weboob/applications/weboorrents/weboorrents.py
++++ b/weboob/applications/weboorrents/weboorrents.py
+@@ -91,7 +91,7 @@ class TorrentListFormatter(PrettyFormatter):
+ class Weboorrents(ReplApplication):
+     APPNAME = 'weboorrents'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2012 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2010-YEAR Romain Bignon'
+     DESCRIPTION = "Console application allowing to search for torrents on various trackers " \
+                   "and download .torrent files."
+     SHORT_DESCRIPTION = "search and download torrents"
+diff --git a/weboob/applications/wetboobs/wetboobs.py b/weboob/applications/wetboobs/wetboobs.py
+index 576f903..b912375 100644
+--- a/weboob/applications/wetboobs/wetboobs.py
++++ b/weboob/applications/wetboobs/wetboobs.py
+@@ -60,7 +60,7 @@ class CitiesFormatter(PrettyFormatter):
+ class WetBoobs(ReplApplication):
+     APPNAME = 'wetboobs'
+     VERSION = '1.0'
+-    COPYRIGHT = 'Copyright(C) 2010-2014 Romain Bignon'
++    COPYRIGHT = 'Copyright(C) 2010-YEAR Romain Bignon'
+     DESCRIPTION = "Console application allowing to display weather and forecasts in your city."
+     SHORT_DESCRIPTION = "display weather and forecasts"
+     CAPS = CapWeather
+diff --git a/weboob/tools/application/base.py b/weboob/tools/application/base.py
+index 8fe2310..6e4aa37 100644
+--- a/weboob/tools/application/base.py
++++ b/weboob/tools/application/base.py
+@@ -23,6 +23,7 @@ from __future__ import print_function
+ import logging
+ import optparse
+ from optparse import OptionGroup, OptionParser
++from datetime import datetime
+ import locale
+ import os
+ import sys
+@@ -260,7 +261,8 @@ class Application(object):
+         version = None
+         if self.VERSION:
+             if self.COPYRIGHT:
+-                version = '%s v%s %s' % (self.APPNAME, self.VERSION, self.COPYRIGHT)
++                copyright = self.COPYRIGHT.replace('YEAR', '%d' % datetime.today().year)
++                version = '%s v%s %s' % (self.APPNAME, self.VERSION, copyright)
+             else:
+                 version = '%s v%s' % (self.APPNAME, self.VERSION)
+         return version
+diff --git a/weboob/tools/application/repl.py b/weboob/tools/application/repl.py
+index 8acdebc..d7e86b4 100644
+--- a/weboob/tools/application/repl.py
++++ b/weboob/tools/application/repl.py
+@@ -24,6 +24,7 @@ from cmd import Cmd
+ import logging
+ import re
+ from optparse import OptionGroup, OptionParser, IndentedHelpFormatter
++from datetime import datetime
+ import os
+ 
+ from weboob.capabilities.base import FieldNotFound, BaseObject, UserError
+@@ -113,9 +114,10 @@ class ReplApplication(Cmd, ConsoleApplication):
+         Cmd.__init__(self)
+         ConsoleApplication.__init__(self, ReplOptionParser(self.SYNOPSIS, version=self._get_optparse_version()))
+ 
++        copyright = self.COPYRIGHT.replace('YEAR', '%d' % datetime.today().year).encode(self.encoding)
+         self.intro = '\n'.join(('Welcome to %s%s%s v%s' % (self.BOLD, self.APPNAME, self.NC, self.VERSION),
+                                 '',
+-                                self.COPYRIGHT.encode(self.encoding),
++                                copyright,
+                                 'This program is free software: you can redistribute it and/or modify',
+                                 'it under the terms of the GNU Affero General Public License as published by',
+                                 'the Free Software Foundation, either version 3 of the License, or',
