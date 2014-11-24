@@ -19,7 +19,5 @@ IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="
-python_targets_python2_7? ( dev-python/pies2overrides[python_targets_python2_7] )
-python_targets_python2_7? ( dev-python/enum34[python_targets_python2_7] )
-python_targets_python3_2? ( dev-python/enum34[python_targets_python3_2] )
-python_targets_python3_3? ( dev-python/enum34[python_targets_python3_3] )"
+$(python_gen_cond_dep 'dev-python/pies2overrides[${PYTHON_USEDEP}]' python2_7)
+$(python_gen_cond_dep 'dev-python/enum34[${PYTHON_USEDEP}]' python{2_7,3_2,3_3})"
