@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND=">=app-misc/task-2.2.0
+RDEPEND=">=app-misc/task-2.1.0
 >=dev-python/six-1.5.2[${PYTHON_USEDEP}]"
 
 DOCS=( README.rst LICENSE )
