@@ -30,6 +30,6 @@ src_install() {
 
 pkg_postinst() {
 	elog
-	elog "Please find a sample config at /usr/share/doc/${PF}/sample_config.txt.bz2"
+	elog "Please find a sample config in /usr/share/doc/${P}/"
 	elog
 }
