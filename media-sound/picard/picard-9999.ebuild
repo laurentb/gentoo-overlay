@@ -1,61 +1,56 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=5
-PYTHON_DEPEND="2:2.7"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
-inherit eutils distutils
+PYTHON_COMPAT=( python2_7 )
+DISTUTILS_SINGLE_IMPL=1
+DISABLE_AUTOFORMATTING=true
+inherit eutils distutils-r1 readme.gentoo
 
-MY_P="${P/_/}"
-DESCRIPTION="An improved rewrite/port of the Picard Tagger using Qt"
-HOMEPAGE="http://musicbrainz.org/doc/PicardQt"
-SRC_URI="http://ftp.musicbrainz.org/pub/musicbrainz/picard/${MY_P}.tar.gz"
+DESCRIPTION="A cross-platform music tagger"
+HOMEPAGE="http://picard.musicbrainz.org/"
+SRC_URI="http://ftp.musicbrainz.org/pub/musicbrainz/picard/${P}.tar.gz"
+
+if [ "$PV" == "9999" ]; then
+       EGIT_REPO_URI="git://github.com/musicbrainz/picard.git"
+       inherit git-2
+       KEYWORDS=""
+       SRC_URI=""
+fi
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="+acoustid +cdda nls"
 
-if [ "$PV" == "9999" ]; then
-	EGIT_REPO_URI="git://github.com/musicbrainz/picard.git"
-	inherit git-2
-	KEYWORDS=""
-	SRC_URI=""
-fi
-
-DEPEND="dev-python/PyQt4[X]
+DEPEND="dev-python/PyQt4[X,${PYTHON_USEDEP}]
 	media-libs/mutagen
 	acoustid? ( >=media-libs/chromaprint-1.0[tools] )
 	cdda? ( >=media-libs/libdiscid-0.1.1 )"
 RDEPEND="${DEPEND}"
 
-# doesn't work with ebuilds
-RESTRICT="test"
-
-S=${WORKDIR}/${MY_P}
+RESTRICT="test" # doesn't work with ebuilds
+S=${WORKDIR}/${PN}-release-${PV}
 DOCS="AUTHORS.txt NEWS.txt"
 
+DOC_CONTENTS="If you are upgrading Picard and it does not start,
+try removing Picard's settings:
+    rm ~/.config/MusicBrainz/Picard.conf
+
+You should set the environment variable BROWSER to something like
+    firefox '%s' &
+to let python know which browser to use."
+
 src_compile() {
-	distutils_src_compile $(use nls || echo "--disable-locales")
+	distutils-r1_src_compile $(use nls || echo "--disable-locales")
 }
 
 src_install() {
-	distutils_src_install --disable-autoupdate --skip-build \
+	distutils-r1_src_install --disable-autoupdate --skip-build \
 		$(use nls || echo "--disable-locales")
 
 	doicon picard.ico
 	domenu picard.desktop
-}
-
-pkg_postinst() {
-	distutils_pkg_postinst
-	echo
-	ewarn "If you are upgrading Picard and it does not start"
-	ewarn "try removing Picard's settings:"
-	ewarn "	rm ~/.config/MusicBrainz/Picard.conf"
-	elog
-	elog "You should set the environment variable BROWSER to something like"
-	elog "\"firefox '%s' &\" to let python know which browser to use."
+	readme.gentoo_create_doc
 }
