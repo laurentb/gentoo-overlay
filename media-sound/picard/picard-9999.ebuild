@@ -12,17 +12,17 @@ DESCRIPTION="A cross-platform music tagger"
 HOMEPAGE="http://picard.musicbrainz.org/"
 SRC_URI="http://ftp.musicbrainz.org/pub/musicbrainz/picard/${P}.tar.gz"
 
+LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="~amd64 ~ppc ~x86"
+IUSE="+acoustid +cdda nls"
+
 if [ "$PV" == "9999" ]; then
        EGIT_REPO_URI="git://github.com/musicbrainz/picard.git"
        inherit git-2
        KEYWORDS=""
        SRC_URI=""
 fi
-
-LICENSE="GPL-2"
-SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="+acoustid +cdda nls"
 
 DEPEND="dev-python/PyQt4[X,${PYTHON_USEDEP}]
 	media-libs/mutagen
