@@ -32,7 +32,7 @@ RDEPEND="${DEPEND}"
 
 RESTRICT="test" # doesn't work with ebuilds
 S=${WORKDIR}/${PN}-release-${PV}
-DOCS="AUTHORS.txt NEWS.txt"
+DOCS=( AUTHORS.txt NEWS.txt )
 
 DOC_CONTENTS="If you are upgrading Picard and it does not start,
 try removing Picard's settings:
