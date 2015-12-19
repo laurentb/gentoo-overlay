@@ -50,11 +50,7 @@ RDEPEND="${DEPEND}
 	>=dev-python/lxml-3.0[${PYTHON_USEDEP}]
 	dev-python/cssselect[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.2[${PYTHON_USEDEP}]
-	sni? (
-		dev-python/pyopenssl[${PYTHON_USEDEP}]
-		dev-python/ndg-httpsclient[${PYTHON_USEDEP}]
-		dev-python/pyasn1[${PYTHON_USEDEP}]
-	)
+	sni? ( >=dev-lang/python-2.7.9 )
 	virtual/python-futures[${PYTHON_USEDEP}]"
 
 DOCS=( AUTHORS COPYING ChangeLog README INSTALL )
