@@ -1,4 +1,4 @@
-# Copyright 2012-2014 Gentoo Foundation
+# Copyright 2012-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -20,7 +20,7 @@ IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/six[${PYTHON_USEDEP}]
-dev-python/docopts[${PYTHON_USEDEP}]
+dev-python/docopt[${PYTHON_USEDEP}]
 dev-python/ConfigObject[${PYTHON_USEDEP}]"
 
 DOCS=( README.rst )
