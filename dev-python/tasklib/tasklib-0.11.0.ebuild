@@ -1,4 +1,4 @@
-# Copyright 2014 Gentoo Foundation
+# Copyright 2014-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -20,7 +20,9 @@ IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND=">=app-misc/task-2.1.0
->=dev-python/six-1.5.2[${PYTHON_USEDEP}]"
+>=dev-python/six-1.5.2[${PYTHON_USEDEP}]
+dev-python/pytz[${PYTHON_USEDEP}]
+dev-python/tzlocal[${PYTHON_USEDEP}]"
 
 DOCS=( README.rst LICENSE )
 
