@@ -1,4 +1,4 @@
-# Copyright 2013-2014 Gentoo Foundation
+# Copyright 2013-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,5 +19,4 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND=">=dev-python/natsort-3.0.0[${PYTHON_USEDEP}]
->=dev-python/pies-2.6.0[${PYTHON_USEDEP}]"
+RDEPEND=""
