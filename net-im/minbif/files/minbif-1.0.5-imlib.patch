@@ -1,0 +1,25 @@
+From 7aaf2a24260cabbfc04791291160a4100e550b5a Mon Sep 17 00:00:00 2001
+From: Romain Bignon <romain@budget-insight.com>
+Date: Tue, 5 May 2015 10:42:49 +0200
+Subject: [PATCH] ImlibLoadError has been renamed to Imlib_Load_Error in latest version of imlib2
+
+---
+ src/im/account.cpp |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/src/im/account.cpp b/src/im/account.cpp
+index efde142..4ac5163 100644
+--- a/src/im/account.cpp
++++ b/src/im/account.cpp
+@@ -275,7 +275,7 @@ void Account::setBuddyIcon(string filename)
+ 				else
+ 				{
+ 					char** prpl_formats = g_strsplit(prplinfo->icon_spec.format,",",0);
+-					ImlibLoadError err = IMLIB_LOAD_ERROR_UNKNOWN;
++					Imlib_Load_Error err = IMLIB_LOAD_ERROR_UNKNOWN;
+ 
+ 					close(temp_fd);
+ 					/* Try to encode in a supported format. */
+-- 
+1.7.2.5
+

@@ -36,8 +36,11 @@ RDEPEND="${DEPEND}
 	syslog? ( virtual/logger )"
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-1.0.5-glib-single-includes.patch"
-	epatch "${FILESDIR}/${PN}-1.0.5-gcc47.patch"
+	if [ "$PV" != "9999" ]; then
+		epatch "${FILESDIR}/${PN}-1.0.5-glib-single-includes.patch"
+		epatch "${FILESDIR}/${PN}-1.0.5-gcc47.patch"
+		epatch "${FILESDIR}/${PN}-1.0.5-imlib.patch"
+	fi
 
 	sed -i "s#share/doc/minbif)#share/doc/${PF})#" CMakeLists.txt
 
