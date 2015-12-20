@@ -1,0 +1,46 @@
+From 5f847fe93325143fafcc8081e594e32aa956a473 Mon Sep 17 00:00:00 2001
+From: Andreas Cadhalpun <Andreas.Cadhalpun@googlemail.com>
+Date: Tue, 13 May 2014 00:00:00 +0000
+Subject: [PATCH] Replace removed macros
+
+Rename CodecID to AVCodecID and replace AVCODEC_MAX_AUDIO_FRAME_SIZE
+with its last value 192000.
+---
+ decoder.h             | 2 +-
+ ffmpeg/audioconvert.h | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/decoder.h b/decoder.h
+index 310fe2d..92156de 100644
+--- a/decoder.h
++++ b/decoder.h
+@@ -116,7 +116,7 @@ inline Decoder::Decoder(const std::string &file_name)
+ #endif
+ {
+ #ifdef HAVE_AV_AUDIO_CONVERT
+-	m_buffer2 = (uint8_t *)av_malloc(AVCODEC_MAX_AUDIO_FRAME_SIZE * 2 + 16);
++	m_buffer2 = (uint8_t *)av_malloc(192000 * 2 + 16);
+ #endif
+ 
+ #if NEW_AVFRAME_API
+diff --git a/ffmpeg/audioconvert.h b/ffmpeg/audioconvert.h
+index 2b28e2e..69c0db2 100644
+--- a/ffmpeg/audioconvert.h
++++ b/ffmpeg/audioconvert.h
+@@ -75,11 +75,11 @@ int avcodec_channel_layout_num_channels(int64_t channel_layout);
+ /**
+  * Guess the channel layout
+  * @param nb_channels
+- * @param codec_id Codec identifier, or CODEC_ID_NONE if unknown
++ * @param codec_id Codec identifier, or AV_CODEC_ID_NONE if unknown
+  * @param fmt_name Format name, or NULL if unknown
+  * @return Channel layout mask
+  */
+-uint64_t avcodec_guess_channel_layout(int nb_channels, enum CodecID codec_id, const char *fmt_name);
++uint64_t avcodec_guess_channel_layout(int nb_channels, enum AVCodecID codec_id, const char *fmt_name);
+ 
+ struct AVAudioConvert;
+ typedef struct AVAudioConvert AVAudioConvert;
+-- 
+2.1.1.1.g1fb337f
+

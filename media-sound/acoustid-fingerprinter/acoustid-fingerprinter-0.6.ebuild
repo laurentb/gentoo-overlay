@@ -1,4 +1,4 @@
-# Copyright 2011-2014 Gentoo Foundation
+# Copyright 2011-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,3 +18,10 @@ DEPEND="dev-qt/qtgui
 	media-libs/chromaprint
 	virtual/ffmpeg"
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	pwd
+	ls
+	epatch "${FILESDIR}/0001-libav.patch"
+	epatch "${FILESDIR}/0002-libav.patch"
+}
