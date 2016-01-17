@@ -1,4 +1,4 @@
-# Copyright 2012-2015 Gentoo Foundation
+# Copyright 2012-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,7 +6,7 @@ EAPI=5
 
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils-r1
+inherit gnome2-utils distutils-r1
 
 DESCRIPTION="Metadata Anonymisation Toolkit"
 HOMEPAGE="https://mat.boum.org/"
@@ -17,21 +17,34 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+exif +audio +pdf gtk"
 
-DEPEND="dev-python/python-distutils-extra[${PYTHON_USEDEP}]
-dev-python/hachoir-core[${PYTHON_USEDEP}]
-dev-python/hachoir-parser[${PYTHON_USEDEP}]"
+DEPEND="dev-python/python-distutils-extra[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 exif? ( media-libs/exiftool )
 audio? ( media-libs/mutagen[${PYTHON_USEDEP}] )
 pdf? ( dev-python/python-poppler[${PYTHON_USEDEP}] dev-python/pycairo[${PYTHON_USEDEP}] dev-python/pdfrw[${PYTHON_USEDEP}] )
 gtk? ( dev-python/pygtk[${PYTHON_USEDEP}] )
-dev-python/pygobject:3[${PYTHON_USEDEP}]"
+dev-python/pygobject:3[${PYTHON_USEDEP}]
+dev-python/pillow[${PYTHON_USEDEP}]"
 
-src_prepare() {
+python_prepare() {
 	sed -i "s#share/doc/${PN}#share/doc/${PF}#" setup.py
 	use gtk || sed -i "s/'mat-gui'//" setup.py
 	use gtk || sed -i "s/'mat-gui.1'//" setup.py
 	use gtk || sed -i '/mat.desktop/d' setup.py
 	use gtk || sed -i '/pixmaps/d' setup.py
 	use gtk || sed -i '/nautilus/d' setup.py
+
+	distutils-r1_python_prepare
+}
+
+pkg_preinst() {
+	use gtk && gnome2_icon_savelist
+}
+
+pkg_postinst() {
+	use gtk && gnome2_icon_cache_update
+}
+
+pkg_postrm() {
+	use gtk && gnome2_icon_cache_update
 }
