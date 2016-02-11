@@ -19,7 +19,7 @@ elif [ "$PV" == "9998" ]; then
 	SRC_URI=""
 else
 	KEYWORDS="~x86 ~amd64"
-	REDMINE_ID="289"
+	REDMINE_ID="324"
 	SRC_URI="http://symlink.me/attachments/download/${REDMINE_ID}/${P}.tar.gz"
 fi
 
