@@ -1,4 +1,4 @@
-# Copyright 2010-2015 Gentoo Foundation
+# Copyright 2010-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -79,11 +79,4 @@ pkg_postinst() {
 
 pkg_postrm() {
 	use X && gnome2_icon_cache_update
-}
-
-src_prepare() {
-	if [ "$PV" == "1.0" ]; then
-		epatch "${FILESDIR}/0001-Set-copyright-in-applications.patch"
-		epatch "${FILESDIR}/0002-fix-StatusField-to-be-a-BaseObject.patch"
-	fi
 }
