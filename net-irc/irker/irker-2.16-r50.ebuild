@@ -1,9 +1,11 @@
-# Copyright 2012-2014 Gentoo Foundation
+# Copyright 2012-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=5
-PYTHON_COMPAT=( python2_7 )
+EAPI=6
+PYTHON_COMPAT=( python{2_7,3_3,3_4} )
+PYTHON_REQ_USE="ssl"
+
 
 inherit python-single-r1 systemd
 
@@ -21,6 +23,8 @@ DEPEND="app-text/docbook-xml-dtd:4.1.2
 RDEPEND="${PYTHON_DEPS}"
 
 src_prepare() {
+	default
+
 	# Rely on systemd eclass for systemd service install
 	sed -i -e "/^SYSTEMDSYSTEMUNITDIR/d" Makefile
 
