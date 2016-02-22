@@ -1,8 +1,8 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit toolchain-funcs
 
@@ -25,17 +25,21 @@ DEPEND="x11-proto/xproto
 	${RDEPEND}"
 
 src_prepare() {
+	default
+
 	sed -i 's/^[A-Z]\+FLAGS+=-pg -g$//' Makefile
 }
 
 src_compile() {
 	tc-export CC LD
+
 	default
 }
 
 src_install() {
 	dodoc README CHANGELIST COPYRIGHT
 	dobin keynav
+
 	insinto /etc
 	doins keynavrc
 }
