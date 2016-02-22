@@ -8,14 +8,14 @@ inherit toolchain-funcs
 
 DESCRIPTION="Make pointer-driven interfaces easier and faster for users to operate"
 HOMEPAGE="http://www.semicomplete.com/projects/keynav/"
-SRC_URI="http://semicomplete.googlecode.com/files/${PN}-0.${PV}.tar.gz"
+SRC_URI="mirror://debian/pool/main/${PN:0:1}/${PN}/${PN}_0.${PV}.0.orig.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-S="${WORKDIR}/${PN}-0.${PV}"
+S="${WORKDIR}/${PN}-0.${PV}.0"
 
 RDEPEND="x11-libs/cairo[X]
 	x11-libs/libXinerama
