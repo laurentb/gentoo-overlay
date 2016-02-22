@@ -30,7 +30,9 @@ LICENSE="AGPL-3"
 SLOT="0"
 IUSE="X +secure-updates +sni fast-libs"
 
-DEPEND="X? ( >=dev-python/PyQt4-4.9.4-r1[X,phonon,${PYTHON_USEDEP}] )
+DEPEND="X? (
+		dev-python/PyQt5[multimedia,${PYTHON_USEDEP}]
+	)
 	dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	dev-python/prettytable[${PYTHON_USEDEP}]
