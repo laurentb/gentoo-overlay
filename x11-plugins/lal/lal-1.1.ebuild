@@ -1,8 +1,8 @@
-# Copyright 2010-2014 Gentoo Foundation
+# Copyright 2010-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=5
+EAPI=6
 
 DESCRIPTION="lal is a clock for the dock. Nothing more, nothing less."
 HOMEPAGE="http://projects.l3ib.org/lal/"
@@ -20,6 +20,8 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/${PN}"
 
 src_prepare() {
+	default
+
 	sed -i 's/\$(CC) /$(CC) $(CFLAGS) /g' Makefile
 }
 
