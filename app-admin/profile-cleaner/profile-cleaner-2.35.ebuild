@@ -1,9 +1,8 @@
-# Copyright 2013-2015 Gentoo Foundation
+# Copyright 2013-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=5
-inherit base
+EAPI=6
 
 DESCRIPTION="Vacuum and reindex browser sqlite databases"
 HOMEPAGE="https://bbs.archlinux.org/viewtopic.php?id=148062
@@ -25,4 +24,4 @@ sys-apps/sed
 sys-process/parallel
 dev-db/sqlite:3"
 
-DOCS=(INSTALL LICENSE)
+DOCS=( INSTALL LICENSE )
