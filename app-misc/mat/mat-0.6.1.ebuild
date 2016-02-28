@@ -1,8 +1,8 @@
 # Copyright 2012-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=5
+EAPI=6
 
 PYTHON_COMPAT=( python2_7 )
 
@@ -34,7 +34,7 @@ python_prepare() {
 	use gtk || sed -i '/pixmaps/d' setup.py
 	use gtk || sed -i '/nautilus/d' setup.py
 
-	distutils-r1_python_prepare
+	default
 }
 
 pkg_preinst() {
