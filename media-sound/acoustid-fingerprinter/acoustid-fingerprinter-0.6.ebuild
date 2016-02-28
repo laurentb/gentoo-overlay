@@ -1,13 +1,13 @@
-# Copyright 2011-2015 Gentoo Foundation
+# Copyright 2011-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=5
-inherit eutils cmake-utils
+EAPI=6
+inherit cmake-utils
 
 DESCRIPTION="GUI application to submit audio fingerprints to the Acoustid database."
-HOMEPAGE="http://acoustid.org/fingerprinter"
-SRC_URI="mirror://github/lalinsky/${PN}/${P}.tar.gz"
+HOMEPAGE="https://acoustid.org/fingerprinter"
+SRC_URI="https://bitbucket.org/acoustid/${PN}/downloads/${P}.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
@@ -19,9 +19,4 @@ DEPEND="dev-qt/qtgui
 	virtual/ffmpeg"
 RDEPEND="${DEPEND}"
 
-src_prepare() {
-	pwd
-	ls
-	epatch "${FILESDIR}/0001-libav.patch"
-	epatch "${FILESDIR}/0002-libav.patch"
-}
+PATCHES=( "${FILESDIR}/0001-libav.patch" "${FILESDIR}/0002-libav.patch" )
