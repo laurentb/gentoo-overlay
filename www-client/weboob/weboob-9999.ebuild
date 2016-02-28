@@ -20,7 +20,7 @@ elif [ "$PV" == "9998" ]; then
 else
 	KEYWORDS="~x86 ~amd64"
 	REDMINE_ID="324"
-	SRC_URI="http://symlink.me/attachments/download/${REDMINE_ID}/${P}.tar.gz"
+	SRC_URI="https://symlink.me/attachments/download/${REDMINE_ID}/${P}.tar.gz"
 fi
 
 DESCRIPTION="Weboob (Web Outside of Browsers) provides several applications to interact with a lot of websites."
