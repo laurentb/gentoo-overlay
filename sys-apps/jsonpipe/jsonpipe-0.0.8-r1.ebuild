@@ -1,8 +1,8 @@
-# Copyright 2011-2014 Gentoo Foundation
+# Copyright 2011-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=5
+EAPI=6
 
 PYTHON_COMPAT=( python2_7 )
 
@@ -23,6 +23,8 @@ RDEPEND="dev-python/simplejson[${PYTHON_USEDEP}]
 >=dev-python/calabash-0.0.3[${PYTHON_USEDEP}]"
 
 src_prepare() {
+	default
+
 	sed -i "/argparse/d" setup.py
 	sed -i "s/calabash==/calabash>=/" setup.py
 	sed -i "/use_setuptools/d" setup.py
