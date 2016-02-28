@@ -1,8 +1,8 @@
-# Copyright 2011-2014 Gentoo Foundation
+# Copyright 2011-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=5
+EAPI=6
 
 PYTHON_COMPAT=( python2_7 )
 
@@ -18,6 +18,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 src_prepare() {
+	default
+
 	sed -i "s#'TODO'##" setup.py
 	sed -i "s#share/${PN}/doc#share/doc/${PF}#" setup.py
 }
