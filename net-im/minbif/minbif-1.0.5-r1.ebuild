@@ -1,24 +1,23 @@
-# Copyright 2009-2014 Gentoo Foundation
+# Copyright 2009-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=5
+EAPI=6
 
-inherit cmake-utils eutils user systemd
+inherit cmake-utils user systemd
 [ "$PV" == "9999" ] \
 	&& EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}.git" \
-	&& inherit git-2
+	&& inherit git-r3
 
 DESCRIPTION="an IRC instant messaging gateway, using libpurple"
 HOMEPAGE="http://minbif.im/"
 
 if [ "$PV" != "9999" ]; then
-	SRC_URI="http://symlink.me/attachments/download/148/${P}.tar.gz"
+	SRC_URI="https://symlink.me/attachments/download/148/${P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
 else
 	SRC_URI=""
 	KEYWORDS=""
-	S="${WORKDIR}"/${PN}
 fi
 
 LICENSE="GPL-2"
@@ -36,10 +35,12 @@ RDEPEND="${DEPEND}
 	syslog? ( virtual/logger )"
 
 src_prepare() {
+	default
+
 	if [ "$PV" != "9999" ]; then
-		epatch "${FILESDIR}/${PN}-1.0.5-glib-single-includes.patch"
-		epatch "${FILESDIR}/${PN}-1.0.5-gcc47.patch"
-		epatch "${FILESDIR}/${PN}-1.0.5-imlib.patch"
+		eapply "${FILESDIR}/${PN}-1.0.5-glib-single-includes.patch"
+		eapply "${FILESDIR}/${PN}-1.0.5-gcc47.patch"
+		eapply "${FILESDIR}/${PN}-1.0.5-imlib.patch"
 	fi
 
 	sed -i "s#share/doc/minbif)#share/doc/${PF})#" CMakeLists.txt
@@ -56,15 +57,15 @@ src_configure() {
 	append-flags "-DX_DISPLAY_MISSING"
 
 	local mycmakeargs
-	mycmakeargs="${mycmakeargs}
+	mycmakeargs=(
 		-DCONF_PREFIX=/etc/minbif
-		$(cmake-utils_use_enable libcaca CACA)
-		$(cmake-utils_use_enable imlib IMLIB)
-		$(cmake-utils_use_enable debug DEBUG)
-		$(cmake-utils_use_enable pam PAM)
-		$(cmake-utils_use_enable gnutls TLS)
-		$(cmake-utils_use_enable video VIDEO)
-	"
+		-DENABLE_CACA="$(usex libcaca)"
+		-DENABLE_DEBUG="$(usex debug)"
+		-DENABLE_IMLIB="$(usex imlib)"
+		-DENABLE_PAM="$(usex pam)"
+		-DENABLE_TLS="$(usex gnutls)"
+		-DENABLE_VIDEO="$(usex video)"
+	)
 
 	cmake-utils_src_configure
 }
