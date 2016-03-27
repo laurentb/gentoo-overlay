@@ -1,8 +1,8 @@
-# Copyright 2010-2014 Gentoo Foundation
+# Copyright 2010-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=5
+EAPI=6
 
 DESCRIPTION="git-publish-branch is a simple script to ease the unnecessarily \
 complex task of \"publishing\" a branch"
