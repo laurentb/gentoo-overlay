@@ -1,8 +1,8 @@
-# Copyright 2011-2014 Gentoo Foundation
+# Copyright 2011-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=5
+EAPI=6
 PYTHON_COMPAT=( python2_7 )
 
 inherit distutils-r1
@@ -23,6 +23,6 @@ dev-vcs/git"
 
 DOCS=( AUTHORS INSTALL LICENSE README.rst docs/index.rst docs/overview.rst )
 
-python_install() {
-	distutils-r1_python_install --install-scripts="/usr/libexec/git-core"
+python_install_all() {
+	distutils-r1_python_install_all --install-scripts="/usr/libexec/git-core"
 }
