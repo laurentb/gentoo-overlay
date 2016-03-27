@@ -1,8 +1,8 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=5
+EAPI=6
 
 PYTHON_COMPAT=( python2_7 )
 
@@ -21,6 +21,8 @@ DEPEND=""
 RDEPEND="dev-python/wxpython[${PYTHON_USEDEP}]"
 
 src_prepare() {
+	default
+
 	mkdir bin
 	mv "dictator_start.py" "bin/dictator"
 	sed -i 's#dictator_start\.py#bin/dictator#' "setup.py"
