@@ -24,4 +24,4 @@ dev-python/docopt[${PYTHON_USEDEP}]
 dev-python/ConfigObject[${PYTHON_USEDEP}]
 virtual/python-pathlib[${PYTHON_USEDEP}]"
 
-DOCS=( README.rst )
+DOCS=( README.rst docs/. )
