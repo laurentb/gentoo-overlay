@@ -11,7 +11,7 @@ inherit distutils-r1
 DESCRIPTION="Small tool to interact with shell pipes"
 HOMEPAGE="https://pypi.python.org/pypi/chut
 https://github.com/gawel/chut"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://pypi.python.org/packages/bc/3a/93b3235398e40a3ffe284fc233d7e4872994dc7662f537476a8d2ab940ec/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
