@@ -1,5 +1,5 @@
-#!/sbin/runscript
-# Copyright 2012-2014 Gentoo Foundation
+#!/sbin/openrc-run
+# Copyright 2012-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 PIDFILE=/run/${SVCNAME}.pid
