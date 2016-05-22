@@ -1,0 +1,5 @@
+# Laurent Bachelier <laurent@bachelier.name> (22 May 2016)
+# Bepo is now included in kbd>=2.0.0.
+# For kbd>=2.0.1, use keymap="fr-bepo" instead of
+# keymap="fr-dvorak-bepo".
+sys-apps/fr-bepo-keymap
