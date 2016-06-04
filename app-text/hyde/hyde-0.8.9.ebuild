@@ -1,8 +1,8 @@
-# Copyright 2012-2015 Gentoo Foundation
+# Copyright 2012-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=5
+EAPI=6
 
 PYTHON_COMPAT=( python2_7 )
 
@@ -29,6 +29,8 @@ RDEPEND=">=dev-python/fswrap-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/jinja-2.7.3[${PYTHON_USEDEP}]"
 
 src_prepare() {
+	default
+
 	# incorrect, this is for typogrify only
 	sed -i '/smartypants/d' setup.py requirements.txt
 	# stupid
