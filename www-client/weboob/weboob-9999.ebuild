@@ -41,7 +41,7 @@ RDEPEND="${DEPEND}
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
-	dev-python/gdata[${PYTHON_USEDEP}]
+	dev-python/google-api-python-client[${PYTHON_USEDEP}]
 	dev-python/feedparser[${PYTHON_USEDEP}]
 	dev-python/termcolor[${PYTHON_USEDEP}]
 	secure-updates? ( app-crypt/gnupg )
