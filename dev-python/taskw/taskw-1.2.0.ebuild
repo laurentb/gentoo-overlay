@@ -21,6 +21,7 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="app-misc/task
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
-	dev-python/six[${PYTHON_USEDEP}]"
+	dev-python/six[${PYTHON_USEDEP}]
+	dev-python/kitchen[${PYTHON_USEDEP}]"
 
 DOCS=( README.rst LICENSE.txt )
