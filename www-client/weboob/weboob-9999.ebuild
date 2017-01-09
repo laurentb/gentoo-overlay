@@ -57,6 +57,12 @@ RDEPEND="${DEPEND}
 
 DOCS=( AUTHORS COPYING ChangeLog README INSTALL )
 
+src_prepare() {
+	default
+
+	sed -i "s/exclude=\['modules'\]/exclude=['modules', 'modules.*']/" setup.py
+}
+
 python_configure_all() {
 	mydistutilsargs=(
 		$(usex X '--qt' '--no-qt')
