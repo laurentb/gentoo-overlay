@@ -5,7 +5,7 @@
 EAPI=6
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils-r1 gnome2-utils
+inherit distutils-r1 gnome2-utils bash-completion-r1
 
 if [ "$PV" == "9999" ]; then
 	EGIT_REPO_URI="https://git.weboob.org/${PN}/devel.git"
@@ -72,8 +72,15 @@ python_configure_all() {
 
 python_install_all() {
 	distutils-r1_python_install_all
+
 	insinto /usr/share/${PN}/
 	doins -r contrib
+
+	newbashcomp tools/weboob_bash_completion ${PN}
+	local script
+	for script in scripts/*; do
+		[[ $(basename $script) != "weboob" ]] && bashcomp_alias "weboob" $(basename $script)
+	done
 }
 
 pkg_preinst() {
