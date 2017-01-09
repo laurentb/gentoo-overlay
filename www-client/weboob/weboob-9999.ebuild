@@ -78,8 +78,8 @@ python_install_all() {
 
 	newbashcomp tools/weboob_bash_completion ${PN}
 	local script
-	for script in scripts/*; do
-		[[ $(basename $script) != "weboob" ]] && bashcomp_alias "weboob" $(basename $script)
+	for script in $(weboob-config applications|tail -n1); do
+		bashcomp_alias "weboob" $script
 	done
 }
 
