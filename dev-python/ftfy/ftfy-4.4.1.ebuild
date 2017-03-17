@@ -1,4 +1,4 @@
-# Copyright 2014-2016 Gentoo Foundation
+# Copyright 2014-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -19,4 +19,5 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND=""
+RDEPEND="dev-python/html5lib[${PYTHON_USEDEP}]
+	dev-python/wcwidth[${PYTHON_USEDEP}]"
