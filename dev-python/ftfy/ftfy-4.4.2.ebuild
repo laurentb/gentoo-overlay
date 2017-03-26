@@ -21,3 +21,5 @@ IUSE=""
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/html5lib[${PYTHON_USEDEP}]
 	dev-python/wcwidth[${PYTHON_USEDEP}]"
+
+DOCS=( CHANGELOG.md LICENSE.txt README.md )
