@@ -21,4 +21,5 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="
 	dev-python/regex[${PYTHON_USEDEP}]
 	>=dev-python/unidecode-0.04[${PYTHON_USEDEP}]
-	<=dev-python/unidecode-0.05[${PYTHON_USEDEP}]"
+	<=dev-python/unidecode-0.05[${PYTHON_USEDEP}]
+	!dev-python/python-slugify"
