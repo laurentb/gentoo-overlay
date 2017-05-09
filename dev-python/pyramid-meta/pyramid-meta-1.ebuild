@@ -20,6 +20,6 @@ IUSE="+development +mako"
 
 RDEPEND="${DEPEND}
 	dev-python/pyramid[${PYTHON_USEDEP}]
-	net-zope/zope-deprecation[${PYTHON_USEDEP}]
+	dev-python/zope-deprecation[${PYTHON_USEDEP}]
 	development? ( dev-python/waitress[${PYTHON_USEDEP}] )
 	mako? ( dev-python/mako[${PYTHON_USEDEP}] )"
