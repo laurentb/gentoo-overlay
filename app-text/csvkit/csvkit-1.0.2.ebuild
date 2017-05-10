@@ -19,10 +19,10 @@ IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="
-	>=dev-python/agate-1.5.5[${PYTHON_USEDEP}]
-	>=dev-python/agate-excel-0.2.0[${PYTHON_USEDEP}]
+	>=dev-python/agate-1.6.0[${PYTHON_USEDEP}]
+	>=dev-python/agate-excel-0.2.1[${PYTHON_USEDEP}]
 	>=dev-python/agate-dbf-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/agate-sql-0.5.0[${PYTHON_USEDEP}]
+	>=dev-python/agate-sql-0.5.2[${PYTHON_USEDEP}]
 	>=dev-python/six-1.6.1[${PYTHON_USEDEP}]"
 
 DOCS=( COPYING README.rst )
