@@ -1,25 +1,24 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
 EAPI=6
 
-inherit toolchain-funcs
+inherit toolchain-funcs git-r3
 
 DESCRIPTION="Make pointer-driven interfaces easier and faster for users to operate"
-HOMEPAGE="http://www.semicomplete.com/projects/keynav/"
-SRC_URI="mirror://debian/pool/main/${PN:0:1}/${PN}/${PN}_0.${PV}.0.orig.tar.gz"
+HOMEPAGE="https://github.com/jordansissel/keynav"
+EGIT_REPO_URI="git://github.com/jordansissel/keynav.git"
+EGIT_COMMIT="4ae486db6697877e84b66583a0502afc7301ba16"
 
-LICENSE="as-is"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-S="${WORKDIR}/${PN}-0.${PV}.0"
-
 RDEPEND="x11-libs/cairo[X]
 	x11-libs/libXinerama
-	>=x11-misc/xdotool-2.0
+	>=x11-misc/xdotool-3.0
 	>=dev-libs/glib-2.0"
 DEPEND="x11-proto/xproto
 	${RDEPEND}"
