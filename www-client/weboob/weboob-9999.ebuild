@@ -12,13 +12,13 @@ if [ "$PV" == "9999" ]; then
 	KEYWORDS=""
 	SRC_URI=""
 elif [ "$PV" == "9998" ]; then
-	EGIT_REPO_URI="https://git.weboob.org/${PN}/devel.git"
+	EGIT_REPO_URI="https://git.weboob.org/${PN}/stable.git"
 	inherit git-r3
 	KEYWORDS=""
 	SRC_URI=""
 else
 	KEYWORDS="~x86 ~amd64"
-	REDMINE_ID="342"
+	REDMINE_ID="356"
 	SRC_URI="https://symlink.me/attachments/download/${REDMINE_ID}/${P}.tar.gz"
 fi
 
@@ -52,6 +52,7 @@ RDEPEND="${DEPEND}
 	dev-python/cssselect[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.2[${PYTHON_USEDEP}]
 	sni? ( >=dev-lang/python-2.7.9 )
+	dev-python/six[${PYTHON_USEDEP}]
 	virtual/python-futures[${PYTHON_USEDEP}]"
 
 DOCS=( AUTHORS COPYING ChangeLog README INSTALL )
