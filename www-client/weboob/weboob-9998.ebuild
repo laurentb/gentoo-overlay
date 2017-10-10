@@ -27,7 +27,7 @@ HOMEPAGE="http://weboob.org/"
 
 LICENSE="AGPL-3"
 SLOT="0"
-IUSE="X +secure-updates fast-libs"
+IUSE="X +secure-updates +deprecated fast-libs"
 
 DEPEND="X? (
 		dev-python/PyQt5[multimedia,${PYTHON_USEDEP}]
@@ -37,7 +37,9 @@ RDEPEND="${DEPEND}
 	>=dev-lang/python-2.7.9[ssl]
 	dev-python/prettytable[${PYTHON_USEDEP}]
 	dev-python/html2text[${PYTHON_USEDEP}]
-	dev-python/mechanize[${PYTHON_USEDEP}]
+	deprecated? (
+		dev-python/mechanize[${PYTHON_USEDEP}]
+	)
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
