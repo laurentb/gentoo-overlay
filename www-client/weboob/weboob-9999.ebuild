@@ -27,13 +27,14 @@ HOMEPAGE="http://weboob.org/"
 
 LICENSE="AGPL-3"
 SLOT="0"
-IUSE="X +secure-updates +sni fast-libs"
+IUSE="X +secure-updates fast-libs"
 
 DEPEND="X? (
 		dev-python/PyQt5[multimedia,${PYTHON_USEDEP}]
 	)
 	dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
+	>=dev-lang/python-2.7.9[ssl]
 	dev-python/prettytable[${PYTHON_USEDEP}]
 	dev-python/html2text[${PYTHON_USEDEP}]
 	dev-python/mechanize[${PYTHON_USEDEP}]
@@ -50,8 +51,7 @@ RDEPEND="${DEPEND}
 	)
 	>=dev-python/lxml-3.0[${PYTHON_USEDEP}]
 	dev-python/cssselect[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.2[${PYTHON_USEDEP}]
-	sni? ( >=dev-lang/python-2.7.9 )
+	>=dev-python/requests-2.2[${PYTHON_USEDEP},ssl]
 	dev-python/six[${PYTHON_USEDEP}]
 	virtual/python-futures[${PYTHON_USEDEP}]"
 
