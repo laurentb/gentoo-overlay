@@ -63,8 +63,11 @@ DOCS=( AUTHORS COPYING ChangeLog README INSTALL )
 
 src_prepare() {
 	default
-
-	sed -i "s/exclude=\['modules'\]/exclude=['modules', 'modules.*']/" setup.py
+	
+	test -L contrib/webextension-session-importer/logo.png \
+		&& cp -L contrib/webextension-session-importer/logo.png logo.tmp.png \
+		&& rm contrib/webextension-session-importer/logo.png \
+		&& mv logo.tmp.png contrib/webextension-session-importer/logo.png
 }
 
 python_configure_all() {
