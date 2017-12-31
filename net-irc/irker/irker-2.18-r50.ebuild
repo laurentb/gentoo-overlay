@@ -46,8 +46,7 @@ src_install() {
 
 	systemd_dounit irkerd.service
 
-	dodoc NEWS README hacking.txt security.txt
-	dohtml irkerd.html irkerhook.html
+	dodoc NEWS README hacking.txt security.txt irkerd.html irkerhook.html
 
 	docinto examples
 	dodoc filter-example.py filter-test.py
