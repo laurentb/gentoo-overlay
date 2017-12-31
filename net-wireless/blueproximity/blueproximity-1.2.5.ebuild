@@ -41,7 +41,7 @@ src_install() {
 	dodoc README
 	dodoc ChangeLog
 	doman doc/blueproximity.1
-	dohtml doc/*
+	dodoc doc/*
 	insinto /usr/share/applications
 	doins addons/blueproximity.desktop
 	insinto /usr/share/pixmaps
