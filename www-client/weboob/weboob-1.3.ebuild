@@ -1,4 +1,4 @@
-# Copyright 2010-2017 Gentoo Foundation
+# Copyright 2010-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -57,6 +57,7 @@ RDEPEND="${DEPEND}
 	dev-python/cssselect[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.2[${PYTHON_USEDEP},ssl]
 	dev-python/six[${PYTHON_USEDEP}]
+	dev-python/unidecode[${PYTHON_USEDEP}]
 	virtual/python-futures[${PYTHON_USEDEP}]"
 
 DOCS=( AUTHORS COPYING ChangeLog README INSTALL )
