@@ -1,11 +1,11 @@
-# Copyright 2005-2017 Gentoo Foundation
+# Copyright 2005-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
-inherit base autotools eutils games
+EAPI=6
+inherit autotools eutils
 [ "$PV" == "9999" ] \
 	&& EGIT_REPO_URI="git://git.symlink.me/pub/romain/${PN}.git" \
-	&& inherit git-2
+	&& inherit git-r3
 
 DESCRIPTION="Men Are Ants is a strategic turn by turn
 (simultaneous) game with solo and multiplayer modes."
@@ -19,7 +19,7 @@ IUSE="debug server +game meta-server"
 
 DEPEND="
 	game? (
-		>=media-libs/libsdl-1.2.6[X,audio,video]
+		>=media-libs/libsdl-1.2.6[X,sound,video]
 		>=media-libs/sdl-ttf-2.0[X]
 		>=media-libs/sdl-image-1.2[png]
 		>=media-libs/sdl-mixer-1.2.6[wav,vorbis]
@@ -28,11 +28,12 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_prepare() {
+	default
 	eautoreconf
 }
 
 src_configure() {
-	egamesconf \
+	econf \
 		$(use_enable debug) \
 		$(use_enable server) \
 		$(use_enable meta-server) \
@@ -46,8 +47,6 @@ src_install() {
 	use server && doman server/menareants-server.6
 	use meta-server && doman meta-server/menareants-meta-server.6
 	{ use server || use meta-server ;} && dodoc doc/ADMINS
-
-	prepgamesdirs
 }
 
 pkg_postinst() {
@@ -58,5 +57,4 @@ pkg_postinst() {
 		einfo "as an user with a valid user directory." && \
 		echo
 	fi
-	games_pkg_postinst
 }
