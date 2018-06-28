@@ -45,6 +45,7 @@ RDEPEND="${COMMON_DEPEND}
 	dev-python/termcolor[${PYTHON_USEDEP}]
 	dev-python/unidecode[${PYTHON_USEDEP}]
 	virtual/python-futures[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep 'dev-python/enum34[${PYTHON_USEDEP}]' python2_7)
 	deprecated? ( dev-python/mechanize[${PYTHON_USEDEP}] )
 	fast-libs? (
 		dev-python/pyyaml[libyaml,${PYTHON_USEDEP}]
