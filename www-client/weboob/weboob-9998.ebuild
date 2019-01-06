@@ -26,7 +26,7 @@ HOMEPAGE="http://weboob.org/"
 
 LICENSE="AGPL-3"
 SLOT="0"
-IUSE="+deprecated fast-libs +secure-updates X"
+IUSE="fast-libs +secure-updates X"
 
 COMMON_DEPEND="
 	X? ( dev-python/PyQt5[multimedia,${PYTHON_USEDEP}] )
