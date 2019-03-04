@@ -12,7 +12,7 @@ if [[ ${PV} == *999* ]]; then
 	GIT_SCM=git-r3
 	SRC_URI=""
 else
-	GITLAB_ID="08dad6b2a68fd618ba8c87c627393d06"
+	GITLAB_ID="007b56516cfeeea4d5c7e97fd3a1ba1f"
 	SRC_URI="https://git.weboob.org/${PN}/${PN}/uploads/${GITLAB_ID}/${P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
 fi
@@ -24,7 +24,7 @@ unset GIT_SCM
 DESCRIPTION="Consume lots of websites without a browser (Web Outside Of Browsers)"
 HOMEPAGE="http://weboob.org/"
 
-LICENSE="AGPL-3"
+LICENSE="LGPL-3+"
 SLOT="0"
 IUSE="fast-libs +secure-updates X"
 
