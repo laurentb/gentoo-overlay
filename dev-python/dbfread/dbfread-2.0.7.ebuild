@@ -1,4 +1,4 @@
-# Copyright 2017 Gentoo Foundation
+# Copyright 2017-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python{2_7,3_4,3_5,3_6,3_6} )
 inherit distutils-r1
 
 DESCRIPTION="Read DBF Files with Python"
-HOMEPAGE="http://dbfread.rtfd.org/"
+HOMEPAGE="https://dbfread.readthedocs.io/"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
