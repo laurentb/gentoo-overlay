@@ -1,4 +1,4 @@
-# Copyright 2009-2017 Gentoo Foundation
+# Copyright 2009-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -8,7 +8,8 @@ inherit distutils-r1
 
 DESCRIPTION="Intelligently extract multiple archive types."
 HOMEPAGE="http://brettcsmith.org/2007/dtrx/"
-SRC_URI="http://brettcsmith.org/2007/dtrx/${P}.tar.gz"
+SRC_URI="https://fossies.org/linux/privat/${P}.tar.gz
+http://brettcsmith.org/2007/dtrx/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
