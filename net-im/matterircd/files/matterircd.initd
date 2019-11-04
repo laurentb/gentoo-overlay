@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+# Copyright 1999-2018 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+output_log="${output_log:-/dev/null}"
+error_log="${error_log:-${MATTERIRCD_LOGDIR}/error.log}"
+
+command="/usr/bin/matterircd"
+command_args="-config ${MATTERIRCD_CONFIG} ${MATTERIRCD_OPTS}"
+command_background=true
+command_user="${command_user:-matterircd:matterircd}"
+pidfile="/run/${RC_SVCNAME}.pid"
+required_files="${MATTERIRCD_CONFIG}"
+retry="${retry:-TERM/30/KILL/5}"
+start_stop_daemon_args="${SSD_OPTS}"
+
+depend() {
+	need net
+}
+
+start_pre() {
+	checkpath -d -m 0750 -o "${command_user}" "${MATTERIRCD_LOGDIR}"
+}

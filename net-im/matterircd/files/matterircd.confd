@@ -1,0 +1,11 @@
+# config file for /etc/init.d/matterircd
+
+MATTERIRCD_LOGDIR="/var/log/matterircd"
+MATTERIRCD_CONFIG="/etc/matterircd/matterircd.toml"
+
+# Additional options (avoid -config use the variable above)
+MATTERIRCD_OPTS=""
+
+# Logging
+#output_log="${MATTERIRCD_LOGDIR}/matterircd.log"
+#error_log="${MATTERIRCD_LOGDIR}/error.log"
