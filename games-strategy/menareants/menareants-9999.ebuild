@@ -1,4 +1,4 @@
-# Copyright 2005-2018 Gentoo Foundation
+# Copyright 2005-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -14,7 +14,7 @@ SRC_URI=""
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="debug server +game meta-server"
 
 DEPEND="
