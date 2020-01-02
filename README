@@ -1,11 +1,9 @@
 This overlay is mainly for my own usage, though packages are of reasonable quality and do not conflict with the official portage tree if you use stable.
 
 
-There is some software I watch closely that should be always up-to-date, at least: esniper, minbif, assnet, weboob, irker, rtorrent-notify, tmpclone, brutha, xunitparser.
+There is some software I watch closely that should be always up-to-date, especially since I'm a developer of many.
 
 Most of the remaining packages are developer tools and Python libraries.
-
-There is an effort to package third-party supported versions of Symfony 1.4.
 
 
 You can browse the package list: http://gpo.zugaina.org/Overlays/laurentb
@@ -26,6 +24,8 @@ You can check the authenticity of my key by various means, including:
 * https://launchpad.net/~laurentb
 
 
-Copyright is assigned to the Gentoo Foundation.
+Feel free to take any of my ebuilds under whatever licence and copyright assignation.
+I follow these guidelines: https://dev.gentoo.org/~mgorny/articles/new-gentoo-copyright-policy-explained.html
+
 
 Contact: Laurent Bachelier <laurent@bachelier.name>
