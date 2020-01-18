@@ -8,20 +8,32 @@ Most of the remaining packages are developer tools and Python libraries.
 
 You can browse the package list: http://gpo.zugaina.org/Overlays/laurentb
 
-This overlay is available in the default layman list. Just run:
+This overlay is available in the official Gentoo list. Just run:
+
+    # eselect repository enable laurentb
+
+Or if you're using layman:
 
     # layman -a laurentb
 
-The commits should now be signed by my GPG key.
+In case you don't use those tools, you can also put into /etc/portage/repos.conf/laurentb.conf:
+
+    [laurentb]
+    location = /var/db/repos/laurentb
+    sync-type = git
+    sync-uri = https://github.com/laurentb/gentoo-overlay.git
+
+The commits should be signed by my GPG key.
 
     # gpg --recv-key 0x3463EA5A518A9C75
-    # GIT_DIR="/var/lib/layman/laurentb/.git" git log -n1 --show-signature
+    # GIT_DIR="/var/db/repos/laurentb/.git" git log -n1 --show-signature
 
 You can check the authenticity of my key by various means, including:
 * https://laurent.bachelier.name/gpgkey.txt
 * namecoin id/laurentb https://nameid.org/?name=laurentb https://namecha.in/name/id/laurentb
 * The GPG web of trust http://pgp.cs.uu.nl/stats/518A9C75.html
 * https://launchpad.net/~laurentb
+* GitHub shows the commits as Verified along with the key used
 
 
 Feel free to take any of my ebuilds under whatever licence and copyright assignation.
