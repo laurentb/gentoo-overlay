@@ -1,14 +1,13 @@
-# Copyright 2011-2019 Gentoo Authors
+# Copyright 2010-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils-r1
-[ "$PV" == "9999" ] \
-	&& EGIT_REPO_URI="git://git.symlink.me/pub/laurentb/${PN}.git" \
-	&& inherit git-2
+EGIT_REPO_URI="git://git.p.engu.in/laurentb/assnet"
+inherit distutils-r1 git-r3
+unset GIT_SCM
 
 DESCRIPTION="The Asocial Sharing Network"
 HOMEPAGE="http://assnet.org/"
