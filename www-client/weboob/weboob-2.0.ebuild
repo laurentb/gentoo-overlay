@@ -1,9 +1,9 @@
-# Copyright 2010-2019 Gentoo Foundation
+# Copyright 2010-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python3_{6,7,8} )
 PYTHON_REQ_USE="ssl"
 
 EGIT_BRANCH="master"
@@ -12,13 +12,13 @@ if [[ ${PV} == *999* ]]; then
 	GIT_SCM=git-r3
 	SRC_URI=""
 else
-	GITLAB_ID="007b56516cfeeea4d5c7e97fd3a1ba1f"
+	GITLAB_ID="7b91875f693b60e93c5976daa051034b"
 	SRC_URI="https://git.weboob.org/${PN}/${PN}/uploads/${GITLAB_ID}/${P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
 fi
 
 EGIT_REPO_URI="https://git.weboob.org/${PN}/${PN}.git"
-inherit distutils-r1 gnome2-utils ${GIT_SCM}
+inherit distutils-r1 ${GIT_SCM}
 unset GIT_SCM
 
 DESCRIPTION="Consume lots of websites without a browser (Web Outside Of Browsers)"
@@ -26,17 +26,16 @@ HOMEPAGE="http://weboob.org/"
 
 LICENSE="LGPL-3+"
 SLOT="0"
-IUSE="fast-libs +secure-updates X"
+IUSE="fast-libs +secure-updates"
 
-COMMON_DEPEND="
-	X? ( dev-python/PyQt5[multimedia,${PYTHON_USEDEP}] )
-"
-RDEPEND="${COMMON_DEPEND}
+RDEPEND="
+	$(python_gen_impl_dep 'ssl(+)')
 	dev-python/cssselect[${PYTHON_USEDEP}]
 	dev-python/feedparser[${PYTHON_USEDEP}]
 	dev-python/html2text[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
+	dev-python/Babel[${PYTHON_USEDEP}]
 	dev-python/prettytable[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
@@ -50,44 +49,11 @@ RDEPEND="${COMMON_DEPEND}
 		dev-python/simplejson[${PYTHON_USEDEP}]
 	)
 	secure-updates? ( app-crypt/gnupg )
-	X? ( dev-python/google-api-python-client[${PYTHON_USEDEP}] )
 "
-DEPEND="${COMMON_DEPEND}
-	dev-python/setuptools[${PYTHON_USEDEP}]
-"
-
-src_prepare() {
-	default
-
-	if [[ -L contrib/webextension-session-importer/logo.png ]]; then
-		cp -L contrib/webextension-session-importer/logo.png logo.tmp.png || die
-		rm contrib/webextension-session-importer/logo.png || die
-		mv logo.tmp.png contrib/webextension-session-importer/logo.png || die
-	fi
-}
-
-python_configure_all() {
-	mydistutilsargs=(
-		$(usex X '--qt' '--no-qt')
-		$(usex X '--xdg' '--no-xdg')
-	)
-}
+DEPEND="${RDEPEND}"
 
 python_install_all() {
 	distutils-r1_python_install_all
 	insinto /usr/share/${PN}/
 	doins -r contrib
-}
-
-pkg_preinst() {
-	use X && gnome2_icon_savelist
-}
-
-pkg_postinst() {
-	use X && gnome2_icon_cache_update
-	elog 'You should now run "weboob-config update" (as your login user).'
-}
-
-pkg_postrm() {
-	use X && gnome2_icon_cache_update
 }
