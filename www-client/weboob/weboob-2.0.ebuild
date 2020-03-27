@@ -26,7 +26,7 @@ HOMEPAGE="http://weboob.org/"
 
 LICENSE="LGPL-3+"
 SLOT="0"
-IUSE="fast-libs +secure-updates"
+IUSE="fast-libs +secure-updates X"
 
 RDEPEND="
 	$(python_gen_impl_dep 'ssl(+)')
@@ -49,6 +49,7 @@ RDEPEND="
 		dev-python/simplejson[${PYTHON_USEDEP}]
 	)
 	secure-updates? ( app-crypt/gnupg )
+	X? ( www-client/weboob-qt[${PYTHON_USEDEP}] )
 "
 DEPEND="${RDEPEND}"
 
